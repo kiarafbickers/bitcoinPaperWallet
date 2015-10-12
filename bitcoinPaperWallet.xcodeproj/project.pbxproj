@@ -264,6 +264,7 @@
 				TargetAttributes = {
 					E901CAF51BCA30DF001ACC70 = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = K5325KADLR;
 					};
 					E901CB111BCA30E0001ACC70 = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -511,10 +512,13 @@
 			baseConfigurationReference = D50427E3B5B6A0AE52950832 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = bitcoinPaperWallet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = KiaraRobles.bitcoinPaperWallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -523,10 +527,13 @@
 			baseConfigurationReference = A087B2CFC0AD8E0D9422FAAE /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = bitcoinPaperWallet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = KiaraRobles.bitcoinPaperWallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

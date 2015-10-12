@@ -41,8 +41,8 @@
     
     
     
-    BTCPrivateKeyAddress *key = [self makeRandomKey];
-    [self saveQRImages:key];
+//    BTCPrivateKeyAddress *key = [self makeRandomKey];
+//    [self saveQRImages:key];
     
 }
 - (IBAction)generate:(id)sender {
