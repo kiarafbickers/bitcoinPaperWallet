@@ -1,0 +1,674 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3458088EC2BD62891CD02D0D /* libPods-FoldyPaperWallet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 23B3788031AAE2F3BA7B5D9C /* libPods-FoldyPaperWallet.a */; };
+		E95A33DB1BCEBBAE007D1DBD /* qrspec.c in Sources */ = {isa = PBXBuildFile; fileRef = E93E9E121BCEB4870019B7AD /* qrspec.c */; };
+		E95A33DC1BCEBBB9007D1DBD /* split.c in Sources */ = {isa = PBXBuildFile; fileRef = E93E9E161BCEB4870019B7AD /* split.c */; };
+		E95A33DD1BCEBBC3007D1DBD /* bitstream.c in Sources */ = {isa = PBXBuildFile; fileRef = E93E9E0A1BCEB4870019B7AD /* bitstream.c */; };
+		E95A33DE1BCEBBCB007D1DBD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D710111BCD880A00C895D5 /* main.m */; };
+		E95A33DF1BCEBBD1007D1DBD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D710141BCD880A00C895D5 /* AppDelegate.m */; };
+		E95A33E01BCEBBE4007D1DBD /* rscode.c in Sources */ = {isa = PBXBuildFile; fileRef = E93E9E141BCEB4870019B7AD /* rscode.c */; };
+		E95A33E11BCEBC02007D1DBD /* mask.c in Sources */ = {isa = PBXBuildFile; fileRef = E93E9E0C1BCEB4870019B7AD /* mask.c */; };
+		E95A33E21BCEBC12007D1DBD /* qrinput.c in Sources */ = {isa = PBXBuildFile; fileRef = E93E9E101BCEB4870019B7AD /* qrinput.c */; };
+		E95A33E31BCEBC2D007D1DBD /* qrencode.c in Sources */ = {isa = PBXBuildFile; fileRef = E93E9E0E1BCEB4870019B7AD /* qrencode.c */; };
+		E95A33E41BCEBC39007D1DBD /* FPWTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D710471BCD89F500C895D5 /* FPWTableViewController.m */; };
+		E95A33E51BCEBC3F007D1DBD /* FPWCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E93E9DF41BCDCD150019B7AD /* FPWCustomCell.m */; };
+		E95A33E61BCEBC44007D1DBD /* FPWWallet.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D7104A1BCD8DF400C895D5 /* FPWWallet.m */; };
+		E95A33E71BCEBC48007D1DBD /* UIImage+MDQRCode.m in Sources */ = {isa = PBXBuildFile; fileRef = E93E9E011BCEB4870019B7AD /* UIImage+MDQRCode.m */; };
+		E95A33E81BCEBE2D007D1DBD /* FoldyPaperWallet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E9D7101C1BCD880A00C895D5 /* FoldyPaperWallet.xcdatamodeld */; };
+		E9605A541BCF3F5D007697F1 /* FPWWTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9605A531BCF3F5D007697F1 /* FPWWTableViewController.m */; settings = {ASSET_TAGS = (); }; };
+		E9D7101B1BCD880A00C895D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9D710191BCD880A00C895D5 /* Main.storyboard */; };
+		E9D710201BCD880A00C895D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9D7101F1BCD880A00C895D5 /* Assets.xcassets */; };
+		E9D710231BCD880A00C895D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9D710211BCD880A00C895D5 /* LaunchScreen.storyboard */; };
+		E9D7102E1BCD880A00C895D5 /* FoldyPaperWalletTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D7102D1BCD880A00C895D5 /* FoldyPaperWalletTests.m */; };
+		E9D710391BCD880A00C895D5 /* FoldyPaperWalletUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D710381BCD880A00C895D5 /* FoldyPaperWalletUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E9D7102A1BCD880A00C895D5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E9D710051BCD880A00C895D5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E9D7100C1BCD880A00C895D5;
+			remoteInfo = FoldyPaperWallet;
+		};
+		E9D710351BCD880A00C895D5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E9D710051BCD880A00C895D5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E9D7100C1BCD880A00C895D5;
+			remoteInfo = FoldyPaperWallet;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		23B3788031AAE2F3BA7B5D9C /* libPods-FoldyPaperWallet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FoldyPaperWallet.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0BDF885479AAA13F6DD48F1 /* Pods-FoldyPaperWallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoldyPaperWallet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoldyPaperWallet/Pods-FoldyPaperWallet.debug.xcconfig"; sourceTree = "<group>"; };
+		E93E9DF31BCDCD150019B7AD /* FPWCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPWCustomCell.h; sourceTree = "<group>"; };
+		E93E9DF41BCDCD150019B7AD /* FPWCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPWCustomCell.m; sourceTree = "<group>"; };
+		E93E9E001BCEB4870019B7AD /* UIImage+MDQRCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MDQRCode.h"; sourceTree = "<group>"; };
+		E93E9E011BCEB4870019B7AD /* UIImage+MDQRCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MDQRCode.m"; sourceTree = "<group>"; };
+		E93E9E0A1BCEB4870019B7AD /* bitstream.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bitstream.c; sourceTree = "<group>"; };
+		E93E9E0B1BCEB4870019B7AD /* bitstream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bitstream.h; sourceTree = "<group>"; };
+		E93E9E0C1BCEB4870019B7AD /* mask.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mask.c; sourceTree = "<group>"; };
+		E93E9E0D1BCEB4870019B7AD /* mask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mask.h; sourceTree = "<group>"; };
+		E93E9E0E1BCEB4870019B7AD /* qrencode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = qrencode.c; sourceTree = "<group>"; };
+		E93E9E0F1BCEB4870019B7AD /* qrencode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrencode.h; sourceTree = "<group>"; };
+		E93E9E101BCEB4870019B7AD /* qrinput.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = qrinput.c; sourceTree = "<group>"; };
+		E93E9E111BCEB4870019B7AD /* qrinput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrinput.h; sourceTree = "<group>"; };
+		E93E9E121BCEB4870019B7AD /* qrspec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = qrspec.c; sourceTree = "<group>"; };
+		E93E9E131BCEB4870019B7AD /* qrspec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrspec.h; sourceTree = "<group>"; };
+		E93E9E141BCEB4870019B7AD /* rscode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rscode.c; sourceTree = "<group>"; };
+		E93E9E151BCEB4870019B7AD /* rscode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rscode.h; sourceTree = "<group>"; };
+		E93E9E161BCEB4870019B7AD /* split.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = split.c; sourceTree = "<group>"; };
+		E93E9E171BCEB4870019B7AD /* split.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = split.h; sourceTree = "<group>"; };
+		E9605A521BCF3F5D007697F1 /* FPWWTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPWWTableViewController.h; sourceTree = "<group>"; };
+		E9605A531BCF3F5D007697F1 /* FPWWTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPWWTableViewController.m; sourceTree = "<group>"; };
+		E9D7100D1BCD880A00C895D5 /* FoldyPaperWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoldyPaperWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9D710111BCD880A00C895D5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E9D710131BCD880A00C895D5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E9D710141BCD880A00C895D5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E9D7101A1BCD880A00C895D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E9D7101D1BCD880A00C895D5 /* FoldyPaperWallet.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FoldyPaperWallet.xcdatamodel; sourceTree = "<group>"; };
+		E9D7101F1BCD880A00C895D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E9D710221BCD880A00C895D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E9D710241BCD880A00C895D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9D710291BCD880A00C895D5 /* FoldyPaperWalletTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoldyPaperWalletTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9D7102D1BCD880A00C895D5 /* FoldyPaperWalletTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FoldyPaperWalletTests.m; sourceTree = "<group>"; };
+		E9D7102F1BCD880A00C895D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9D710341BCD880A00C895D5 /* FoldyPaperWalletUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoldyPaperWalletUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9D710381BCD880A00C895D5 /* FoldyPaperWalletUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FoldyPaperWalletUITests.m; sourceTree = "<group>"; };
+		E9D7103A1BCD880A00C895D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9D710461BCD89F500C895D5 /* FPWTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPWTableViewController.h; sourceTree = "<group>"; };
+		E9D710471BCD89F500C895D5 /* FPWTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPWTableViewController.m; sourceTree = "<group>"; };
+		E9D710491BCD8DF400C895D5 /* FPWWallet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPWWallet.h; sourceTree = "<group>"; };
+		E9D7104A1BCD8DF400C895D5 /* FPWWallet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPWWallet.m; sourceTree = "<group>"; };
+		F6EB17AB7B2A76F6F2201878 /* Pods-FoldyPaperWallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoldyPaperWallet.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoldyPaperWallet/Pods-FoldyPaperWallet.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E9D7100A1BCD880A00C895D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3458088EC2BD62891CD02D0D /* libPods-FoldyPaperWallet.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9D710261BCD880A00C895D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9D710311BCD880A00C895D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7B316B085887C991E9F9E70D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D0BDF885479AAA13F6DD48F1 /* Pods-FoldyPaperWallet.debug.xcconfig */,
+				F6EB17AB7B2A76F6F2201878 /* Pods-FoldyPaperWallet.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A63F724CC41CC2C245B27252 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				23B3788031AAE2F3BA7B5D9C /* libPods-FoldyPaperWallet.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E93E9E091BCEB4870019B7AD /* libqrencode */ = {
+			isa = PBXGroup;
+			children = (
+				E93E9E0A1BCEB4870019B7AD /* bitstream.c */,
+				E93E9E0B1BCEB4870019B7AD /* bitstream.h */,
+				E93E9E0C1BCEB4870019B7AD /* mask.c */,
+				E93E9E0D1BCEB4870019B7AD /* mask.h */,
+				E93E9E0E1BCEB4870019B7AD /* qrencode.c */,
+				E93E9E0F1BCEB4870019B7AD /* qrencode.h */,
+				E93E9E101BCEB4870019B7AD /* qrinput.c */,
+				E93E9E111BCEB4870019B7AD /* qrinput.h */,
+				E93E9E121BCEB4870019B7AD /* qrspec.c */,
+				E93E9E131BCEB4870019B7AD /* qrspec.h */,
+				E93E9E141BCEB4870019B7AD /* rscode.c */,
+				E93E9E151BCEB4870019B7AD /* rscode.h */,
+				E93E9E161BCEB4870019B7AD /* split.c */,
+				E93E9E171BCEB4870019B7AD /* split.h */,
+			);
+			path = libqrencode;
+			sourceTree = "<group>";
+		};
+		E9D710041BCD880A00C895D5 = {
+			isa = PBXGroup;
+			children = (
+				E9D7100F1BCD880A00C895D5 /* FoldyPaperWallet */,
+				E9D7102C1BCD880A00C895D5 /* FoldyPaperWalletTests */,
+				E9D710371BCD880A00C895D5 /* FoldyPaperWalletUITests */,
+				E9D7100E1BCD880A00C895D5 /* Products */,
+				7B316B085887C991E9F9E70D /* Pods */,
+				A63F724CC41CC2C245B27252 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E9D7100E1BCD880A00C895D5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E9D7100D1BCD880A00C895D5 /* FoldyPaperWallet.app */,
+				E9D710291BCD880A00C895D5 /* FoldyPaperWalletTests.xctest */,
+				E9D710341BCD880A00C895D5 /* FoldyPaperWalletUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E9D7100F1BCD880A00C895D5 /* FoldyPaperWallet */ = {
+			isa = PBXGroup;
+			children = (
+				E9D710131BCD880A00C895D5 /* AppDelegate.h */,
+				E9D710141BCD880A00C895D5 /* AppDelegate.m */,
+				E9D710491BCD8DF400C895D5 /* FPWWallet.h */,
+				E9D7104A1BCD8DF400C895D5 /* FPWWallet.m */,
+				E93E9DF31BCDCD150019B7AD /* FPWCustomCell.h */,
+				E93E9DF41BCDCD150019B7AD /* FPWCustomCell.m */,
+				E9D710461BCD89F500C895D5 /* FPWTableViewController.h */,
+				E9D710471BCD89F500C895D5 /* FPWTableViewController.m */,
+				E9605A521BCF3F5D007697F1 /* FPWWTableViewController.h */,
+				E9605A531BCF3F5D007697F1 /* FPWWTableViewController.m */,
+				E9D710191BCD880A00C895D5 /* Main.storyboard */,
+				E9D7101F1BCD880A00C895D5 /* Assets.xcassets */,
+				E9D710211BCD880A00C895D5 /* LaunchScreen.storyboard */,
+				E9D710241BCD880A00C895D5 /* Info.plist */,
+				E9D7101C1BCD880A00C895D5 /* FoldyPaperWallet.xcdatamodeld */,
+				E9D710101BCD880A00C895D5 /* Supporting Files */,
+			);
+			path = FoldyPaperWallet;
+			sourceTree = "<group>";
+		};
+		E9D710101BCD880A00C895D5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E93E9E001BCEB4870019B7AD /* UIImage+MDQRCode.h */,
+				E93E9E011BCEB4870019B7AD /* UIImage+MDQRCode.m */,
+				E93E9E091BCEB4870019B7AD /* libqrencode */,
+				E9D710111BCD880A00C895D5 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E9D7102C1BCD880A00C895D5 /* FoldyPaperWalletTests */ = {
+			isa = PBXGroup;
+			children = (
+				E9D7102D1BCD880A00C895D5 /* FoldyPaperWalletTests.m */,
+				E9D7102F1BCD880A00C895D5 /* Info.plist */,
+			);
+			path = FoldyPaperWalletTests;
+			sourceTree = "<group>";
+		};
+		E9D710371BCD880A00C895D5 /* FoldyPaperWalletUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E9D710381BCD880A00C895D5 /* FoldyPaperWalletUITests.m */,
+				E9D7103A1BCD880A00C895D5 /* Info.plist */,
+			);
+			path = FoldyPaperWalletUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E9D7100C1BCD880A00C895D5 /* FoldyPaperWallet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E9D7103D1BCD880A00C895D5 /* Build configuration list for PBXNativeTarget "FoldyPaperWallet" */;
+			buildPhases = (
+				B4C27D0BA950775BE72D7C02 /* Check Pods Manifest.lock */,
+				E9D710091BCD880A00C895D5 /* Sources */,
+				E9D7100A1BCD880A00C895D5 /* Frameworks */,
+				E9D7100B1BCD880A00C895D5 /* Resources */,
+				13F53E4DBB2B97292F94ABAB /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FoldyPaperWallet;
+			productName = FoldyPaperWallet;
+			productReference = E9D7100D1BCD880A00C895D5 /* FoldyPaperWallet.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E9D710281BCD880A00C895D5 /* FoldyPaperWalletTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E9D710401BCD880A00C895D5 /* Build configuration list for PBXNativeTarget "FoldyPaperWalletTests" */;
+			buildPhases = (
+				E9D710251BCD880A00C895D5 /* Sources */,
+				E9D710261BCD880A00C895D5 /* Frameworks */,
+				E9D710271BCD880A00C895D5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E9D7102B1BCD880A00C895D5 /* PBXTargetDependency */,
+			);
+			name = FoldyPaperWalletTests;
+			productName = FoldyPaperWalletTests;
+			productReference = E9D710291BCD880A00C895D5 /* FoldyPaperWalletTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E9D710331BCD880A00C895D5 /* FoldyPaperWalletUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E9D710431BCD880A00C895D5 /* Build configuration list for PBXNativeTarget "FoldyPaperWalletUITests" */;
+			buildPhases = (
+				E9D710301BCD880A00C895D5 /* Sources */,
+				E9D710311BCD880A00C895D5 /* Frameworks */,
+				E9D710321BCD880A00C895D5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E9D710361BCD880A00C895D5 /* PBXTargetDependency */,
+			);
+			name = FoldyPaperWalletUITests;
+			productName = FoldyPaperWalletUITests;
+			productReference = E9D710341BCD880A00C895D5 /* FoldyPaperWalletUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E9D710051BCD880A00C895D5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Kiara Robles";
+				TargetAttributes = {
+					E9D7100C1BCD880A00C895D5 = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+					E9D710281BCD880A00C895D5 = {
+						CreatedOnToolsVersion = 7.0.1;
+						TestTargetID = E9D7100C1BCD880A00C895D5;
+					};
+					E9D710331BCD880A00C895D5 = {
+						CreatedOnToolsVersion = 7.0.1;
+						TestTargetID = E9D7100C1BCD880A00C895D5;
+					};
+				};
+			};
+			buildConfigurationList = E9D710081BCD880A00C895D5 /* Build configuration list for PBXProject "FoldyPaperWallet" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E9D710041BCD880A00C895D5;
+			productRefGroup = E9D7100E1BCD880A00C895D5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E9D7100C1BCD880A00C895D5 /* FoldyPaperWallet */,
+				E9D710281BCD880A00C895D5 /* FoldyPaperWalletTests */,
+				E9D710331BCD880A00C895D5 /* FoldyPaperWalletUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E9D7100B1BCD880A00C895D5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9D710231BCD880A00C895D5 /* LaunchScreen.storyboard in Resources */,
+				E9D710201BCD880A00C895D5 /* Assets.xcassets in Resources */,
+				E9D7101B1BCD880A00C895D5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9D710271BCD880A00C895D5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9D710321BCD880A00C895D5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		13F53E4DBB2B97292F94ABAB /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FoldyPaperWallet/Pods-FoldyPaperWallet-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B4C27D0BA950775BE72D7C02 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E9D710091BCD880A00C895D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E95A33E61BCEBC44007D1DBD /* FPWWallet.m in Sources */,
+				E95A33E51BCEBC3F007D1DBD /* FPWCustomCell.m in Sources */,
+				E95A33E41BCEBC39007D1DBD /* FPWTableViewController.m in Sources */,
+				E95A33E71BCEBC48007D1DBD /* UIImage+MDQRCode.m in Sources */,
+				E95A33E31BCEBC2D007D1DBD /* qrencode.c in Sources */,
+				E95A33E21BCEBC12007D1DBD /* qrinput.c in Sources */,
+				E95A33E11BCEBC02007D1DBD /* mask.c in Sources */,
+				E95A33E01BCEBBE4007D1DBD /* rscode.c in Sources */,
+				E9605A541BCF3F5D007697F1 /* FPWWTableViewController.m in Sources */,
+				E95A33DF1BCEBBD1007D1DBD /* AppDelegate.m in Sources */,
+				E95A33DE1BCEBBCB007D1DBD /* main.m in Sources */,
+				E95A33DD1BCEBBC3007D1DBD /* bitstream.c in Sources */,
+				E95A33DC1BCEBBB9007D1DBD /* split.c in Sources */,
+				E95A33DB1BCEBBAE007D1DBD /* qrspec.c in Sources */,
+				E95A33E81BCEBE2D007D1DBD /* FoldyPaperWallet.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9D710251BCD880A00C895D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9D7102E1BCD880A00C895D5 /* FoldyPaperWalletTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9D710301BCD880A00C895D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9D710391BCD880A00C895D5 /* FoldyPaperWalletUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E9D7102B1BCD880A00C895D5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E9D7100C1BCD880A00C895D5 /* FoldyPaperWallet */;
+			targetProxy = E9D7102A1BCD880A00C895D5 /* PBXContainerItemProxy */;
+		};
+		E9D710361BCD880A00C895D5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E9D7100C1BCD880A00C895D5 /* FoldyPaperWallet */;
+			targetProxy = E9D710351BCD880A00C895D5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E9D710191BCD880A00C895D5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E9D7101A1BCD880A00C895D5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E9D710211BCD880A00C895D5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E9D710221BCD880A00C895D5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E9D7103B1BCD880A00C895D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E9D7103C1BCD880A00C895D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E9D7103E1BCD880A00C895D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0BDF885479AAA13F6DD48F1 /* Pods-FoldyPaperWallet.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FoldyPaperWallet/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = KiaraRobles.FoldyPaperWallet;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E9D7103F1BCD880A00C895D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6EB17AB7B2A76F6F2201878 /* Pods-FoldyPaperWallet.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FoldyPaperWallet/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = KiaraRobles.FoldyPaperWallet;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E9D710411BCD880A00C895D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = FoldyPaperWalletTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = KiaraRobles.FoldyPaperWalletTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FoldyPaperWallet.app/FoldyPaperWallet";
+			};
+			name = Debug;
+		};
+		E9D710421BCD880A00C895D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = FoldyPaperWalletTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = KiaraRobles.FoldyPaperWalletTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FoldyPaperWallet.app/FoldyPaperWallet";
+			};
+			name = Release;
+		};
+		E9D710441BCD880A00C895D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = FoldyPaperWalletUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = KiaraRobles.FoldyPaperWalletUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = FoldyPaperWallet;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		E9D710451BCD880A00C895D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = FoldyPaperWalletUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = KiaraRobles.FoldyPaperWalletUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = FoldyPaperWallet;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E9D710081BCD880A00C895D5 /* Build configuration list for PBXProject "FoldyPaperWallet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E9D7103B1BCD880A00C895D5 /* Debug */,
+				E9D7103C1BCD880A00C895D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E9D7103D1BCD880A00C895D5 /* Build configuration list for PBXNativeTarget "FoldyPaperWallet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E9D7103E1BCD880A00C895D5 /* Debug */,
+				E9D7103F1BCD880A00C895D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E9D710401BCD880A00C895D5 /* Build configuration list for PBXNativeTarget "FoldyPaperWalletTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E9D710411BCD880A00C895D5 /* Debug */,
+				E9D710421BCD880A00C895D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E9D710431BCD880A00C895D5 /* Build configuration list for PBXNativeTarget "FoldyPaperWalletUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E9D710441BCD880A00C895D5 /* Debug */,
+				E9D710451BCD880A00C895D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E9D7101C1BCD880A00C895D5 /* FoldyPaperWallet.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E9D7101D1BCD880A00C895D5 /* FoldyPaperWallet.xcdatamodel */,
+			);
+			currentVersion = E9D7101D1BCD880A00C895D5 /* FoldyPaperWallet.xcdatamodel */;
+			path = FoldyPaperWallet.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = E9D710051BCD880A00C895D5 /* Project object */;
+}

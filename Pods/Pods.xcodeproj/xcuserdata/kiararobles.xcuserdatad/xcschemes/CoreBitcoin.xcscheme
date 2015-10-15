@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4613E397F944BAD3FA5F7993"
+               BlueprintIdentifier = "F63B7075C9708FFAFC1461B5"
                BuildableName = "libCoreBitcoin.a"
                BlueprintName = "CoreBitcoin"
                ReferencedContainer = "container:Pods.xcodeproj">

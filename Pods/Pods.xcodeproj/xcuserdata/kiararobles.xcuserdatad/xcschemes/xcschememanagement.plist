@@ -14,7 +14,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods.xcscheme</key>
+		<key>Pods-FoldyPaperWallet.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -22,17 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>3AD778D91D72072293FC164FA7792860</key>
+		<key>1ACDE7D2C624F5949F6D829608A95CAF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>56EB7D6C8FBE46E44D2DC91404ED4333</key>
+		<key>7825D95F72818118E4A43F092066B933</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>98371F02AAACC76AFEEB9A1F7C4E8BB4</key>
+		<key>8BE4FB316BA4CD9A97DE28E0D66AED56</key>
 		<dict>
 			<key>primary</key>
 			<true/>
