@@ -18,11 +18,11 @@
 		E95A33E21BCEBC12007D1DBD /* qrinput.c in Sources */ = {isa = PBXBuildFile; fileRef = E93E9E101BCEB4870019B7AD /* qrinput.c */; };
 		E95A33E31BCEBC2D007D1DBD /* qrencode.c in Sources */ = {isa = PBXBuildFile; fileRef = E93E9E0E1BCEB4870019B7AD /* qrencode.c */; };
 		E95A33E41BCEBC39007D1DBD /* FPWTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D710471BCD89F500C895D5 /* FPWTableViewController.m */; };
-		E95A33E51BCEBC3F007D1DBD /* FPWCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E93E9DF41BCDCD150019B7AD /* FPWCustomCell.m */; };
 		E95A33E61BCEBC44007D1DBD /* FPWWallet.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D7104A1BCD8DF400C895D5 /* FPWWallet.m */; };
 		E95A33E71BCEBC48007D1DBD /* UIImage+MDQRCode.m in Sources */ = {isa = PBXBuildFile; fileRef = E93E9E011BCEB4870019B7AD /* UIImage+MDQRCode.m */; };
 		E95A33E81BCEBE2D007D1DBD /* FoldyPaperWallet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E9D7101C1BCD880A00C895D5 /* FoldyPaperWallet.xcdatamodeld */; };
-		E9605A541BCF3F5D007697F1 /* FPWWTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9605A531BCF3F5D007697F1 /* FPWWTableViewController.m */; settings = {ASSET_TAGS = (); }; };
+		E977DDBF1BCFD8D000B8D497 /* FPWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E977DDBE1BCFD8D000B8D497 /* FPWViewController.m */; settings = {ASSET_TAGS = (); }; };
+		E977DDC21BCFDEB800B8D497 /* FPWTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E977DDC11BCFDEB800B8D497 /* FPWTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		E9D7101B1BCD880A00C895D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9D710191BCD880A00C895D5 /* Main.storyboard */; };
 		E9D710201BCD880A00C895D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9D7101F1BCD880A00C895D5 /* Assets.xcassets */; };
 		E9D710231BCD880A00C895D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9D710211BCD880A00C895D5 /* LaunchScreen.storyboard */; };
@@ -50,8 +50,6 @@
 /* Begin PBXFileReference section */
 		23B3788031AAE2F3BA7B5D9C /* libPods-FoldyPaperWallet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FoldyPaperWallet.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0BDF885479AAA13F6DD48F1 /* Pods-FoldyPaperWallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoldyPaperWallet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoldyPaperWallet/Pods-FoldyPaperWallet.debug.xcconfig"; sourceTree = "<group>"; };
-		E93E9DF31BCDCD150019B7AD /* FPWCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPWCustomCell.h; sourceTree = "<group>"; };
-		E93E9DF41BCDCD150019B7AD /* FPWCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPWCustomCell.m; sourceTree = "<group>"; };
 		E93E9E001BCEB4870019B7AD /* UIImage+MDQRCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MDQRCode.h"; sourceTree = "<group>"; };
 		E93E9E011BCEB4870019B7AD /* UIImage+MDQRCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MDQRCode.m"; sourceTree = "<group>"; };
 		E93E9E0A1BCEB4870019B7AD /* bitstream.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bitstream.c; sourceTree = "<group>"; };
@@ -68,8 +66,10 @@
 		E93E9E151BCEB4870019B7AD /* rscode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rscode.h; sourceTree = "<group>"; };
 		E93E9E161BCEB4870019B7AD /* split.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = split.c; sourceTree = "<group>"; };
 		E93E9E171BCEB4870019B7AD /* split.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = split.h; sourceTree = "<group>"; };
-		E9605A521BCF3F5D007697F1 /* FPWWTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPWWTableViewController.h; sourceTree = "<group>"; };
-		E9605A531BCF3F5D007697F1 /* FPWWTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPWWTableViewController.m; sourceTree = "<group>"; };
+		E977DDBD1BCFD8D000B8D497 /* FPWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPWViewController.h; sourceTree = "<group>"; };
+		E977DDBE1BCFD8D000B8D497 /* FPWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPWViewController.m; sourceTree = "<group>"; };
+		E977DDC01BCFDEB800B8D497 /* FPWTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPWTableViewCell.h; sourceTree = "<group>"; };
+		E977DDC11BCFDEB800B8D497 /* FPWTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPWTableViewCell.m; sourceTree = "<group>"; };
 		E9D7100D1BCD880A00C895D5 /* FoldyPaperWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoldyPaperWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9D710111BCD880A00C895D5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E9D710131BCD880A00C895D5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -185,12 +185,10 @@
 				E9D710141BCD880A00C895D5 /* AppDelegate.m */,
 				E9D710491BCD8DF400C895D5 /* FPWWallet.h */,
 				E9D7104A1BCD8DF400C895D5 /* FPWWallet.m */,
-				E93E9DF31BCDCD150019B7AD /* FPWCustomCell.h */,
-				E93E9DF41BCDCD150019B7AD /* FPWCustomCell.m */,
+				E977DDC01BCFDEB800B8D497 /* FPWTableViewCell.h */,
+				E977DDC11BCFDEB800B8D497 /* FPWTableViewCell.m */,
 				E9D710461BCD89F500C895D5 /* FPWTableViewController.h */,
 				E9D710471BCD89F500C895D5 /* FPWTableViewController.m */,
-				E9605A521BCF3F5D007697F1 /* FPWWTableViewController.h */,
-				E9605A531BCF3F5D007697F1 /* FPWWTableViewController.m */,
 				E9D710191BCD880A00C895D5 /* Main.storyboard */,
 				E9D7101F1BCD880A00C895D5 /* Assets.xcassets */,
 				E9D710211BCD880A00C895D5 /* LaunchScreen.storyboard */,
@@ -204,6 +202,8 @@
 		E9D710101BCD880A00C895D5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E977DDBD1BCFD8D000B8D497 /* FPWViewController.h */,
+				E977DDBE1BCFD8D000B8D497 /* FPWViewController.m */,
 				E93E9E001BCEB4870019B7AD /* UIImage+MDQRCode.h */,
 				E93E9E011BCEB4870019B7AD /* UIImage+MDQRCode.m */,
 				E93E9E091BCEB4870019B7AD /* libqrencode */,
@@ -396,15 +396,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				E95A33E61BCEBC44007D1DBD /* FPWWallet.m in Sources */,
-				E95A33E51BCEBC3F007D1DBD /* FPWCustomCell.m in Sources */,
 				E95A33E41BCEBC39007D1DBD /* FPWTableViewController.m in Sources */,
 				E95A33E71BCEBC48007D1DBD /* UIImage+MDQRCode.m in Sources */,
 				E95A33E31BCEBC2D007D1DBD /* qrencode.c in Sources */,
 				E95A33E21BCEBC12007D1DBD /* qrinput.c in Sources */,
 				E95A33E11BCEBC02007D1DBD /* mask.c in Sources */,
 				E95A33E01BCEBBE4007D1DBD /* rscode.c in Sources */,
-				E9605A541BCF3F5D007697F1 /* FPWWTableViewController.m in Sources */,
+				E977DDC21BCFDEB800B8D497 /* FPWTableViewCell.m in Sources */,
 				E95A33DF1BCEBBD1007D1DBD /* AppDelegate.m in Sources */,
+				E977DDBF1BCFD8D000B8D497 /* FPWViewController.m in Sources */,
 				E95A33DE1BCEBBCB007D1DBD /* main.m in Sources */,
 				E95A33DD1BCEBBC3007D1DBD /* bitstream.c in Sources */,
 				E95A33DC1BCEBBB9007D1DBD /* split.c in Sources */,

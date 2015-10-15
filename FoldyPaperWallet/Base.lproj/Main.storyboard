@@ -13,7 +13,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="oneWalletCell" rowHeight="700" id="mgq-Jr-FQ3">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomCell" rowHeight="700" id="mgq-Jr-FQ3" customClass="FPWTableViewCell">
                                 <rect key="frame" x="0.0" y="28" width="414" height="700"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mgq-Jr-FQ3" id="PMC-6i-2c0">
@@ -30,13 +30,13 @@
                                             <color key="backgroundColor" red="0.82391716449999997" green="0.82391716449999997" blue="0.82391716449999997" alpha="1" colorSpace="calibratedRGB"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8AT-ma-geB">
-                                            <rect key="frame" x="32" y="307" width="250" height="36"/>
+                                            <rect key="frame" x="32" y="307" width="268" height="36"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c13-vi-MUG">
-                                            <rect key="frame" x="32" y="31" width="250" height="21"/>
+                                            <rect key="frame" x="32" y="25" width="250" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -44,8 +44,10 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="keyPrivateView" destination="ED4-bj-9R1" id="l0b-tS-b7c"/>
-                                    <outlet property="keyPublicView" destination="RW7-uH-KKS" id="0Dd-Qf-ABZ"/>
+                                    <outlet property="keyAddress" destination="8AT-ma-geB" id="r4T-pT-gzf"/>
+                                    <outlet property="keyName" destination="c13-vi-MUG" id="RwG-nq-4pk"/>
+                                    <outlet property="keyPrivateImage" destination="ED4-bj-9R1" id="Qea-9I-3pm"/>
+                                    <outlet property="keyPublicImage" destination="RW7-uH-KKS" id="koP-V4-tqA"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

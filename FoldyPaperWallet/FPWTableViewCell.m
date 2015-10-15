@@ -1,25 +1,25 @@
 //
-//  FPWCustomCell.m
-//  
+//  FPWTableViewCell.m
+//  FoldyPaperWallet
 //
-//  Created by Kiara Robles on 10/13/15.
-//
+//  Created by Kiara Robles on 10/15/15.
+//  Copyright © 2015 Kiara Robles. All rights reserved.
 //
 
-#import "FPWCustomCell.h"
+#import "FPWTableViewCell.h"
 
-@implementation FPWCustomCell
+@implementation FPWTableViewCell
 
 - (void)awakeFromNib {
     // Initialization code
 }
-
-
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
 }
+
+
 
 @end

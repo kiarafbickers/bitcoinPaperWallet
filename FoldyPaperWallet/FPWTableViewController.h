@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 #import "FPWWallet.h"
+#import "FPWTableViewCell.h"
 
 @interface FPWTableViewController : UITableViewController
 
