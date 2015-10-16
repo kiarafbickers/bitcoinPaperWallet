@@ -18,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     [self generateNewWallet];
     
     // Initialize the refresh control.
@@ -29,12 +29,11 @@
                             action:@selector(reloadData)
                   forControlEvents:UIControlEventValueChanged];
 }
+
 - (void)reloadData {
     if (self.refreshControl) {
-        
-//        NSString *title = [NSString stringWithFormat:@"Generate New Wallet"];
-//        NSAttributedString *attributedTitle = [[NSAttributedString alloc] initWithString:title];
-//        self.refreshControl.attributedTitle = attributedTitle;
+        // Attributes Title is buggy..
+        // self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Generating wallet..."];
         [self generateNewWallet];
         [self.tableView reloadData];
         [self.refreshControl endRefreshing];
@@ -74,5 +73,6 @@
                                                   fillColor:[UIColor darkGrayColor]];
     return cell;
 }
+
 
 @end
