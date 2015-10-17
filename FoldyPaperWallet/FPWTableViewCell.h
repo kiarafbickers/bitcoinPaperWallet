@@ -11,9 +11,11 @@
 
 @interface FPWTableViewCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *keyName;
+@property (weak, nonatomic) IBOutlet UITextField *walletName;
+@property (weak, nonatomic) IBOutlet UILabel *keyPublicLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *keyPublicImage;
 @property (weak, nonatomic) IBOutlet UILabel *keyAddress;
+@property (weak, nonatomic) IBOutlet UILabel *keyPrivateLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *keyPrivateImage;
 
 @end

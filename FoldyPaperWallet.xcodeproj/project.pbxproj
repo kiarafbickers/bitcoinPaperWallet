@@ -23,6 +23,8 @@
 		E95A33E81BCEBE2D007D1DBD /* FoldyPaperWallet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E9D7101C1BCD880A00C895D5 /* FoldyPaperWallet.xcdatamodeld */; };
 		E977DDBF1BCFD8D000B8D497 /* FPWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E977DDBE1BCFD8D000B8D497 /* FPWViewController.m */; settings = {ASSET_TAGS = (); }; };
 		E977DDC21BCFDEB800B8D497 /* FPWTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E977DDC11BCFDEB800B8D497 /* FPWTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		E9CFA0361BD28FBA00D53079 /* FPWNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CFA0351BD28FBA00D53079 /* FPWNavigationController.m */; settings = {ASSET_TAGS = (); }; };
+		E9CFA0371BD2A5EE00D53079 /* SF-UI-Text-Medium.otf in Sources */ = {isa = PBXBuildFile; fileRef = E9CFA02E1BD1C85300D53079 /* SF-UI-Text-Medium.otf */; };
 		E9D7101B1BCD880A00C895D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9D710191BCD880A00C895D5 /* Main.storyboard */; };
 		E9D710201BCD880A00C895D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9D7101F1BCD880A00C895D5 /* Assets.xcassets */; };
 		E9D710231BCD880A00C895D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9D710211BCD880A00C895D5 /* LaunchScreen.storyboard */; };
@@ -70,6 +72,29 @@
 		E977DDBE1BCFD8D000B8D497 /* FPWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPWViewController.m; sourceTree = "<group>"; };
 		E977DDC01BCFDEB800B8D497 /* FPWTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPWTableViewCell.h; sourceTree = "<group>"; };
 		E977DDC11BCFDEB800B8D497 /* FPWTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPWTableViewCell.m; sourceTree = "<group>"; };
+		E9CFA01F1BD1C85300D53079 /* SF-UI-Display-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Black.otf"; sourceTree = "<group>"; };
+		E9CFA0201BD1C85300D53079 /* SF-UI-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Bold.otf"; sourceTree = "<group>"; };
+		E9CFA0211BD1C85300D53079 /* SF-UI-Display-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Heavy.otf"; sourceTree = "<group>"; };
+		E9CFA0221BD1C85300D53079 /* SF-UI-Display-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Light.otf"; sourceTree = "<group>"; };
+		E9CFA0231BD1C85300D53079 /* SF-UI-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Medium.otf"; sourceTree = "<group>"; };
+		E9CFA0241BD1C85300D53079 /* SF-UI-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Regular.otf"; sourceTree = "<group>"; };
+		E9CFA0251BD1C85300D53079 /* SF-UI-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Semibold.otf"; sourceTree = "<group>"; };
+		E9CFA0261BD1C85300D53079 /* SF-UI-Display-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Thin.otf"; sourceTree = "<group>"; };
+		E9CFA0271BD1C85300D53079 /* SF-UI-Display-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Ultralight.otf"; sourceTree = "<group>"; };
+		E9CFA0281BD1C85300D53079 /* SF-UI-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Bold.otf"; sourceTree = "<group>"; };
+		E9CFA0291BD1C85300D53079 /* SF-UI-Text-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-BoldItalic.otf"; sourceTree = "<group>"; };
+		E9CFA02A1BD1C85300D53079 /* SF-UI-Text-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Heavy.otf"; sourceTree = "<group>"; };
+		E9CFA02B1BD1C85300D53079 /* SF-UI-Text-HeavyItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-HeavyItalic.otf"; sourceTree = "<group>"; };
+		E9CFA02C1BD1C85300D53079 /* SF-UI-Text-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Light.otf"; sourceTree = "<group>"; };
+		E9CFA02D1BD1C85300D53079 /* SF-UI-Text-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-LightItalic.otf"; sourceTree = "<group>"; };
+		E9CFA02E1BD1C85300D53079 /* SF-UI-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Medium.otf"; sourceTree = "<group>"; };
+		E9CFA02F1BD1C85300D53079 /* SF-UI-Text-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-MediumItalic.otf"; sourceTree = "<group>"; };
+		E9CFA0301BD1C85300D53079 /* SF-UI-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Regular.otf"; sourceTree = "<group>"; };
+		E9CFA0311BD1C85300D53079 /* SF-UI-Text-RegularItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-RegularItalic.otf"; sourceTree = "<group>"; };
+		E9CFA0321BD1C85300D53079 /* SF-UI-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Semibold.otf"; sourceTree = "<group>"; };
+		E9CFA0331BD1C85300D53079 /* SF-UI-Text-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-SemiboldItalic.otf"; sourceTree = "<group>"; };
+		E9CFA0341BD28FBA00D53079 /* FPWNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPWNavigationController.h; sourceTree = "<group>"; };
+		E9CFA0351BD28FBA00D53079 /* FPWNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPWNavigationController.m; sourceTree = "<group>"; };
 		E9D7100D1BCD880A00C895D5 /* FoldyPaperWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoldyPaperWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9D710111BCD880A00C895D5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E9D710131BCD880A00C895D5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -156,6 +181,34 @@
 			path = libqrencode;
 			sourceTree = "<group>";
 		};
+		E9CFA01E1BD1C83B00D53079 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E9CFA01F1BD1C85300D53079 /* SF-UI-Display-Black.otf */,
+				E9CFA0201BD1C85300D53079 /* SF-UI-Display-Bold.otf */,
+				E9CFA0211BD1C85300D53079 /* SF-UI-Display-Heavy.otf */,
+				E9CFA0221BD1C85300D53079 /* SF-UI-Display-Light.otf */,
+				E9CFA0231BD1C85300D53079 /* SF-UI-Display-Medium.otf */,
+				E9CFA0241BD1C85300D53079 /* SF-UI-Display-Regular.otf */,
+				E9CFA0251BD1C85300D53079 /* SF-UI-Display-Semibold.otf */,
+				E9CFA0261BD1C85300D53079 /* SF-UI-Display-Thin.otf */,
+				E9CFA0271BD1C85300D53079 /* SF-UI-Display-Ultralight.otf */,
+				E9CFA0281BD1C85300D53079 /* SF-UI-Text-Bold.otf */,
+				E9CFA0291BD1C85300D53079 /* SF-UI-Text-BoldItalic.otf */,
+				E9CFA02A1BD1C85300D53079 /* SF-UI-Text-Heavy.otf */,
+				E9CFA02B1BD1C85300D53079 /* SF-UI-Text-HeavyItalic.otf */,
+				E9CFA02C1BD1C85300D53079 /* SF-UI-Text-Light.otf */,
+				E9CFA02D1BD1C85300D53079 /* SF-UI-Text-LightItalic.otf */,
+				E9CFA02E1BD1C85300D53079 /* SF-UI-Text-Medium.otf */,
+				E9CFA02F1BD1C85300D53079 /* SF-UI-Text-MediumItalic.otf */,
+				E9CFA0301BD1C85300D53079 /* SF-UI-Text-Regular.otf */,
+				E9CFA0311BD1C85300D53079 /* SF-UI-Text-RegularItalic.otf */,
+				E9CFA0321BD1C85300D53079 /* SF-UI-Text-Semibold.otf */,
+				E9CFA0331BD1C85300D53079 /* SF-UI-Text-SemiboldItalic.otf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		E9D710041BCD880A00C895D5 = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +242,8 @@
 				E977DDC11BCFDEB800B8D497 /* FPWTableViewCell.m */,
 				E9D710461BCD89F500C895D5 /* FPWTableViewController.h */,
 				E9D710471BCD89F500C895D5 /* FPWTableViewController.m */,
+				E9CFA0341BD28FBA00D53079 /* FPWNavigationController.h */,
+				E9CFA0351BD28FBA00D53079 /* FPWNavigationController.m */,
 				E9D710191BCD880A00C895D5 /* Main.storyboard */,
 				E9D7101F1BCD880A00C895D5 /* Assets.xcassets */,
 				E9D710211BCD880A00C895D5 /* LaunchScreen.storyboard */,
@@ -202,6 +257,7 @@
 		E9D710101BCD880A00C895D5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E9CFA01E1BD1C83B00D53079 /* Fonts */,
 				E977DDBD1BCFD8D000B8D497 /* FPWViewController.h */,
 				E977DDBE1BCFD8D000B8D497 /* FPWViewController.m */,
 				E93E9E001BCEB4870019B7AD /* UIImage+MDQRCode.h */,
@@ -395,11 +451,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9CFA0371BD2A5EE00D53079 /* SF-UI-Text-Medium.otf in Sources */,
 				E95A33E61BCEBC44007D1DBD /* FPWWallet.m in Sources */,
 				E95A33E41BCEBC39007D1DBD /* FPWTableViewController.m in Sources */,
 				E95A33E71BCEBC48007D1DBD /* UIImage+MDQRCode.m in Sources */,
 				E95A33E31BCEBC2D007D1DBD /* qrencode.c in Sources */,
 				E95A33E21BCEBC12007D1DBD /* qrinput.c in Sources */,
+				E9CFA0361BD28FBA00D53079 /* FPWNavigationController.m in Sources */,
 				E95A33E11BCEBC02007D1DBD /* mask.c in Sources */,
 				E95A33E01BCEBBE4007D1DBD /* rscode.c in Sources */,
 				E977DDC21BCFDEB800B8D497 /* FPWTableViewCell.m in Sources */,

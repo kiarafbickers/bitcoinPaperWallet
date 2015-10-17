@@ -18,10 +18,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self generateNewWallet];
     
-    // Initialize the refresh control.
+    self.tableView.allowsSelection = NO;
+    
+    // Initialize the refresh control
     self.refreshControl = [[UIRefreshControl alloc] init];
     self.refreshControl.backgroundColor = [UIColor lightGrayColor];
     self.refreshControl.tintColor = [UIColor whiteColor];
@@ -29,7 +30,6 @@
                             action:@selector(reloadData)
                   forControlEvents:UIControlEventValueChanged];
 }
-
 - (void)reloadData {
     if (self.refreshControl) {
         // Attributes Title is buggy..
@@ -49,7 +49,6 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-
 #pragma mark - Table view data source
 // delegation pattern
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -60,18 +59,35 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     FPWTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CustomCell" forIndexPath:indexPath];
-
     FPWWallet *wallet = [self.wallets objectAtIndex:indexPath.row];
     
-    cell.keyName.text = wallet.keyName;
+    cell.walletName.text = wallet.keyName;
     cell.keyPublicImage.image = [UIImage mdQRCodeForString:wallet.keyPublic.base58String
                                                       size:cell.keyPublicImage.bounds.size.width
-                                                 fillColor:[UIColor darkGrayColor]];
+                                                 fillColor:[UIColor blackColor]];
     cell.keyAddress.text = wallet.keyPublic.base58String;
     cell.keyPrivateImage.image = [UIImage mdQRCodeForString:wallet.keyPrivate.base58String
                                                        size:cell.keyPrivateImage.bounds.size.width
-                                                  fillColor:[UIColor darkGrayColor]];
+                                                  fillColor:[UIColor blackColor]];
     return cell;
+}
+// Allow cell to be copied!
+-(BOOL)tableView:(UITableView *)tableView shouldShowMenuForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+-(BOOL)tableView:(UITableView *)tableView canPerformAction:(SEL)action forRowAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender
+{
+    return action == @selector(copy:);
+}
+-(void)tableView:(UITableView *)tableView performAction:(SEL)action forRowAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender
+{
+    FPWWallet *wallet = [self.wallets objectAtIndex:indexPath.row];
+    [UIPasteboard generalPasteboard].string = wallet.keyPublic.base58String;
+}
+
+// Enable air print
+- (IBAction)tapToPrint:(id)sender {
 }
 
 
