@@ -11,10 +11,12 @@
 
 @interface FPWTableViewController ()
 
+@property (nonatomic,strong) FPWTableViewCell *tableCell;
+
 @end
 
 @implementation FPWTableViewController
-
+@class FPWTableViewCell;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -62,13 +64,16 @@
     FPWWallet *wallet = [self.wallets objectAtIndex:indexPath.row];
     
     cell.walletName.text = wallet.keyName;
-    cell.keyPublicImage.image = [UIImage mdQRCodeForString:wallet.keyPublic.base58String
-                                                      size:cell.keyPublicImage.bounds.size.width
-                                                 fillColor:[UIColor blackColor]];
+    wallet.keyPublicImage = [UIImage mdQRCodeForString:wallet.keyPublic.base58String
+                                                        size:cell.keyPublicImage.bounds.size.width
+                                                   fillColor:[UIColor blackColor]];
+    cell.keyPublicImage.image = wallet.keyPublicImage;
     cell.keyAddress.text = wallet.keyPublic.base58String;
-    cell.keyPrivateImage.image = [UIImage mdQRCodeForString:wallet.keyPrivate.base58String
-                                                       size:cell.keyPrivateImage.bounds.size.width
-                                                  fillColor:[UIColor blackColor]];
+    wallet.keyPrivateImage = [UIImage mdQRCodeForString:wallet.keyPrivate.base58String
+                                                    size:cell.keyPrivateImage.bounds.size.width
+                                               fillColor:[UIColor blackColor]];
+    cell.keyPrivateImage.image = wallet.keyPrivateImage;
+    
     return cell;
 }
 // Allow cell to be copied!
@@ -88,6 +93,53 @@
 
 // Enable air print
 - (IBAction)tapToPrint:(id)sender {
+    {
+        if ([UIPrintInteractionController isPrintingAvailable]) {
+            UIPrintInteractionController *pic = [UIPrintInteractionController sharedPrintController];
+            
+            UIPrintInfo *printInfo = [UIPrintInfo printInfo];
+            printInfo.outputType = UIPrintInfoOutputGeneral;
+            printInfo.jobName = self.title;
+            printInfo.duplex = UIPrintInfoDuplexLongEdge;
+            printInfo.orientation = UIPrintInfoOrientationPortrait;
+            pic.printInfo = printInfo;
+            
+            UISimpleTextPrintFormatter *simpleText = [[UISimpleTextPrintFormatter alloc] initWithText:@"Air Print"];
+            
+            FPWPrintPageRenderer *pageRenderer = [[FPWPrintPageRenderer alloc] init];
+            pageRenderer.printData = [[NSMutableDictionary alloc] init];
+            
+            FPWWallet *wallet = [self.wallets objectAtIndex:0];
+            
+            /*
+             Need to get printerData from custom cell label, forward deceration?
+             */
+            
+            pageRenderer.printData = @{ @"keyPublicImage": wallet.keyPublicImage,
+                                            // @"walletName": wallet.keyName
+                                        };
+            
+            // @"walletName": wallet.keyPrivate
+            // @"keyPublic" : wallet.keyPublic,
+            
+            pageRenderer.headerHeight = 72.0 / 2;
+            pageRenderer.footerHeight = 72.0 / 2;
+            [pageRenderer addPrintFormatter:simpleText startingAtPageAtIndex:0];
+            
+            pic.printPageRenderer = pageRenderer;
+            pic.showsPageRange = YES;
+            
+            [pic presentAnimated:YES
+               completionHandler:^(UIPrintInteractionController *printInteractionController, BOOL completed, NSError *error) {
+                   if (!completed && (error != nil)) {
+                       NSLog(@"Error Printing: %@", error);
+                   }
+                   else {
+                       NSLog(@"Printing Cancelled");
+                   }
+               }];
+        }
+    }
 }
 
 

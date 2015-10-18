@@ -24,7 +24,9 @@
 		E977DDBF1BCFD8D000B8D497 /* FPWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E977DDBE1BCFD8D000B8D497 /* FPWViewController.m */; settings = {ASSET_TAGS = (); }; };
 		E977DDC21BCFDEB800B8D497 /* FPWTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E977DDC11BCFDEB800B8D497 /* FPWTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		E9CFA0361BD28FBA00D53079 /* FPWNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CFA0351BD28FBA00D53079 /* FPWNavigationController.m */; settings = {ASSET_TAGS = (); }; };
-		E9CFA0371BD2A5EE00D53079 /* SF-UI-Text-Medium.otf in Sources */ = {isa = PBXBuildFile; fileRef = E9CFA02E1BD1C85300D53079 /* SF-UI-Text-Medium.otf */; };
+		E9CFA03A1BD2AE7000D53079 /* FPWPrintPageRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CFA0391BD2AE7000D53079 /* FPWPrintPageRenderer.m */; settings = {ASSET_TAGS = (); }; };
+		E9CFA03D1BD2AF0200D53079 /* UIImage+Resizing.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CFA03C1BD2AF0200D53079 /* UIImage+Resizing.m */; settings = {ASSET_TAGS = (); }; };
+		E9CFA03E1BD2AF8500D53079 /* UIImage+Resizing.h in Sources */ = {isa = PBXBuildFile; fileRef = E9CFA03B1BD2AF0200D53079 /* UIImage+Resizing.h */; };
 		E9D7101B1BCD880A00C895D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9D710191BCD880A00C895D5 /* Main.storyboard */; };
 		E9D710201BCD880A00C895D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9D7101F1BCD880A00C895D5 /* Assets.xcassets */; };
 		E9D710231BCD880A00C895D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9D710211BCD880A00C895D5 /* LaunchScreen.storyboard */; };
@@ -95,6 +97,10 @@
 		E9CFA0331BD1C85300D53079 /* SF-UI-Text-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-SemiboldItalic.otf"; sourceTree = "<group>"; };
 		E9CFA0341BD28FBA00D53079 /* FPWNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPWNavigationController.h; sourceTree = "<group>"; };
 		E9CFA0351BD28FBA00D53079 /* FPWNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPWNavigationController.m; sourceTree = "<group>"; };
+		E9CFA0381BD2AE7000D53079 /* FPWPrintPageRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FPWPrintPageRenderer.h; path = ../../FPWPrintPageRenderer.h; sourceTree = "<group>"; };
+		E9CFA0391BD2AE7000D53079 /* FPWPrintPageRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FPWPrintPageRenderer.m; path = ../../FPWPrintPageRenderer.m; sourceTree = "<group>"; };
+		E9CFA03B1BD2AF0200D53079 /* UIImage+Resizing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resizing.h"; sourceTree = "<group>"; };
+		E9CFA03C1BD2AF0200D53079 /* UIImage+Resizing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resizing.m"; sourceTree = "<group>"; };
 		E9D7100D1BCD880A00C895D5 /* FoldyPaperWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoldyPaperWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9D710111BCD880A00C895D5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E9D710131BCD880A00C895D5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -244,6 +250,8 @@
 				E9D710471BCD89F500C895D5 /* FPWTableViewController.m */,
 				E9CFA0341BD28FBA00D53079 /* FPWNavigationController.h */,
 				E9CFA0351BD28FBA00D53079 /* FPWNavigationController.m */,
+				E9CFA0381BD2AE7000D53079 /* FPWPrintPageRenderer.h */,
+				E9CFA0391BD2AE7000D53079 /* FPWPrintPageRenderer.m */,
 				E9D710191BCD880A00C895D5 /* Main.storyboard */,
 				E9D7101F1BCD880A00C895D5 /* Assets.xcassets */,
 				E9D710211BCD880A00C895D5 /* LaunchScreen.storyboard */,
@@ -260,6 +268,8 @@
 				E9CFA01E1BD1C83B00D53079 /* Fonts */,
 				E977DDBD1BCFD8D000B8D497 /* FPWViewController.h */,
 				E977DDBE1BCFD8D000B8D497 /* FPWViewController.m */,
+				E9CFA03B1BD2AF0200D53079 /* UIImage+Resizing.h */,
+				E9CFA03C1BD2AF0200D53079 /* UIImage+Resizing.m */,
 				E93E9E001BCEB4870019B7AD /* UIImage+MDQRCode.h */,
 				E93E9E011BCEB4870019B7AD /* UIImage+MDQRCode.m */,
 				E93E9E091BCEB4870019B7AD /* libqrencode */,
@@ -451,7 +461,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9CFA0371BD2A5EE00D53079 /* SF-UI-Text-Medium.otf in Sources */,
+				E9CFA03E1BD2AF8500D53079 /* UIImage+Resizing.h in Sources */,
 				E95A33E61BCEBC44007D1DBD /* FPWWallet.m in Sources */,
 				E95A33E41BCEBC39007D1DBD /* FPWTableViewController.m in Sources */,
 				E95A33E71BCEBC48007D1DBD /* UIImage+MDQRCode.m in Sources */,
@@ -464,6 +474,8 @@
 				E95A33DF1BCEBBD1007D1DBD /* AppDelegate.m in Sources */,
 				E977DDBF1BCFD8D000B8D497 /* FPWViewController.m in Sources */,
 				E95A33DE1BCEBBCB007D1DBD /* main.m in Sources */,
+				E9CFA03D1BD2AF0200D53079 /* UIImage+Resizing.m in Sources */,
+				E9CFA03A1BD2AE7000D53079 /* FPWPrintPageRenderer.m in Sources */,
 				E95A33DD1BCEBBC3007D1DBD /* bitstream.c in Sources */,
 				E95A33DC1BCEBBB9007D1DBD /* split.c in Sources */,
 				E95A33DB1BCEBBAE007D1DBD /* qrspec.c in Sources */,

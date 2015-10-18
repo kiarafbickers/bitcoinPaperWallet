@@ -18,4 +18,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *keyPrivateLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *keyPrivateImage;
 
+- (void)getKeyPrivateImage:(UIImageView *)keyPublicImage;
+
 @end

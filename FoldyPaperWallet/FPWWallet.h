@@ -17,7 +17,9 @@
 @property (nonatomic, strong) BTCKey *key;
 @property (nonatomic, strong) NSString *keyName;
 @property (nonatomic, readonly) BTCPublicKeyAddress *keyPublic;
+@property (nonatomic, strong) UIImage *keyPublicImage;
 @property (nonatomic, readonly) BTCPrivateKeyAddress *keyPrivate;
+@property (nonatomic, strong) UIImage *keyPrivateImage;
 
 @property (nonatomic, strong) UIImage *keyImage;
 

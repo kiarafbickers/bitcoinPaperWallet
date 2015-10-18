@@ -10,6 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "FPWWallet.h"
 #import "FPWTableViewCell.h"
+#import "FPWPrintPageRenderer.h"
 
 @interface FPWTableViewController : UITableViewController
 
