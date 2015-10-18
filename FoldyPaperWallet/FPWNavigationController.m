@@ -22,7 +22,7 @@
     // Set app title
     self.title = @"Foldy Paper Wallet";
     [self.navigationBar setTitleTextAttributes:@{ NSFontAttributeName:
-                                                 [UIFont fontWithName:@"Helvetica"
+                                                 [UIFont fontWithName:@"HelveticaNeue-Bold"
                                                                  size:14.0f],
                                        NSForegroundColorAttributeName:[UIColor blackColor]}];
 }

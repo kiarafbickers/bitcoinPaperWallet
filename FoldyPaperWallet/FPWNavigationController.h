@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FPWTableViewController.h"
 
 @interface FPWNavigationController : UINavigationController
 

@@ -8,10 +8,9 @@
 
 #import "FPWTableViewController.h"
 
-
 @interface FPWTableViewController ()
 
-@property (nonatomic,strong) FPWTableViewCell *tableCell;
+@property (nonatomic, strong) FPWTableViewCell *tableCell;
 
 @end
 
@@ -20,6 +19,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //// General Declarations
+//    CGContextRef context = UIGraphicsGetCurrentContext();
     
     UIImage *planeImage = [UIImage imageNamed:@"plane.png"];
     self.myImageView = [[UIImageView alloc] initWithImage:planeImage];
@@ -31,6 +33,18 @@
     [self.myImageView setContentMode:UIViewContentModeScaleAspectFit];
     [self.view addSubview:self.myImageView];
     
+//    //// Picture Drawing
+//    CGContextSaveGState(context);
+//    CGContextTranslateCTM(context, 1087.63, -236.4);
+//    
+//    UIBezierPath* picturePath = [UIBezierPath bezierPathWithRect: CGRectMake(-831.63, 361.4, 240, 168)];
+//    CGContextSaveGState(context);
+//    [picturePath addClip];
+//    [planeImage drawInRect: CGRectMake(-832, 361, planeImage.size.width, planeImage.size.height)];
+//    CGContextRestoreGState(context);
+//    
+//    CGContextRestoreGState(context);
+//    
     self.tableView.allowsSelection = NO;
     
     // Initialize the refresh control
@@ -40,7 +54,27 @@
     [self.refreshControl addTarget:self
                             action:@selector(reloadData)
                   forControlEvents:UIControlEventValueChanged];
+    
+    self.navigationController.navigationBar.translucent = YES;
 }
+
+
+//- (void)viewWillAppear:(BOOL)animated {
+//    NSLog(@"viewWillAppear");
+//}
+//- (void)viewDidAppear:(BOOL)animated {
+//    NSLog(@"viewDidAppear");
+//}
+//- (void)viewDidDisappear:(BOOL)animated {
+//    NSLog(@"viewDidDisappear");
+//}
+//- (void)viewDidUnload {
+//    NSLog(@"viewDidUnload");
+//}
+//- (void)viewDidDispose {
+//    NSLog(@"viewDidDispose");
+//}
+
 - (void)reloadData {
     if (self.refreshControl) {
         // Attributes Title is buggy..
@@ -75,6 +109,7 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    
     FPWTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CustomCell" forIndexPath:indexPath];
     FPWWallet *wallet = [self.wallets objectAtIndex:indexPath.row];
         
@@ -87,7 +122,7 @@
                                                        size:cell.keyPrivateImage.bounds.size.width
                                                   fillColor:[UIColor blackColor]];
     cell.keyPrivateImage.image = wallet.keyPrivateImage;
-    NSLog(@"Bye!");
+    NSLog(@"Table Cells Made!");
     
     return cell;
 }

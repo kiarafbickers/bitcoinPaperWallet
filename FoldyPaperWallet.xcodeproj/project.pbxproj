@@ -292,6 +292,8 @@
 				E9CFA0351BD28FBA00D53079 /* FPWNavigationController.m */,
 				E9CFA0381BD2AE7000D53079 /* FPWPrintPageRenderer.h */,
 				E9CFA0391BD2AE7000D53079 /* FPWPrintPageRenderer.m */,
+				E977DDBD1BCFD8D000B8D497 /* FPWViewController.h */,
+				E977DDBE1BCFD8D000B8D497 /* FPWViewController.m */,
 				E9D710191BCD880A00C895D5 /* Main.storyboard */,
 				E9D7101F1BCD880A00C895D5 /* Assets.xcassets */,
 				E9D710211BCD880A00C895D5 /* LaunchScreen.storyboard */,
@@ -307,8 +309,6 @@
 			children = (
 				E9012ED81BD362E2008FB34A /* images */,
 				E9CFA01E1BD1C83B00D53079 /* Fonts */,
-				E977DDBD1BCFD8D000B8D497 /* FPWViewController.h */,
-				E977DDBE1BCFD8D000B8D497 /* FPWViewController.m */,
 				E9CFA03B1BD2AF0200D53079 /* UIImage+Resizing.h */,
 				E9CFA03C1BD2AF0200D53079 /* UIImage+Resizing.m */,
 				E93E9E001BCEB4870019B7AD /* UIImage+MDQRCode.h */,

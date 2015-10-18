@@ -86,7 +86,7 @@
                     <navigationItem key="navigationItem" title="Foldy Paper Wallet" id="s5S-QR-cZO">
                         <barButtonItem key="rightBarButtonItem" image="printer-60.png" style="plain" id="eoj-GR-KCt">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ZpK-ty-JUr">
-                                <rect key="frame" x="354" y="7" width="40" height="30"/>
+                                <rect key="frame" x="374" y="12" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="printer-Small.png"/>
                                 <connections>
@@ -99,7 +99,26 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QIp-4E-Ehl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2790" y="160"/>
+            <point key="canvasLocation" x="3602" y="160"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="daI-Kb-MqO">
+            <objects>
+                <viewController id="L9A-H5-RYw" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IAJ-7D-cdS"/>
+                        <viewControllerLayoutGuide type="bottom" id="C7D-QC-52b"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="icL-ST-RnM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="upK-CA-PsU"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YAV-KH-Nst" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2379" y="160"/>
         </scene>
         <!--Item-->
         <scene sceneID="nYx-ik-fhg">
@@ -119,7 +138,26 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w8s-2t-nFb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2200" y="160"/>
+            <point key="canvasLocation" x="3012" y="160"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="63s-fA-nUr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uhi-vb-lOK" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wen-It-giu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="L9A-H5-RYw" kind="relationship" relationship="rootViewController" id="u3W-iW-J62"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vkP-ty-3YK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1759" y="160"/>
         </scene>
     </scenes>
     <resources>
