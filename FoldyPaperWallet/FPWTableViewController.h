@@ -16,5 +16,6 @@
 
 @property (nonatomic, strong) NSMutableArray *wallets;
 @property (nonatomic, strong) FPWWallet *randomWallet;
+@property (nonatomic, strong) UIImageView *myImageView;
 
 @end

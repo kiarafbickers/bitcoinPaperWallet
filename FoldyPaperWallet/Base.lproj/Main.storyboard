@@ -1,80 +1,73 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="KJE-VB-95K">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="P1x-U9-Ad1">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Foldy Paper Wallet-->
         <scene sceneID="Qbi-f3-LPs">
             <objects>
                 <tableViewController id="zi8-P7-dfc" customClass="FPWTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="700" sectionHeaderHeight="28" sectionFooterHeight="28" id="SJ4-Ic-w0d">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="645" sectionHeaderHeight="28" sectionFooterHeight="28" id="SJ4-Ic-w0d">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomCell" rowHeight="700" id="mgq-Jr-FQ3" customClass="FPWTableViewCell">
-                                <rect key="frame" x="0.0" y="92" width="414" height="700"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomCell" rowHeight="645" id="mgq-Jr-FQ3" customClass="FPWTableViewCell">
+                                <rect key="frame" x="0.0" y="92" width="414" height="645"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mgq-Jr-FQ3" id="PMC-6i-2c0">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="699"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="644"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Wallet Name" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lye-da-opy">
-                                            <rect key="frame" x="82" y="8" width="250" height="30"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                        </textField>
-                                        <imageView userInteractionEnabled="NO" tag="101" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RW7-uH-KKS">
-                                            <rect key="frame" x="82" y="70" width="250" height="250"/>
+                                        <imageView userInteractionEnabled="NO" tag="101" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RW7-uH-KKS">
+                                            <rect key="frame" x="107" y="75" width="200" height="200"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="tintColor" red="0.82391716449999997" green="0.82391716449999997" blue="0.82391716449999997" alpha="1" colorSpace="calibratedRGB"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="250" id="pvA-Cx-lDU"/>
-                                            </constraints>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" tag="103" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ED4-bj-9R1">
-                                            <rect key="frame" x="82" y="392" width="250" height="250"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <imageView userInteractionEnabled="NO" tag="103" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ED4-bj-9R1">
+                                            <rect key="frame" x="107" y="410" width="200" height="200"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8AT-ma-geB">
-                                            <rect key="frame" x="82" y="312" width="268" height="36"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="36" placeholder="YES" id="B5s-aL-Kix"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8AT-ma-geB">
+                                            <rect key="frame" x="107" y="274" width="200" height="20"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Address">
+                                                    <attributes>
+                                                        <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <font key="NSFont" size="12" name="Helvetica-Light"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Private Key" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTU-Gv-ad1">
-                                            <rect key="frame" x="82" y="365" width="250" height="30"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTU-Gv-ad1">
+                                            <rect key="frame" x="107" y="382" width="200" height="20"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Private Key">
+                                                    <attributes>
+                                                        <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <font key="NSFont" size="13" name="Helvetica"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Public Key" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c13-vi-MUG">
-                                            <rect key="frame" x="82" y="46" width="250" height="30"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c13-vi-MUG">
+                                            <rect key="frame" x="107" y="54" width="200" height="22"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Public Key">
+                                                    <attributes>
+                                                        <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <font key="NSFont" size="13" name="Helvetica"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstItem="RW7-uH-KKS" firstAttribute="centerX" secondItem="PMC-6i-2c0" secondAttribute="centerX" placeholder="YES" id="8ZG-2E-d4L"/>
-                                        <constraint firstItem="8AT-ma-geB" firstAttribute="top" secondItem="RW7-uH-KKS" secondAttribute="bottom" constant="1" placeholder="YES" id="Dmc-jV-KL8"/>
-                                        <constraint firstItem="c13-vi-MUG" firstAttribute="trailing" secondItem="RW7-uH-KKS" secondAttribute="trailing" placeholder="YES" id="Efn-sd-AP3"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="ED4-bj-9R1" secondAttribute="bottom" constant="49" placeholder="YES" id="Fqb-Tw-gYk"/>
-                                        <constraint firstItem="c13-vi-MUG" firstAttribute="leading" secondItem="RW7-uH-KKS" secondAttribute="leading" placeholder="YES" id="Lvl-T1-uVD"/>
-                                        <constraint firstItem="c13-vi-MUG" firstAttribute="top" secondItem="PMC-6i-2c0" secondAttribute="topMargin" constant="17" placeholder="YES" id="OiE-Qu-BnU"/>
-                                        <constraint firstItem="ED4-bj-9R1" firstAttribute="top" secondItem="8AT-ma-geB" secondAttribute="bottom" constant="51" placeholder="YES" id="Q0o-Gj-M6L"/>
-                                        <constraint firstItem="RW7-uH-KKS" firstAttribute="trailing" secondItem="ED4-bj-9R1" secondAttribute="trailing" placeholder="YES" id="YTP-DT-7sW"/>
-                                        <constraint firstItem="ED4-bj-9R1" firstAttribute="leading" secondItem="8AT-ma-geB" secondAttribute="leading" placeholder="YES" id="Ycq-9G-Oaa"/>
-                                        <constraint firstItem="c13-vi-MUG" firstAttribute="leading" secondItem="PMC-6i-2c0" secondAttribute="leadingMargin" constant="74" placeholder="YES" id="ZTY-nF-D4b"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="8AT-ma-geB" secondAttribute="trailing" constant="56" placeholder="YES" id="ZlR-ck-mp7"/>
-                                        <constraint firstItem="RW7-uH-KKS" firstAttribute="top" secondItem="c13-vi-MUG" secondAttribute="bottom" constant="8" symbolic="YES" placeholder="YES" id="lbg-9S-zwD"/>
-                                        <constraint firstItem="8AT-ma-geB" firstAttribute="leading" secondItem="RW7-uH-KKS" secondAttribute="leading" placeholder="YES" id="myW-1w-5LN"/>
-                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="keyAddress" destination="8AT-ma-geB" id="r4T-pT-gzf"/>
@@ -82,7 +75,6 @@
                                     <outlet property="keyPrivateLabel" destination="aTU-Gv-ad1" id="SEF-Ym-etH"/>
                                     <outlet property="keyPublicImage" destination="RW7-uH-KKS" id="koP-V4-tqA"/>
                                     <outlet property="keyPublicLabel" destination="c13-vi-MUG" id="pan-hD-x5R"/>
-                                    <outlet property="walletName" destination="lye-da-opy" id="lGT-9e-TBA"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -92,11 +84,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Foldy Paper Wallet" id="s5S-QR-cZO">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="eoj-GR-KCt">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZpK-ty-JUr">
-                                <rect key="frame" x="302" y="7" width="92" height="30"/>
+                        <barButtonItem key="rightBarButtonItem" image="printer-60.png" style="plain" id="eoj-GR-KCt">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ZpK-ty-JUr">
+                                <rect key="frame" x="354" y="7" width="40" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Print"/>
+                                <state key="normal" image="printer-Small.png"/>
                                 <connections>
                                     <action selector="tapToPrint:" destination="zi8-P7-dfc" eventType="touchUpInside" id="NlT-4m-Ph2"/>
                                 </connections>
@@ -109,30 +101,13 @@
             </objects>
             <point key="canvasLocation" x="2790" y="160"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="1SC-QH-BAa">
-            <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="KJE-VB-95K" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="OLb-AA-fYi">
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="P1x-U9-Ad1" kind="relationship" relationship="viewControllers" id="AuQ-1h-o4a"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PT6-sV-6l3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1675" y="160"/>
-        </scene>
         <!--Item-->
         <scene sceneID="nYx-ik-fhg">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="P1x-U9-Ad1" customClass="FPWNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="mDb-d1-22O"/>
                     <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VHQ-k9-sX2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -144,7 +119,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w8s-2t-nFb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2218" y="160"/>
+            <point key="canvasLocation" x="2200" y="160"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="printer-60.png" width="60" height="60"/>
+        <image name="printer-Small.png" width="29" height="29"/>
+    </resources>
 </document>

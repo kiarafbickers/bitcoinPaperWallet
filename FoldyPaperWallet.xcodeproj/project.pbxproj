@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		3458088EC2BD62891CD02D0D /* libPods-FoldyPaperWallet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 23B3788031AAE2F3BA7B5D9C /* libPods-FoldyPaperWallet.a */; };
+		E9012EE31BD362F4008FB34A /* printer-40.png in Resources */ = {isa = PBXBuildFile; fileRef = E9012ED91BD362F4008FB34A /* printer-40.png */; settings = {ASSET_TAGS = (); }; };
+		E9012EE41BD362F4008FB34A /* printer-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E9012EDA1BD362F4008FB34A /* printer-40@2x.png */; settings = {ASSET_TAGS = (); }; };
+		E9012EE51BD362F4008FB34A /* printer-40@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E9012EDB1BD362F4008FB34A /* printer-40@3x.png */; settings = {ASSET_TAGS = (); }; };
+		E9012EE61BD362F4008FB34A /* printer-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E9012EDC1BD362F4008FB34A /* printer-60@2x.png */; settings = {ASSET_TAGS = (); }; };
+		E9012EE71BD362F4008FB34A /* printer-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E9012EDD1BD362F4008FB34A /* printer-60@3x.png */; settings = {ASSET_TAGS = (); }; };
+		E9012EE81BD362F4008FB34A /* printer-76.png in Resources */ = {isa = PBXBuildFile; fileRef = E9012EDE1BD362F4008FB34A /* printer-76.png */; settings = {ASSET_TAGS = (); }; };
+		E9012EE91BD362F4008FB34A /* printer-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E9012EDF1BD362F4008FB34A /* printer-76@2x.png */; settings = {ASSET_TAGS = (); }; };
+		E9012EEA1BD362F4008FB34A /* printer-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = E9012EE01BD362F4008FB34A /* printer-Small.png */; settings = {ASSET_TAGS = (); }; };
+		E9012EEB1BD362F4008FB34A /* printer-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E9012EE11BD362F4008FB34A /* printer-Small@2x.png */; settings = {ASSET_TAGS = (); }; };
+		E9012EEC1BD362F4008FB34A /* printer-Small@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E9012EE21BD362F4008FB34A /* printer-Small@3x.png */; settings = {ASSET_TAGS = (); }; };
 		E95A33DB1BCEBBAE007D1DBD /* qrspec.c in Sources */ = {isa = PBXBuildFile; fileRef = E93E9E121BCEB4870019B7AD /* qrspec.c */; };
 		E95A33DC1BCEBBB9007D1DBD /* split.c in Sources */ = {isa = PBXBuildFile; fileRef = E93E9E161BCEB4870019B7AD /* split.c */; };
 		E95A33DD1BCEBBC3007D1DBD /* bitstream.c in Sources */ = {isa = PBXBuildFile; fileRef = E93E9E0A1BCEB4870019B7AD /* bitstream.c */; };
@@ -23,6 +33,7 @@
 		E95A33E81BCEBE2D007D1DBD /* FoldyPaperWallet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E9D7101C1BCD880A00C895D5 /* FoldyPaperWallet.xcdatamodeld */; };
 		E977DDBF1BCFD8D000B8D497 /* FPWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E977DDBE1BCFD8D000B8D497 /* FPWViewController.m */; settings = {ASSET_TAGS = (); }; };
 		E977DDC21BCFDEB800B8D497 /* FPWTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E977DDC11BCFDEB800B8D497 /* FPWTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		E98B3C3E1BD423A500733896 /* plane.png in Resources */ = {isa = PBXBuildFile; fileRef = E98B3C3D1BD423A500733896 /* plane.png */; settings = {ASSET_TAGS = (); }; };
 		E9CFA0361BD28FBA00D53079 /* FPWNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CFA0351BD28FBA00D53079 /* FPWNavigationController.m */; settings = {ASSET_TAGS = (); }; };
 		E9CFA03A1BD2AE7000D53079 /* FPWPrintPageRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CFA0391BD2AE7000D53079 /* FPWPrintPageRenderer.m */; settings = {ASSET_TAGS = (); }; };
 		E9CFA03D1BD2AF0200D53079 /* UIImage+Resizing.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CFA03C1BD2AF0200D53079 /* UIImage+Resizing.m */; settings = {ASSET_TAGS = (); }; };
@@ -54,6 +65,16 @@
 /* Begin PBXFileReference section */
 		23B3788031AAE2F3BA7B5D9C /* libPods-FoldyPaperWallet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FoldyPaperWallet.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0BDF885479AAA13F6DD48F1 /* Pods-FoldyPaperWallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoldyPaperWallet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoldyPaperWallet/Pods-FoldyPaperWallet.debug.xcconfig"; sourceTree = "<group>"; };
+		E9012ED91BD362F4008FB34A /* printer-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "printer-40.png"; sourceTree = "<group>"; };
+		E9012EDA1BD362F4008FB34A /* printer-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "printer-40@2x.png"; sourceTree = "<group>"; };
+		E9012EDB1BD362F4008FB34A /* printer-40@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "printer-40@3x.png"; sourceTree = "<group>"; };
+		E9012EDC1BD362F4008FB34A /* printer-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "printer-60@2x.png"; sourceTree = "<group>"; };
+		E9012EDD1BD362F4008FB34A /* printer-60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "printer-60@3x.png"; sourceTree = "<group>"; };
+		E9012EDE1BD362F4008FB34A /* printer-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "printer-76.png"; sourceTree = "<group>"; };
+		E9012EDF1BD362F4008FB34A /* printer-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "printer-76@2x.png"; sourceTree = "<group>"; };
+		E9012EE01BD362F4008FB34A /* printer-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "printer-Small.png"; sourceTree = "<group>"; };
+		E9012EE11BD362F4008FB34A /* printer-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "printer-Small@2x.png"; sourceTree = "<group>"; };
+		E9012EE21BD362F4008FB34A /* printer-Small@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "printer-Small@3x.png"; sourceTree = "<group>"; };
 		E93E9E001BCEB4870019B7AD /* UIImage+MDQRCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MDQRCode.h"; sourceTree = "<group>"; };
 		E93E9E011BCEB4870019B7AD /* UIImage+MDQRCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MDQRCode.m"; sourceTree = "<group>"; };
 		E93E9E0A1BCEB4870019B7AD /* bitstream.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bitstream.c; sourceTree = "<group>"; };
@@ -74,6 +95,7 @@
 		E977DDBE1BCFD8D000B8D497 /* FPWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPWViewController.m; sourceTree = "<group>"; };
 		E977DDC01BCFDEB800B8D497 /* FPWTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPWTableViewCell.h; sourceTree = "<group>"; };
 		E977DDC11BCFDEB800B8D497 /* FPWTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPWTableViewCell.m; sourceTree = "<group>"; };
+		E98B3C3D1BD423A500733896 /* plane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plane.png; sourceTree = "<group>"; };
 		E9CFA01F1BD1C85300D53079 /* SF-UI-Display-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Black.otf"; sourceTree = "<group>"; };
 		E9CFA0201BD1C85300D53079 /* SF-UI-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Bold.otf"; sourceTree = "<group>"; };
 		E9CFA0211BD1C85300D53079 /* SF-UI-Display-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Heavy.otf"; sourceTree = "<group>"; };
@@ -164,6 +186,24 @@
 				23B3788031AAE2F3BA7B5D9C /* libPods-FoldyPaperWallet.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E9012ED81BD362E2008FB34A /* images */ = {
+			isa = PBXGroup;
+			children = (
+				E98B3C3D1BD423A500733896 /* plane.png */,
+				E9012ED91BD362F4008FB34A /* printer-40.png */,
+				E9012EDA1BD362F4008FB34A /* printer-40@2x.png */,
+				E9012EDB1BD362F4008FB34A /* printer-40@3x.png */,
+				E9012EDC1BD362F4008FB34A /* printer-60@2x.png */,
+				E9012EDD1BD362F4008FB34A /* printer-60@3x.png */,
+				E9012EDE1BD362F4008FB34A /* printer-76.png */,
+				E9012EDF1BD362F4008FB34A /* printer-76@2x.png */,
+				E9012EE01BD362F4008FB34A /* printer-Small.png */,
+				E9012EE11BD362F4008FB34A /* printer-Small@2x.png */,
+				E9012EE21BD362F4008FB34A /* printer-Small@3x.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 		E93E9E091BCEB4870019B7AD /* libqrencode */ = {
@@ -265,6 +305,7 @@
 		E9D710101BCD880A00C895D5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E9012ED81BD362E2008FB34A /* images */,
 				E9CFA01E1BD1C83B00D53079 /* Fonts */,
 				E977DDBD1BCFD8D000B8D497 /* FPWViewController.h */,
 				E977DDBE1BCFD8D000B8D497 /* FPWViewController.m */,
@@ -401,8 +442,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9012EE81BD362F4008FB34A /* printer-76.png in Resources */,
+				E9012EEA1BD362F4008FB34A /* printer-Small.png in Resources */,
+				E9012EEC1BD362F4008FB34A /* printer-Small@3x.png in Resources */,
 				E9D710231BCD880A00C895D5 /* LaunchScreen.storyboard in Resources */,
+				E9012EE91BD362F4008FB34A /* printer-76@2x.png in Resources */,
 				E9D710201BCD880A00C895D5 /* Assets.xcassets in Resources */,
+				E9012EE51BD362F4008FB34A /* printer-40@3x.png in Resources */,
+				E9012EE61BD362F4008FB34A /* printer-60@2x.png in Resources */,
+				E9012EEB1BD362F4008FB34A /* printer-Small@2x.png in Resources */,
+				E9012EE31BD362F4008FB34A /* printer-40.png in Resources */,
+				E9012EE41BD362F4008FB34A /* printer-40@2x.png in Resources */,
+				E9012EE71BD362F4008FB34A /* printer-60@3x.png in Resources */,
+				E98B3C3E1BD423A500733896 /* plane.png in Resources */,
 				E9D7101B1BCD880A00C895D5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -18,27 +18,14 @@
 
 @implementation FPWWallet
 
--(int)getRandomNumberBetween:(int)from to:(int)to {
-    return (int)from + arc4random() % (to-from+1);
-}
-
-
-// BTCKey *someKeyThingIDontKnowsflkjsdflksjdf = [[BTCKey allo] init];
-// someKetyghinIdon.name = @"TEST";
-
-// FPWallet *newWallet = [[FPWallet alloc] initWIthKey: someKeyThingIDontKnowflkjsdflksjdf];
-
-- (instancetype)initWithKey:(BTCKey *)key
-                       name:(NSString *)keyName {
+- (instancetype)initWithKey:(BTCKey *)key {
     if (self) {
         _key = key;
-        _keyName = keyName;
         _keyPrivate = key.privateKeyAddress;
         _keyPublic = key.address;
     }
     return self;
 }
-
 
 // Generate Random Key
 -(BTCPrivateKeyAddress *)makeRandomKey {
