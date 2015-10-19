@@ -11,6 +11,7 @@
 @interface FPWTableViewController ()
 
 @property (nonatomic, strong) FPWTableViewCell *tableCell;
+@property (weak, nonatomic) IBOutlet UIButton *printButton;
 
 @end
 
@@ -19,9 +20,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // self.navigationController.navigationBarHidden = YES;
+    self.printButton.hidden = YES;
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1.0];
     
-    //// General Declarations
-//    CGContextRef context = UIGraphicsGetCurrentContext();
+    self.title = @"Pull to generate..";
+    [self.navigationController.navigationBar setTitleTextAttributes:@{ NSFontAttributeName:
+                                                      [UIFont fontWithName:@"HelveticaNeue-Bold"
+                                                                      size:14.0f],
+                                                  NSForegroundColorAttributeName:[UIColor blackColor]}];
     
     UIImage *planeImage = [UIImage imageNamed:@"plane.png"];
     self.myImageView = [[UIImageView alloc] initWithImage:planeImage];
@@ -32,6 +39,9 @@
     [self.myImageView setFrame:myFrame];
     [self.myImageView setContentMode:UIViewContentModeScaleAspectFit];
     [self.view addSubview:self.myImageView];
+    
+////  General Declarations
+//    CGContextRef context = UIGraphicsGetCurrentContext();
     
 //    //// Picture Drawing
 //    CGContextSaveGState(context);
@@ -109,6 +119,7 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    self.printButton.hidden = NO;
     
     FPWTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CustomCell" forIndexPath:indexPath];
     FPWWallet *wallet = [self.wallets objectAtIndex:indexPath.row];
@@ -123,6 +134,12 @@
                                                   fillColor:[UIColor blackColor]];
     cell.keyPrivateImage.image = wallet.keyPrivateImage;
     NSLog(@"Table Cells Made!");
+    
+    self.title = @"Foldy Paper Wallet";
+    [self.navigationController.navigationBar setTitleTextAttributes:@{ NSFontAttributeName:
+                                                                           [UIFont fontWithName:@"HelveticaNeue-Bold"
+                                                                                           size:14.0f],
+                                                                       NSForegroundColorAttributeName:[UIColor blackColor]}];
     
     return cell;
 }

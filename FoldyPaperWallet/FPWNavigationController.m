@@ -17,14 +17,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationBar.barTintColor = [UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1.0];
-
-    // Set app title
-    self.title = @"Foldy Paper Wallet";
-    [self.navigationBar setTitleTextAttributes:@{ NSFontAttributeName:
-                                                 [UIFont fontWithName:@"HelveticaNeue-Bold"
-                                                                 size:14.0f],
-                                       NSForegroundColorAttributeName:[UIColor blackColor]}];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -23,10 +23,10 @@
     // Giant system of linear equations. If this freaks out, fix constraints, then turn them off in interface
     
     // Center
-    [self.keyPublicLabel.centerXAnchor constraintEqualToAnchor:self.contentView.centerXAnchor].active = YES;
+    [self.keyPublicLabel.centerXAnchor constraintEqualToAnchor:self.keyPublicImage.leadingAnchor constant:4].active = YES;
     [self.keyPublicImage.centerXAnchor constraintEqualToAnchor:self.contentView.centerXAnchor].active = YES;
     [self.keyAddress.centerXAnchor constraintEqualToAnchor:self.contentView.centerXAnchor].active = YES;
-    [self.keyPrivateLabel.centerXAnchor constraintEqualToAnchor:self.contentView.centerXAnchor].active = YES;
+    [self.keyPrivateLabel.centerXAnchor constraintEqualToAnchor:self.keyPrivateImage.leadingAnchor constant:4].active = YES;
     [self.keyPrivateImage.centerXAnchor constraintEqualToAnchor:self.contentView.centerXAnchor].active = YES;
     
     // Size - relettive to screen size
@@ -34,10 +34,10 @@
     [self.keyPrivateImage.widthAnchor constraintEqualToAnchor:self.contentView.widthAnchor multiplier:0.60].active = YES;
     
     // Vertical postion
-    [self.keyPublicLabel.topAnchor  constraintEqualToAnchor:self.contentView.topAnchor constant:25].active = YES;
+    [self.keyPublicLabel.topAnchor  constraintEqualToAnchor:self.contentView.topAnchor constant:15].active = YES;
     [self.keyPublicLabel.bottomAnchor constraintEqualToAnchor:self.keyPublicImage.topAnchor].active = YES;
     [self.keyPublicImage.bottomAnchor constraintEqualToAnchor:self.keyAddress.topAnchor].active = YES;
-    [self.keyAddress.bottomAnchor constraintEqualToAnchor:self.keyPrivateImage.topAnchor constant:-35].active = YES;
+    [self.keyAddress.bottomAnchor constraintEqualToAnchor:self.keyPrivateImage.topAnchor constant:-30].active = YES;
     [self.keyPrivateLabel.bottomAnchor constraintEqualToAnchor:self.keyPrivateImage.topAnchor].active = YES;
     
     // Ratio constraiant
