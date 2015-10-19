@@ -183,37 +183,6 @@
             printInfo.orientation = UIPrintInfoOrientationPortrait;
             pic.printInfo = printInfo;
             
-            UISimpleTextPrintFormatter *simpleText = [[UISimpleTextPrintFormatter alloc] initWithText:@"Air Print"];
-            
-            FPWPrintPageRenderer *pageRenderer = [[FPWPrintPageRenderer alloc] init];
-            pageRenderer.printData = [[NSMutableDictionary alloc] init];
-            
-            FPWWallet *wallet = [self.wallets objectAtIndex:0];
-            
-            /*
-             Need access to TableViewCell class labels
-             But that would cause a circular dependency
-             How do I forward deceration?
-             */
-            
-            pageRenderer.printData = @{ @"keyPublicImage": self.randomWallet.keyPublicImage};
-            
-            
-            
-            // Need TableViewCell.keyPrivate.text 
-            // @"walletName": wallet.keyPrivate
-            // @"keyPublic" : wallet.keyPublic,
-            
-            pageRenderer.headerHeight = 72.0 / 2;
-            pageRenderer.footerHeight = 72.0 / 2;
-//            [pageRenderer addPrintFormatter:simpleText startingAtPageAtIndex:0];
-            
-//            UIViewPrintFormatter *viewFormatter = [self.tableView.visibleCells.firstObject viewPrintFormatter];
-//            [pageRenderer addPrintFormatter:viewFormatter startingAtPageAtIndex:0];
-            
-            
-//            pic.printPageRenderer = pageRenderer;
-            
             UITableViewCell *cell = self.tableView.visibleCells.firstObject;
             UIGraphicsBeginImageContext(cell.frame.size);
             [cell drawViewHierarchyInRect:cell.bounds afterScreenUpdates:NO];
@@ -222,9 +191,7 @@
             
             pic.printingItem = cellImage;
             
-            
             pic.showsPageRange = YES;
-            
             [pic presentAnimated:YES
                completionHandler:^(UIPrintInteractionController *printInteractionController, BOOL completed, NSError *error) {
                    
