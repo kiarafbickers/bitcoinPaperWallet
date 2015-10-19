@@ -7,10 +7,11 @@
 //
 
 #import "FPWWallet.h"
-
+#import "NSData+BTCData.h"
 
 @interface FPWWallet ( )
 
+@property (nonatomic, strong) BTCKey *key;
 @property (nonatomic, readwrite) BTCPublicKeyAddress *keyPublic;
 @property (nonatomic, readwrite) BTCPrivateKeyAddress *keyPrivate;
 
@@ -26,14 +27,13 @@
     }
     return self;
 }
-
-// Generate Random Key
 -(BTCPrivateKeyAddress *)makeRandomKey {
+    
+    // Generate Random Key
     NSString *secretExponent = BTCRandomDataWithLength(32).SHA256.hex;
     BTCPrivateKeyAddress *randomKey = [BTCPrivateKeyAddress addressWithData:BTCDataFromHex(secretExponent)];
     return randomKey;
 }
-
 -(NSString*)addSpaceto:(NSString*)originalString afterWithGroupSize:(int)groupSize {
     NSMutableString *result = [[NSMutableString alloc]initWithCapacity:originalString.length];
     

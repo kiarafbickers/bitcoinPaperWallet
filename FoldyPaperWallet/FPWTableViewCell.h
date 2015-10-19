@@ -11,12 +11,10 @@
 
 @interface FPWTableViewCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *keyPublicLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *keyPublicImage;
-@property (weak, nonatomic) IBOutlet UILabel *keyAddress;
-@property (weak, nonatomic) IBOutlet UILabel *keyPrivateLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *keyPrivateImage;
-
-- (void)getKeyPrivateImage:(UIImageView *)keyPublicImage;
+@property (nonatomic, weak) IBOutlet UILabel *keyPublicLabel;
+@property (nonatomic, weak) IBOutlet UIImageView *keyPublicImage;
+@property (nonatomic, weak) IBOutlet UILabel *keyAddress;
+@property (nonatomic, weak) IBOutlet UILabel *keyPrivateLabel;
+@property (nonatomic, weak) IBOutlet UIImageView *keyPrivateImage;
 
 @end

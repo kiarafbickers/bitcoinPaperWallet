@@ -10,11 +10,9 @@
 #import <CoreBitcoin/CoreBitcoin.h>
 #import <QuartzCore/QuartzCore.h>
 #import "UIImage+MDQRCode.h"
-#import "NSData+BTCData.h"
 
 @interface FPWWallet : NSObject
 
-@property (nonatomic, strong) BTCKey *key;
 @property (nonatomic, readonly) BTCPublicKeyAddress *keyPublic;
 @property (nonatomic, strong) UIImage *keyPublicImage;
 @property (nonatomic, readonly) BTCPrivateKeyAddress *keyPrivate;

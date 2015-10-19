@@ -18,16 +18,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
-    BTCKey *randomKey = [[BTCKey alloc]init];
-    FPWWallet *aWallet = [[FPWWallet alloc] initWithKey:randomKey];
-
-    NSLog(@"\n Private = %@", randomKey.privateKeyAddress);
-    NSLog(@"\n Public  = %@", randomKey.address);
-    NSLog(@"-----------------------------------------------------------");
-    NSLog(@"\n Private = %@", aWallet.keyPrivate);
-    NSLog(@"\n Public  = %@", aWallet.keyPublic);
-    NSLog(@"-----------------------------------------------------------");
     return YES;
 }
 - (void)applicationWillResignActive:(UIApplication *)application {
