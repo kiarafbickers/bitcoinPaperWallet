@@ -12,6 +12,8 @@
 
 @property (nonatomic, strong) FPWTableViewCell *tableCell;
 @property (weak, nonatomic) IBOutlet UIButton *printButton;
+@property (nonatomic, strong) CAGradientLayer *blend;
+
 
 @end
 
@@ -29,6 +31,18 @@
                                                       [UIFont fontWithName:@"HelveticaNeue-Bold"
                                                                       size:14.0f],
                                                   NSForegroundColorAttributeName:[UIColor blackColor]}];
+    
+    UIColor *darkBlue = [UIColor colorWithRed:0.11 green:0.47 blue:0.94 alpha:1.0];
+    UIColor *lightBlue = [UIColor colorWithRed:0.51 green:0.95 blue:0.99 alpha:1.0];
+    
+    NSArray *colors = @[ (id)darkBlue.CGColor, (id)lightBlue.CGColor];
+    self.blend = [[CAGradientLayer alloc]init];
+    self.blend.startPoint = CGPointMake(0.5, 0);
+    self.blend.endPoint = CGPointMake(0.5, 1);
+    self.blend.colors = colors;
+    
+    [self.view.layer insertSublayer:self.blend atIndex:0];
+    self.blend.frame = self.view.bounds;
     
     UIImage *planeImage = [UIImage imageNamed:@"plane.png"];
     self.myImageView = [[UIImageView alloc] initWithImage:planeImage];
@@ -158,6 +172,7 @@
 // Enable Air print
 - (IBAction)tapToPrint:(id)sender {
     {
+        
         if ([UIPrintInteractionController isPrintingAvailable]) {
             UIPrintInteractionController *pic = [UIPrintInteractionController sharedPrintController];
             
@@ -181,7 +196,9 @@
              How do I forward deceration?
              */
             
-            pageRenderer.printData = @{ @"keyPublicImage": wallet.keyPublicImage};
+            pageRenderer.printData = @{ @"keyPublicImage": self.randomWallet.keyPublicImage};
+            
+            
             
             // Need TableViewCell.keyPrivate.text 
             // @"walletName": wallet.keyPrivate
@@ -189,13 +206,29 @@
             
             pageRenderer.headerHeight = 72.0 / 2;
             pageRenderer.footerHeight = 72.0 / 2;
-            [pageRenderer addPrintFormatter:simpleText startingAtPageAtIndex:0];
+//            [pageRenderer addPrintFormatter:simpleText startingAtPageAtIndex:0];
             
-            pic.printPageRenderer = pageRenderer;
+//            UIViewPrintFormatter *viewFormatter = [self.tableView.visibleCells.firstObject viewPrintFormatter];
+//            [pageRenderer addPrintFormatter:viewFormatter startingAtPageAtIndex:0];
+            
+            
+//            pic.printPageRenderer = pageRenderer;
+            
+            UITableViewCell *cell = self.tableView.visibleCells.firstObject;
+            UIGraphicsBeginImageContext(cell.frame.size);
+            [cell drawViewHierarchyInRect:cell.bounds afterScreenUpdates:NO];
+            UIImage *cellImage = UIGraphicsGetImageFromCurrentImageContext();
+            UIGraphicsEndImageContext();
+            
+            pic.printingItem = cellImage;
+            
+            
             pic.showsPageRange = YES;
             
             [pic presentAnimated:YES
                completionHandler:^(UIPrintInteractionController *printInteractionController, BOOL completed, NSError *error) {
+                   
+                   
                    if (!completed && (error != nil)) {
                        NSLog(@"Error Printing: %@", error);
                    }
