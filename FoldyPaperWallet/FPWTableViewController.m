@@ -97,6 +97,19 @@
                             action:@selector(reloadData)
                   forControlEvents:UIControlEventValueChanged];
 }
+- (void)reloadData {
+    
+    if (self.refreshControl) {
+        [self generateNewWallet];
+        [self.tableView reloadData];
+        [self.refreshControl endRefreshing];
+    }
+}
+- (void)removeLoadImage {
+    
+    UIView *viewToRemove = [self.view viewWithTag:99];
+    [viewToRemove removeFromSuperview];
+}
 - (void)pushWarningScreen {
     
     NSString *warningMessage = @"DO NOT let anyone see your private key or they can spend your bitcoins.\n\nDO NOT copy your private key to password managers or anywhere else. Paper wallets are intended for storing bitcoins offline, strictly as a physical document.\n\nThe bitcoin keys generated here are NEVER STORED in this application.";
@@ -113,22 +126,16 @@
                                                 NSLog(@"Okay Tapped");
                                             }
                                             else if (buttonIndex == controller.destructiveButtonIndex) {
+                                                [self cancelScreen];
                                                 NSLog(@"Cancel Tapped");
                                             }
                                         }];
 }
-- (void)reloadData {
+- (void)cancelScreen {
     
-    if (self.refreshControl) {
-        [self generateNewWallet];
-        [self.tableView reloadData];
-        [self.refreshControl endRefreshing];
-    }
-}
-- (void)removeLoadImage {
-    
-    UIView *viewToRemove = [self.view viewWithTag:99];
-    [viewToRemove removeFromSuperview];
+    [self.wallets removeAllObjects];
+    [self.tableView reloadData];
+    [self setGenerateScreen]; // Interesting things happen if removed
 }
 
 #pragma mark - Set custom table cell
