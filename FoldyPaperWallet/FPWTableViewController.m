@@ -7,13 +7,13 @@
 //
 
 #import "FPWTableViewController.h"
+#import <UIAlertController+Blocks/UIAlertController+Blocks.h>
 
 @interface FPWTableViewController ()
 
 @property (nonatomic, strong) FPWTableViewCell *tableCell;
 @property (weak, nonatomic) IBOutlet UIButton *printButton;
 @property (nonatomic, strong) CAGradientLayer *blend;
-
 
 @end
 
@@ -61,9 +61,9 @@
     
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1.0];
     [self.navigationController.navigationBar setTitleTextAttributes:@{ NSFontAttributeName:
-                                                                           [UIFont fontWithName:@"HelveticaNeue-Bold"
-                                                                                           size:14.0f],
-                                                                       NSForegroundColorAttributeName:[UIColor blackColor]}];
+                                                                      [UIFont fontWithName:@"HelveticaNeue-Bold"
+                                                                                      size:14.0f],
+                                                            NSForegroundColorAttributeName:[UIColor blackColor]}];
 }
 - (void)setMainNavigationBar {
     
@@ -87,7 +87,7 @@
     [self.view.layer insertSublayer:self.blend atIndex:0];
     self.blend.frame = self.view.bounds;
 }
--(void)setRefreshControl {
+- (void)setRefreshControl {
     
     // Initialize the refresh control
     self.refreshControl = [[UIRefreshControl alloc] init];
@@ -96,6 +96,26 @@
     [self.refreshControl addTarget:self
                             action:@selector(reloadData)
                   forControlEvents:UIControlEventValueChanged];
+}
+- (void)pushWarningScreen {
+    
+    NSString *warningMessage = @"DO NOT let anyone see your private key or they can spend your bitcoins.\n\nDO NOT copy your private key to password managers or anywhere else. Paper wallets are intended for storing bitcoins offline, strictly as a physical document.\n\nThe bitcoin keys generated here are NEVER STORED in this application.";
+    
+    [UIAlertController showAlertInViewController:self
+                                       withTitle:@"WARNING"
+                                         message:warningMessage
+                               cancelButtonTitle:@"Okay"
+                          destructiveButtonTitle:@"Cancel"
+                               otherButtonTitles:nil
+                                        tapBlock:^(UIAlertController *controller, UIAlertAction *action, NSInteger buttonIndex){
+                                            
+                                            if (buttonIndex == controller.cancelButtonIndex) {
+                                                NSLog(@"Okay Tapped");
+                                            }
+                                            else if (buttonIndex == controller.destructiveButtonIndex) {
+                                                NSLog(@"Cancel Tapped");
+                                            }
+                                        }];
 }
 - (void)reloadData {
     
@@ -135,10 +155,15 @@
                                                   fillColor:[UIColor blackColor]];
     cell.keyPrivateImage.image = wallet.keyPrivateImage;
 
-    [self setMainNavigationBar];
+    [self checkIfFirstKey];
     return cell;
 }
-
+- (void) checkIfFirstKey {
+    if (![self.title  isEqualToString: @"Foldy Paper Wallet"]) {
+        [self setMainNavigationBar];
+        [self pushWarningScreen];
+    }
+}
 #pragma mark - Override for copy fuctionality
 -(BOOL)tableView:(UITableView *)tableView shouldShowMenuForRowAtIndexPath:(NSIndexPath *)indexPath {
     

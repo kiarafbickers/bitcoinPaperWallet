@@ -133,6 +133,25 @@
             </objects>
             <point key="canvasLocation" x="3012" y="160"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="ab3-uS-RqM">
+            <objects>
+                <viewController id="Abk-QJ-EMF" customClass="FPWViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Urk-5z-n9f"/>
+                        <viewControllerLayoutGuide type="bottom" id="wAS-DJ-2Hw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5LU-Ku-TlG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uS2-7X-4J9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3012" y="1067"/>
+        </scene>
     </scenes>
     <resources>
         <image name="printer-60.png" width="60" height="60"/>
