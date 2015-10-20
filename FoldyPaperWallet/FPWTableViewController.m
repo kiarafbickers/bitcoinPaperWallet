@@ -91,8 +91,8 @@
     
     // Initialize the refresh control
     self.refreshControl = [[UIRefreshControl alloc] init];
-    self.refreshControl.backgroundColor = [UIColor whiteColor];
-    self.refreshControl.tintColor = [UIColor colorWithRed:0.00 green:0.48 blue:1.00 alpha:1.0];
+    self.refreshControl.backgroundColor = [UIColor colorWithRed:0.11 green:0.47 blue:0.94 alpha:1.0];
+    self.refreshControl.tintColor = [UIColor whiteColor];
     [self.refreshControl addTarget:self
                             action:@selector(reloadData)
                   forControlEvents:UIControlEventValueChanged];
