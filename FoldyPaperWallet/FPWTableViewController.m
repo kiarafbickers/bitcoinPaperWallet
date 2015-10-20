@@ -21,6 +21,7 @@
 @class FPWTableViewCell;
 
 - (void)viewDidLoad {
+
     
     [super viewDidLoad];
     [self setGenerateScreen];
@@ -58,8 +59,19 @@
     
     self.title = @"Pull to generate..";
     self.printButton.hidden = YES;
+    self.navigationController.navigationBar.translucent = NO;
     
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1.0];
+    [[self navigationController] setNavigationBarHidden:YES animated:YES];
+    
+//    // Make Navigation controller completely translucent
+//    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
+//                                                  forBarMetrics:UIBarMetricsDefault];
+//    self.navigationController.navigationBar.shadowImage = [UIImage new];
+//    self.navigationController.navigationBar.translucent = YES;
+//    self.navigationController.view.backgroundColor = [UIColor clearColor];
+    self.navigationController.navigationBar.backgroundColor = [UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1.0];
+    
+    
     [self.navigationController.navigationBar setTitleTextAttributes:@{ NSFontAttributeName:
                                                                       [UIFont fontWithName:@"HelveticaNeue-Bold"
                                                                                       size:14.0f],
@@ -91,8 +103,8 @@
     
     // Initialize the refresh control
     self.refreshControl = [[UIRefreshControl alloc] init];
-    self.refreshControl.backgroundColor = [UIColor colorWithRed:0.11 green:0.47 blue:0.94 alpha:1.0];
-    self.refreshControl.tintColor = [UIColor whiteColor];
+    self.refreshControl.backgroundColor = [UIColor whiteColor];
+    self.refreshControl.tintColor = [UIColor blackColor];
     [self.refreshControl addTarget:self
                             action:@selector(reloadData)
                   forControlEvents:UIControlEventValueChanged];
@@ -134,7 +146,17 @@
 - (void)cancelScreen {
     
     [self.wallets removeAllObjects];
-    [self.tableView reloadData];
+
+    // Animate the table view reload
+    // [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
+    [UIView transitionWithView:self.tableView
+                      duration:1.0f
+                       options:UIViewAnimationOptionTransitionCrossDissolve
+                    animations:^(void)
+     {
+         [self.tableView reloadData];
+     }
+                    completion:nil];
     [self setGenerateScreen]; // Interesting things happen if removed
 }
 

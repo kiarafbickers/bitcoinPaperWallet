@@ -7,7 +7,7 @@
         <!--Foldy Paper Wallet-->
         <scene sceneID="Qbi-f3-LPs">
             <objects>
-                <tableViewController id="zi8-P7-dfc" customClass="FPWTableViewController" sceneMemberID="viewController">
+                <tableViewController wantsFullScreenLayout="YES" extendedLayoutIncludesOpaqueBars="YES" id="zi8-P7-dfc" customClass="FPWTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="645" sectionHeaderHeight="28" sectionFooterHeight="28" id="SJ4-Ic-w0d">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -29,7 +29,7 @@
                                                     <attributedString key="attributedText">
                                                         <fragment content="Public Key">
                                                             <attributes>
-                                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <font key="NSFont" size="13" name="Helvetica"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                             </attributes>
@@ -51,7 +51,7 @@
                                                     <attributedString key="attributedText">
                                                         <fragment content="Private Key">
                                                             <attributes>
-                                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <font key="NSFont" size="13" name="Helvetica"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                             </attributes>
@@ -69,7 +69,7 @@
                                             <attributedString key="attributedText">
                                                 <fragment content="Address">
                                                     <attributes>
-                                                        <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <font key="NSFont" size="13" name="Helvetica-Light"/>
                                                     </attributes>
                                                 </fragment>
@@ -131,26 +131,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w8s-2t-nFb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3012" y="160"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="ab3-uS-RqM">
-            <objects>
-                <viewController id="Abk-QJ-EMF" customClass="FPWViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Urk-5z-n9f"/>
-                        <viewControllerLayoutGuide type="bottom" id="wAS-DJ-2Hw"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="5LU-Ku-TlG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uS2-7X-4J9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3012" y="1067"/>
+            <point key="canvasLocation" x="3064" y="160"/>
         </scene>
     </scenes>
     <resources>
