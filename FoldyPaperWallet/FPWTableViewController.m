@@ -231,6 +231,9 @@
 }
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    // Disable cell selection
+    self.tableView.allowsSelection = NO;
+    
     FPWTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CustomCell" forIndexPath:indexPath];
     FPWWallet *wallet = [self.wallets objectAtIndex:indexPath.row];
         
@@ -254,20 +257,6 @@
         [self setMainNavigationBar];
         [self pushWarningScreen];
     }
-}
-#pragma mark - Override for copy fuctionality
--(BOOL) tableView:(UITableView *)tableView shouldShowMenuForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    return YES;
-}
--(BOOL) tableView:(UITableView *)tableView canPerformAction:(SEL)action forRowAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-    
-    return action == @selector(copy:);
-}
--(void) tableView:(UITableView *)tableView performAction:(SEL)action forRowAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-    
-    FPWWallet *wallet = [self.wallets objectAtIndex:indexPath.row];
-    [UIPasteboard generalPasteboard].string = wallet.keyPublic.base58String;
 }
 
 #pragma mark - Air print
