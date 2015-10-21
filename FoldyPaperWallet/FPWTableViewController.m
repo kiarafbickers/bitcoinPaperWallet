@@ -72,10 +72,11 @@
     // Set title, hide print button, and attributes
     self.title = @"Pull To Generate";
     self.printButton.hidden = YES;
+    [self setNeedsStatusBarAppearanceUpdate];
     [self.navigationController.navigationBar setTitleTextAttributes:@{ NSFontAttributeName:
                                                                            [UIFont fontWithName:@"HelveticaNeue-Bold"
-                                                                                           size:14.0f],
-                                                                       NSForegroundColorAttributeName:[UIColor blackColor]}];
+                                                                                           size:16.0f],
+                                                                       NSForegroundColorAttributeName:[UIColor whiteColor]}];
 
     // Make Navigation controller completely translucent
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
@@ -88,6 +89,11 @@
 - (void) setMainNavigationBar {
     
     self.title = @"Foldy Paper Wallet";
+    [self setNeedsStatusBarAppearanceUpdate];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{ NSFontAttributeName:
+                                                                           [UIFont fontWithName:@"HelveticaNeue-Bold"
+                                                                                           size:16.0f],
+                                                                       NSForegroundColorAttributeName:[UIColor blackColor]}];
     self.printButton.hidden = NO;
 }
 - (void) setGradient {

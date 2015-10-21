@@ -25,6 +25,7 @@
 		E95A33E71BCEBC48007D1DBD /* UIImage+MDQRCode.m in Sources */ = {isa = PBXBuildFile; fileRef = E93E9E011BCEB4870019B7AD /* UIImage+MDQRCode.m */; };
 		E95A33E81BCEBE2D007D1DBD /* FoldyPaperWallet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E9D7101C1BCD880A00C895D5 /* FoldyPaperWallet.xcdatamodeld */; };
 		E977DDC21BCFDEB800B8D497 /* FPWTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E977DDC11BCFDEB800B8D497 /* FPWTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		E983C3731BD7CB9700EE72A2 /* UINavigationController+StatusBarStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = E983C3721BD7CB9700EE72A2 /* UINavigationController+StatusBarStyle.m */; settings = {ASSET_TAGS = (); }; };
 		E98B3C3E1BD423A500733896 /* plane.png in Resources */ = {isa = PBXBuildFile; fileRef = E98B3C3D1BD423A500733896 /* plane.png */; settings = {ASSET_TAGS = (); }; };
 		E9CFA03D1BD2AF0200D53079 /* UIImage+Resizing.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CFA03C1BD2AF0200D53079 /* UIImage+Resizing.m */; settings = {ASSET_TAGS = (); }; };
 		E9CFA03E1BD2AF8500D53079 /* UIImage+Resizing.h in Sources */ = {isa = PBXBuildFile; fileRef = E9CFA03B1BD2AF0200D53079 /* UIImage+Resizing.h */; };
@@ -76,6 +77,8 @@
 		E93E9E171BCEB4870019B7AD /* split.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = split.h; sourceTree = "<group>"; };
 		E977DDC01BCFDEB800B8D497 /* FPWTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPWTableViewCell.h; sourceTree = "<group>"; };
 		E977DDC11BCFDEB800B8D497 /* FPWTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPWTableViewCell.m; sourceTree = "<group>"; };
+		E983C3711BD7CB9700EE72A2 /* UINavigationController+StatusBarStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+StatusBarStyle.h"; sourceTree = "<group>"; };
+		E983C3721BD7CB9700EE72A2 /* UINavigationController+StatusBarStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+StatusBarStyle.m"; sourceTree = "<group>"; };
 		E98B3C3D1BD423A500733896 /* plane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plane.png; sourceTree = "<group>"; };
 		E9CFA01F1BD1C85300D53079 /* SF-UI-Display-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Black.otf"; sourceTree = "<group>"; };
 		E9CFA0201BD1C85300D53079 /* SF-UI-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Bold.otf"; sourceTree = "<group>"; };
@@ -277,6 +280,8 @@
 				E9CFA03C1BD2AF0200D53079 /* UIImage+Resizing.m */,
 				E93E9E001BCEB4870019B7AD /* UIImage+MDQRCode.h */,
 				E93E9E011BCEB4870019B7AD /* UIImage+MDQRCode.m */,
+				E983C3711BD7CB9700EE72A2 /* UINavigationController+StatusBarStyle.h */,
+				E983C3721BD7CB9700EE72A2 /* UINavigationController+StatusBarStyle.m */,
 				E93E9E091BCEB4870019B7AD /* libqrencode */,
 				E9D710111BCD880A00C895D5 /* main.m */,
 			);
@@ -474,6 +479,7 @@
 				E95A33E61BCEBC44007D1DBD /* FPWWallet.m in Sources */,
 				E95A33E41BCEBC39007D1DBD /* FPWTableViewController.m in Sources */,
 				E95A33E71BCEBC48007D1DBD /* UIImage+MDQRCode.m in Sources */,
+				E983C3731BD7CB9700EE72A2 /* UINavigationController+StatusBarStyle.m in Sources */,
 				E95A33E31BCEBC2D007D1DBD /* qrencode.c in Sources */,
 				E95A33E21BCEBC12007D1DBD /* qrinput.c in Sources */,
 				E95A33E11BCEBC02007D1DBD /* mask.c in Sources */,
