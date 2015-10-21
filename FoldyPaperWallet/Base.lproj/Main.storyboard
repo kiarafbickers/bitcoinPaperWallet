@@ -93,11 +93,21 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Foldy Paper Wallet" id="s5S-QR-cZO">
-                        <barButtonItem key="rightBarButtonItem" image="printer-60.png" style="plain" id="eoj-GR-KCt">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ZpK-ty-JUr">
-                                <rect key="frame" x="374" y="12" width="20" height="20"/>
+                        <barButtonItem key="leftBarButtonItem" image="back-Small.png" style="plain" id="0Hr-3u-94x">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="vuJ-1H-nuE">
+                                <rect key="frame" x="20" y="12" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="printer-Small.png"/>
+                                <state key="normal" image="back-Small.png"/>
+                                <connections>
+                                    <action selector="tapToGoBack:" destination="zi8-P7-dfc" eventType="touchUpInside" id="bjN-tr-GOe"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="Upload-Small-50.png" style="plain" id="eoj-GR-KCt">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ZpK-ty-JUr">
+                                <rect key="frame" x="369" y="9" width="25" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Upload-Small-50.png"/>
                                 <connections>
                                     <action selector="tapToPrint:" destination="zi8-P7-dfc" eventType="touchUpInside" id="NlT-4m-Ph2"/>
                                 </connections>
@@ -106,6 +116,7 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
+                        <outlet property="backButton" destination="vuJ-1H-nuE" id="EQy-DD-icA"/>
                         <outlet property="printButton" destination="ZpK-ty-JUr" id="kdS-9U-amh"/>
                     </connections>
                 </tableViewController>
@@ -130,12 +141,29 @@
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w8s-2t-nFb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="GaG-jR-YeM">
+                    <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" image="printer-Small.png"/>
+                    <connections>
+                        <action selector="tapToPrint:" destination="zi8-P7-dfc" eventType="touchUpInside" id="lB4-iz-Wnc"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hPW-co-HzW">
+                    <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" image="printer-Small.png"/>
+                    <connections>
+                        <action selector="tapToPrint:" destination="zi8-P7-dfc" eventType="touchUpInside" id="q36-46-9aP"/>
+                    </connections>
+                </button>
             </objects>
             <point key="canvasLocation" x="3064" y="160"/>
         </scene>
     </scenes>
     <resources>
-        <image name="printer-60.png" width="60" height="60"/>
+        <image name="Upload-Small-50.png" width="50" height="50"/>
+        <image name="back-Small.png" width="29" height="29"/>
         <image name="printer-Small.png" width="29" height="29"/>
     </resources>
 </document>

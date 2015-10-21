@@ -13,6 +13,7 @@
 
 @property (nonatomic, strong) FPWTableViewCell *tableCell;
 @property (weak, nonatomic) IBOutlet UIButton *printButton;
+@property (weak, nonatomic) IBOutlet UIButton *backButton;
 @property (nonatomic, strong) CAGradientLayer *blend;
 @property (nonatomic, strong) UIImage *gradientImage;
 @property (nonatomic, strong) UIImage *clearImage;
@@ -72,6 +73,7 @@
     // Set title, hide print button, and attributes
     self.title = @"Pull To Generate";
     self.printButton.hidden = YES;
+    self.backButton.hidden = YES;
     [self setNeedsStatusBarAppearanceUpdate];
     [self.navigationController.navigationBar setTitleTextAttributes:@{ NSFontAttributeName:
                                                                            [UIFont fontWithName:@"HelveticaNeue-Bold"
@@ -89,12 +91,13 @@
 - (void) setMainNavigationBar {
     
     self.title = @"Foldy Paper Wallet";
+    self.printButton.hidden = NO;
+    self.backButton.hidden = NO;
     [self setNeedsStatusBarAppearanceUpdate];
     [self.navigationController.navigationBar setTitleTextAttributes:@{ NSFontAttributeName:
                                                                            [UIFont fontWithName:@"HelveticaNeue-Bold"
                                                                                            size:16.0f],
                                                                        NSForegroundColorAttributeName:[UIColor blackColor]}];
-    self.printButton.hidden = NO;
 }
 - (void) setGradient {
     
@@ -263,6 +266,11 @@
         [self setMainNavigationBar];
         [self pushWarningScreen];
     }
+}
+
+
+- (IBAction)tapToGoBack:(id)sender {
+    [self cancelScreen];
 }
 
 #pragma mark - Air print
