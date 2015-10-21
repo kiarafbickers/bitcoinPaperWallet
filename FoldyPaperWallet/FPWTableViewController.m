@@ -192,12 +192,12 @@
 - (void) pushWarningScreen {
     
     // Set warning screen
-    NSString *warningMessage = @"DO NOT let anyone see your private key or they can spend your bitcoins.\n\nDO NOT copy your private key to password managers or anywhere else. Paper wallets are intended for storing bitcoins offline, strictly as a physical document.\n\nThe bitcoin keys generated here are NEVER STORED in this application.";
+    NSString *warningMessage = @"DO NOT let anyone see your private key or they can spend your bitcoins.\n\nDO NOT copy your private key to password managers or anywhere else. Paper wallets are intended for storing bitcoins offline, strictly as a physical document.\n\nThe bitcoin keys generated here are NOT STORED in this application outside of this screen.";
     
     [UIAlertController showAlertInViewController:self
                                        withTitle:@"WARNING"
                                          message:warningMessage
-                               cancelButtonTitle:@"Okay"
+                               cancelButtonTitle:@"Got it!"
                           destructiveButtonTitle:@"Cancel"
                                otherButtonTitles:nil
                                         tapBlock:^(UIAlertController *controller, UIAlertAction *action, NSInteger buttonIndex){
