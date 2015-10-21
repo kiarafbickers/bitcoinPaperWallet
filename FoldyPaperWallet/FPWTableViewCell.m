@@ -11,6 +11,7 @@
 @implementation FPWTableViewCell
 
 - (void)awakeFromNib {
+    self.contentView.backgroundColor = [UIColor clearColor];
     
     [self.contentView removeConstraints:self.contentView.constraints];
     

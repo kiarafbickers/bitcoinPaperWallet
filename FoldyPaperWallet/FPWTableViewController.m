@@ -14,6 +14,8 @@
 @property (nonatomic, strong) FPWTableViewCell *tableCell;
 @property (weak, nonatomic) IBOutlet UIButton *printButton;
 @property (nonatomic, strong) CAGradientLayer *blend;
+@property (nonatomic, strong) UIImage *gradientImage;
+@property (nonatomic, strong) UIImage *clearImage;
 
 @end
 
@@ -22,10 +24,22 @@
 
 - (void)viewDidLoad {
 
-    
     [super viewDidLoad];
+    
+    // Set up view
+    [self getClearImage];
+    [self setGradient];
     [self setGenerateScreen];
+    [self placeGradientBackround];
+    
+    // Remove gradient
+    [self.blend removeFromSuperlayer];
+    
     [self setRefreshControl];
+}
+-(void)viewDidAppear:(BOOL)animated {
+    
+    [super viewDidAppear:animated];
 }
 - (void)didReceiveMemoryWarning {
     
@@ -42,7 +56,6 @@
 - (void)setGenerateScreen {
     
     [self setInitialNavigationBar];
-    [self setGradient];
     
     // Set logo image centered on view
     UIImage *planeImage = [UIImage imageNamed:@"plane.png"];
@@ -53,42 +66,37 @@
     [self.myImageView setFrame:myFrame];
     [self.myImageView setContentMode:UIViewContentModeScaleAspectFit];
     [self.view addSubview:self.myImageView];
-
 }
-- (void)setInitialNavigationBar {
+- (void) setInitialNavigationBar {
     
-    self.title = @"Pull to generate..";
+    // Set title, hide print button, and attributes
+    self.title = @"Pull To Generate";
     self.printButton.hidden = YES;
-    self.navigationController.navigationBar.translucent = NO;
-    
-    [[self navigationController] setNavigationBarHidden:YES animated:YES];
-    
-//    // Make Navigation controller completely translucent
-//    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
-//                                                  forBarMetrics:UIBarMetricsDefault];
-//    self.navigationController.navigationBar.shadowImage = [UIImage new];
-//    self.navigationController.navigationBar.translucent = YES;
-//    self.navigationController.view.backgroundColor = [UIColor clearColor];
-    self.navigationController.navigationBar.backgroundColor = [UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1.0];
-    
-    
     [self.navigationController.navigationBar setTitleTextAttributes:@{ NSFontAttributeName:
-                                                                      [UIFont fontWithName:@"HelveticaNeue-Bold"
-                                                                                      size:14.0f],
-                                                            NSForegroundColorAttributeName:[UIColor blackColor]}];
+                                                                           [UIFont fontWithName:@"HelveticaNeue-Bold"
+                                                                                           size:14.0f],
+                                                                       NSForegroundColorAttributeName:[UIColor blackColor]}];
+
+    // Make Navigation controller completely translucent
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
+                                                  forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    self.navigationController.navigationBar.translucent = YES;
+    self.navigationController.view.backgroundColor = [UIColor clearColor];
+    self.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
 }
-- (void)setMainNavigationBar {
+- (void) setMainNavigationBar {
     
     self.title = @"Foldy Paper Wallet";
     self.printButton.hidden = NO;
 }
-- (void)setGradient{
+- (void) setGradient {
     
-    // Define top and bottom UIColors
+    // Define top and bottom UIColors in gradient
     UIColor *darkBlue = [UIColor colorWithRed:0.11 green:0.47 blue:0.94 alpha:1.0];
     UIColor *lightBlue = [UIColor colorWithRed:0.51 green:0.95 blue:0.99 alpha:1.0];
     
-    // Put into array
+    // Put colors into array
     NSArray *colors = @[ (id)darkBlue.CGColor, (id)lightBlue.CGColor];
     self.blend = [[CAGradientLayer alloc]init];
     self.blend.startPoint = CGPointMake(0.5, 0);
@@ -98,8 +106,57 @@
     // Add gradient array to view layer
     [self.view.layer insertSublayer:self.blend atIndex:0];
     self.blend.frame = self.view.bounds;
+    
+    // Convert gradient to image
+    [self getGradientImage];
 }
-- (void)setRefreshControl {
+- (UIImage *) getGradientImage {
+    
+    // Get the size of the screen
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    
+    // Create a bitmap-based graphics context and make it the current context passing in the screen size
+    UIGraphicsBeginImageContext(screenRect.size);
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    [[UIColor blackColor] set]; CGContextFillRect(ctx, screenRect);
+    
+    // Render the receiver and its sublayers into a view or use the window to get a screenshot of the entire device
+    [self.view.layer renderInContext:ctx];
+    self.gradientImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    // End the bitmap-based graphics context
+    UIGraphicsEndImageContext();
+    
+    return self.gradientImage;
+}
+- (void) placeGradientBackround {
+    
+    self.tableView.backgroundView = [[UIImageView alloc] initWithImage:self.gradientImage];
+}
+- (UIImage *) getClearImage {
+    
+    //Get the size of the screen
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    
+    //Create a bitmap-based graphics context and make it the current context passing in the screen size
+    UIGraphicsBeginImageContext(screenRect.size);
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    [[UIColor blackColor] set]; CGContextFillRect(ctx, screenRect);
+    
+    // Render the receiver and its sublayers into the specified context choose a view or use the window to get a screenshot of the entire device
+    [self.view.layer renderInContext:ctx];
+    self.gradientImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    //End the bitmap-based graphics context
+    UIGraphicsEndImageContext();
+    
+    return self.clearImage;
+}
+- (void) placeClearBackround {
+    
+    self.tableView.backgroundView = [[UIImageView alloc] initWithImage:self.clearImage];
+}
+- (void) setRefreshControl {
     
     // Initialize the refresh control
     self.refreshControl = [[UIRefreshControl alloc] init];
@@ -109,7 +166,7 @@
                             action:@selector(reloadData)
                   forControlEvents:UIControlEventValueChanged];
 }
-- (void)reloadData {
+- (void) reloadData {
     
     if (self.refreshControl) {
         [self generateNewWallet];
@@ -117,13 +174,15 @@
         [self.refreshControl endRefreshing];
     }
 }
-- (void)removeLoadImage {
+- (void) removeLoadImage {
     
+    // Remove plane image
     UIView *viewToRemove = [self.view viewWithTag:99];
     [viewToRemove removeFromSuperview];
 }
-- (void)pushWarningScreen {
+- (void) pushWarningScreen {
     
+    // Set warning screen
     NSString *warningMessage = @"DO NOT let anyone see your private key or they can spend your bitcoins.\n\nDO NOT copy your private key to password managers or anywhere else. Paper wallets are intended for storing bitcoins offline, strictly as a physical document.\n\nThe bitcoin keys generated here are NEVER STORED in this application.";
     
     [UIAlertController showAlertInViewController:self
@@ -138,30 +197,31 @@
                                                 NSLog(@"Okay Tapped");
                                             }
                                             else if (buttonIndex == controller.destructiveButtonIndex) {
+                                                // [self placeClearBackround];
                                                 [self cancelScreen];
                                                 NSLog(@"Cancel Tapped");
                                             }
                                         }];
 }
-- (void)cancelScreen {
-    
-    [self.wallets removeAllObjects];
+- (void) cancelScreen {
 
+    [self.wallets removeAllObjects];
+    [self placeGradientBackround];
+    
     // Animate the table view reload
     // [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
     [UIView transitionWithView:self.tableView
                       duration:1.0f
                        options:UIViewAnimationOptionTransitionCrossDissolve
-                    animations:^(void)
-     {
+                    animations:^(void) {
          [self.tableView reloadData];
      }
                     completion:nil];
-    [self setGenerateScreen]; // Interesting things happen if removed
+    [self setGenerateScreen];
 }
 
 #pragma mark - Set custom table cell
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+- (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
     
     return 1;
 }
@@ -169,7 +229,7 @@
     
     return self.wallets.count;
 }
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     FPWTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CustomCell" forIndexPath:indexPath];
     FPWWallet *wallet = [self.wallets objectAtIndex:indexPath.row];
@@ -188,28 +248,30 @@
     return cell;
 }
 - (void) checkIfFirstKey {
+    
     if (![self.title  isEqualToString: @"Foldy Paper Wallet"]) {
+        [self placeClearBackround];
         [self setMainNavigationBar];
         [self pushWarningScreen];
     }
 }
 #pragma mark - Override for copy fuctionality
--(BOOL)tableView:(UITableView *)tableView shouldShowMenuForRowAtIndexPath:(NSIndexPath *)indexPath {
+-(BOOL) tableView:(UITableView *)tableView shouldShowMenuForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     return YES;
 }
--(BOOL)tableView:(UITableView *)tableView canPerformAction:(SEL)action forRowAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
+-(BOOL) tableView:(UITableView *)tableView canPerformAction:(SEL)action forRowAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
     
     return action == @selector(copy:);
 }
--(void)tableView:(UITableView *)tableView performAction:(SEL)action forRowAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
+-(void) tableView:(UITableView *)tableView performAction:(SEL)action forRowAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
     
     FPWWallet *wallet = [self.wallets objectAtIndex:indexPath.row];
     [UIPasteboard generalPasteboard].string = wallet.keyPublic.base58String;
 }
 
 #pragma mark - Air print
-- (IBAction)tapToPrint:(id)sender {
+- (IBAction) tapToPrint:(id)sender {
     {
         
         if ([UIPrintInteractionController isPrintingAvailable]) {
