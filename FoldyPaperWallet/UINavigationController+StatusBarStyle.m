@@ -23,12 +23,17 @@
 - (UIStatusBarStyle)preferredStatusBarStyle {
     
     if ([self.title isEqualToString:@"Foldy Paper Wallet"]) {
+        
         // Make Navigation controller white
         self.navigationBar.backgroundColor = [UIColor whiteColor];
+        
+        // Remove transparentcy prefrence on inital screen
         self.navigationBar.translucent = NO;
+        
         return UIStatusBarStyleDefault;
     }
     else if ([self.title isEqualToString:@"Pull To Generate"]) {
+        
         return UIStatusBarStyleLightContent;
     }
     return UIStatusBarStyleDefault;
@@ -38,15 +43,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

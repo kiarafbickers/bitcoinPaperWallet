@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3458088EC2BD62891CD02D0D /* libPods-FoldyPaperWallet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 23B3788031AAE2F3BA7B5D9C /* libPods-FoldyPaperWallet.a */; };
-		E9012EEA1BD362F4008FB34A /* printer-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = E9012EE01BD362F4008FB34A /* printer-Small.png */; settings = {ASSET_TAGS = (); }; };
-		E9012EEB1BD362F4008FB34A /* printer-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E9012EE11BD362F4008FB34A /* printer-Small@2x.png */; settings = {ASSET_TAGS = (); }; };
-		E9012EEC1BD362F4008FB34A /* printer-Small@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E9012EE21BD362F4008FB34A /* printer-Small@3x.png */; settings = {ASSET_TAGS = (); }; };
 		E95A33DB1BCEBBAE007D1DBD /* qrspec.c in Sources */ = {isa = PBXBuildFile; fileRef = E93E9E121BCEB4870019B7AD /* qrspec.c */; };
 		E95A33DC1BCEBBB9007D1DBD /* split.c in Sources */ = {isa = PBXBuildFile; fileRef = E93E9E161BCEB4870019B7AD /* split.c */; };
 		E95A33DD1BCEBBC3007D1DBD /* bitstream.c in Sources */ = {isa = PBXBuildFile; fileRef = E93E9E0A1BCEB4870019B7AD /* bitstream.c */; };
@@ -25,7 +22,6 @@
 		E95A33E71BCEBC48007D1DBD /* UIImage+MDQRCode.m in Sources */ = {isa = PBXBuildFile; fileRef = E93E9E011BCEB4870019B7AD /* UIImage+MDQRCode.m */; };
 		E95A33E81BCEBE2D007D1DBD /* FoldyPaperWallet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E9D7101C1BCD880A00C895D5 /* FoldyPaperWallet.xcdatamodeld */; };
 		E977DDC21BCFDEB800B8D497 /* FPWTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E977DDC11BCFDEB800B8D497 /* FPWTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		E983C3731BD7CB9700EE72A2 /* UINavigationController+StatusBarStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = E983C3721BD7CB9700EE72A2 /* UINavigationController+StatusBarStyle.m */; settings = {ASSET_TAGS = (); }; };
 		E983C37E1BD7CF2700EE72A2 /* back-40.png in Resources */ = {isa = PBXBuildFile; fileRef = E983C3741BD7CF2700EE72A2 /* back-40.png */; settings = {ASSET_TAGS = (); }; };
 		E983C37F1BD7CF2700EE72A2 /* back-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E983C3751BD7CF2700EE72A2 /* back-40@2x.png */; settings = {ASSET_TAGS = (); }; };
 		E983C3801BD7CF2700EE72A2 /* back-40@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E983C3761BD7CF2700EE72A2 /* back-40@3x.png */; settings = {ASSET_TAGS = (); }; };
@@ -51,6 +47,7 @@
 		E9D710231BCD880A00C895D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9D710211BCD880A00C895D5 /* LaunchScreen.storyboard */; };
 		E9D7102E1BCD880A00C895D5 /* FoldyPaperWalletTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D7102D1BCD880A00C895D5 /* FoldyPaperWalletTests.m */; };
 		E9D710391BCD880A00C895D5 /* FoldyPaperWalletUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D710381BCD880A00C895D5 /* FoldyPaperWalletUITests.m */; };
+		E9F630341BD9371500ABDFA0 /* UINavigationController+StatusBarStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F630331BD9371500ABDFA0 /* UINavigationController+StatusBarStyle.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,9 +70,6 @@
 /* Begin PBXFileReference section */
 		23B3788031AAE2F3BA7B5D9C /* libPods-FoldyPaperWallet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FoldyPaperWallet.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0BDF885479AAA13F6DD48F1 /* Pods-FoldyPaperWallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoldyPaperWallet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoldyPaperWallet/Pods-FoldyPaperWallet.debug.xcconfig"; sourceTree = "<group>"; };
-		E9012EE01BD362F4008FB34A /* printer-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "printer-Small.png"; sourceTree = "<group>"; };
-		E9012EE11BD362F4008FB34A /* printer-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "printer-Small@2x.png"; sourceTree = "<group>"; };
-		E9012EE21BD362F4008FB34A /* printer-Small@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "printer-Small@3x.png"; sourceTree = "<group>"; };
 		E93E9E001BCEB4870019B7AD /* UIImage+MDQRCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MDQRCode.h"; sourceTree = "<group>"; };
 		E93E9E011BCEB4870019B7AD /* UIImage+MDQRCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MDQRCode.m"; sourceTree = "<group>"; };
 		E93E9E0A1BCEB4870019B7AD /* bitstream.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bitstream.c; sourceTree = "<group>"; };
@@ -95,7 +89,6 @@
 		E977DDC01BCFDEB800B8D497 /* FPWTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPWTableViewCell.h; sourceTree = "<group>"; };
 		E977DDC11BCFDEB800B8D497 /* FPWTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPWTableViewCell.m; sourceTree = "<group>"; };
 		E983C3711BD7CB9700EE72A2 /* UINavigationController+StatusBarStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+StatusBarStyle.h"; sourceTree = "<group>"; };
-		E983C3721BD7CB9700EE72A2 /* UINavigationController+StatusBarStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+StatusBarStyle.m"; sourceTree = "<group>"; };
 		E983C3741BD7CF2700EE72A2 /* back-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-40.png"; sourceTree = "<group>"; };
 		E983C3751BD7CF2700EE72A2 /* back-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-40@2x.png"; sourceTree = "<group>"; };
 		E983C3761BD7CF2700EE72A2 /* back-40@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-40@3x.png"; sourceTree = "<group>"; };
@@ -114,27 +107,6 @@
 		E983C38D1BD7D16500EE72A2 /* Upload.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Upload.png; sourceTree = "<group>"; };
 		E983C38E1BD7D16500EE72A2 /* Upload@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Upload@2x.png"; sourceTree = "<group>"; };
 		E98B3C3D1BD423A500733896 /* plane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plane.png; sourceTree = "<group>"; };
-		E9CFA01F1BD1C85300D53079 /* SF-UI-Display-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Black.otf"; sourceTree = "<group>"; };
-		E9CFA0201BD1C85300D53079 /* SF-UI-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Bold.otf"; sourceTree = "<group>"; };
-		E9CFA0211BD1C85300D53079 /* SF-UI-Display-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Heavy.otf"; sourceTree = "<group>"; };
-		E9CFA0221BD1C85300D53079 /* SF-UI-Display-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Light.otf"; sourceTree = "<group>"; };
-		E9CFA0231BD1C85300D53079 /* SF-UI-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Medium.otf"; sourceTree = "<group>"; };
-		E9CFA0241BD1C85300D53079 /* SF-UI-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Regular.otf"; sourceTree = "<group>"; };
-		E9CFA0251BD1C85300D53079 /* SF-UI-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Semibold.otf"; sourceTree = "<group>"; };
-		E9CFA0261BD1C85300D53079 /* SF-UI-Display-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Thin.otf"; sourceTree = "<group>"; };
-		E9CFA0271BD1C85300D53079 /* SF-UI-Display-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Ultralight.otf"; sourceTree = "<group>"; };
-		E9CFA0281BD1C85300D53079 /* SF-UI-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Bold.otf"; sourceTree = "<group>"; };
-		E9CFA0291BD1C85300D53079 /* SF-UI-Text-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-BoldItalic.otf"; sourceTree = "<group>"; };
-		E9CFA02A1BD1C85300D53079 /* SF-UI-Text-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Heavy.otf"; sourceTree = "<group>"; };
-		E9CFA02B1BD1C85300D53079 /* SF-UI-Text-HeavyItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-HeavyItalic.otf"; sourceTree = "<group>"; };
-		E9CFA02C1BD1C85300D53079 /* SF-UI-Text-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Light.otf"; sourceTree = "<group>"; };
-		E9CFA02D1BD1C85300D53079 /* SF-UI-Text-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-LightItalic.otf"; sourceTree = "<group>"; };
-		E9CFA02E1BD1C85300D53079 /* SF-UI-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Medium.otf"; sourceTree = "<group>"; };
-		E9CFA02F1BD1C85300D53079 /* SF-UI-Text-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-MediumItalic.otf"; sourceTree = "<group>"; };
-		E9CFA0301BD1C85300D53079 /* SF-UI-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Regular.otf"; sourceTree = "<group>"; };
-		E9CFA0311BD1C85300D53079 /* SF-UI-Text-RegularItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-RegularItalic.otf"; sourceTree = "<group>"; };
-		E9CFA0321BD1C85300D53079 /* SF-UI-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Semibold.otf"; sourceTree = "<group>"; };
-		E9CFA0331BD1C85300D53079 /* SF-UI-Text-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-SemiboldItalic.otf"; sourceTree = "<group>"; };
 		E9CFA03B1BD2AF0200D53079 /* UIImage+Resizing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resizing.h"; sourceTree = "<group>"; };
 		E9CFA03C1BD2AF0200D53079 /* UIImage+Resizing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resizing.m"; sourceTree = "<group>"; };
 		E9D7100D1BCD880A00C895D5 /* FoldyPaperWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoldyPaperWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,6 +128,7 @@
 		E9D710471BCD89F500C895D5 /* FPWTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPWTableViewController.m; sourceTree = "<group>"; };
 		E9D710491BCD8DF400C895D5 /* FPWWallet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPWWallet.h; sourceTree = "<group>"; };
 		E9D7104A1BCD8DF400C895D5 /* FPWWallet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPWWallet.m; sourceTree = "<group>"; };
+		E9F630331BD9371500ABDFA0 /* UINavigationController+StatusBarStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+StatusBarStyle.m"; sourceTree = "<group>"; };
 		F6EB17AB7B2A76F6F2201878 /* Pods-FoldyPaperWallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoldyPaperWallet.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoldyPaperWallet/Pods-FoldyPaperWallet.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -223,9 +196,6 @@
 				E983C37C1BD7CF2700EE72A2 /* back-Small@2x.png */,
 				E983C37D1BD7CF2700EE72A2 /* back-Small@3x.png */,
 				E98B3C3D1BD423A500733896 /* plane.png */,
-				E9012EE01BD362F4008FB34A /* printer-Small.png */,
-				E9012EE11BD362F4008FB34A /* printer-Small@2x.png */,
-				E9012EE21BD362F4008FB34A /* printer-Small@3x.png */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -254,27 +224,6 @@
 		E9CFA01E1BD1C83B00D53079 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				E9CFA01F1BD1C85300D53079 /* SF-UI-Display-Black.otf */,
-				E9CFA0201BD1C85300D53079 /* SF-UI-Display-Bold.otf */,
-				E9CFA0211BD1C85300D53079 /* SF-UI-Display-Heavy.otf */,
-				E9CFA0221BD1C85300D53079 /* SF-UI-Display-Light.otf */,
-				E9CFA0231BD1C85300D53079 /* SF-UI-Display-Medium.otf */,
-				E9CFA0241BD1C85300D53079 /* SF-UI-Display-Regular.otf */,
-				E9CFA0251BD1C85300D53079 /* SF-UI-Display-Semibold.otf */,
-				E9CFA0261BD1C85300D53079 /* SF-UI-Display-Thin.otf */,
-				E9CFA0271BD1C85300D53079 /* SF-UI-Display-Ultralight.otf */,
-				E9CFA0281BD1C85300D53079 /* SF-UI-Text-Bold.otf */,
-				E9CFA0291BD1C85300D53079 /* SF-UI-Text-BoldItalic.otf */,
-				E9CFA02A1BD1C85300D53079 /* SF-UI-Text-Heavy.otf */,
-				E9CFA02B1BD1C85300D53079 /* SF-UI-Text-HeavyItalic.otf */,
-				E9CFA02C1BD1C85300D53079 /* SF-UI-Text-Light.otf */,
-				E9CFA02D1BD1C85300D53079 /* SF-UI-Text-LightItalic.otf */,
-				E9CFA02E1BD1C85300D53079 /* SF-UI-Text-Medium.otf */,
-				E9CFA02F1BD1C85300D53079 /* SF-UI-Text-MediumItalic.otf */,
-				E9CFA0301BD1C85300D53079 /* SF-UI-Text-Regular.otf */,
-				E9CFA0311BD1C85300D53079 /* SF-UI-Text-RegularItalic.otf */,
-				E9CFA0321BD1C85300D53079 /* SF-UI-Text-Semibold.otf */,
-				E9CFA0331BD1C85300D53079 /* SF-UI-Text-SemiboldItalic.otf */,
 			);
 			name = Fonts;
 			sourceTree = "<group>";
@@ -332,7 +281,7 @@
 				E93E9E001BCEB4870019B7AD /* UIImage+MDQRCode.h */,
 				E93E9E011BCEB4870019B7AD /* UIImage+MDQRCode.m */,
 				E983C3711BD7CB9700EE72A2 /* UINavigationController+StatusBarStyle.h */,
-				E983C3721BD7CB9700EE72A2 /* UINavigationController+StatusBarStyle.m */,
+				E9F630331BD9371500ABDFA0 /* UINavigationController+StatusBarStyle.m */,
 				E93E9E091BCEB4870019B7AD /* libqrencode */,
 				E9D710111BCD880A00C895D5 /* main.m */,
 			);
@@ -468,9 +417,7 @@
 				E983C3831BD7CF2700EE72A2 /* back-76.png in Resources */,
 				E983C37E1BD7CF2700EE72A2 /* back-40.png in Resources */,
 				E983C3911BD7D16500EE72A2 /* Upload-72@2x.png in Resources */,
-				E9012EEA1BD362F4008FB34A /* printer-Small.png in Resources */,
 				E983C3841BD7CF2700EE72A2 /* back-76@2x.png in Resources */,
-				E9012EEC1BD362F4008FB34A /* printer-Small@3x.png in Resources */,
 				E983C3921BD7D16500EE72A2 /* Upload-Small-50.png in Resources */,
 				E983C37F1BD7CF2700EE72A2 /* back-40@2x.png in Resources */,
 				E983C3901BD7D16500EE72A2 /* Upload-72.png in Resources */,
@@ -482,7 +429,6 @@
 				E983C3801BD7CF2700EE72A2 /* back-40@3x.png in Resources */,
 				E9D710231BCD880A00C895D5 /* LaunchScreen.storyboard in Resources */,
 				E9D710201BCD880A00C895D5 /* Assets.xcassets in Resources */,
-				E9012EEB1BD362F4008FB34A /* printer-Small@2x.png in Resources */,
 				E983C3931BD7D16500EE72A2 /* Upload-Small-50@2x.png in Resources */,
 				E983C3861BD7CF2700EE72A2 /* back-Small@2x.png in Resources */,
 				E98B3C3E1BD423A500733896 /* plane.png in Resources */,
@@ -548,7 +494,7 @@
 				E95A33E61BCEBC44007D1DBD /* FPWWallet.m in Sources */,
 				E95A33E41BCEBC39007D1DBD /* FPWTableViewController.m in Sources */,
 				E95A33E71BCEBC48007D1DBD /* UIImage+MDQRCode.m in Sources */,
-				E983C3731BD7CB9700EE72A2 /* UINavigationController+StatusBarStyle.m in Sources */,
+				E9F630341BD9371500ABDFA0 /* UINavigationController+StatusBarStyle.m in Sources */,
 				E95A33E31BCEBC2D007D1DBD /* qrencode.c in Sources */,
 				E95A33E21BCEBC12007D1DBD /* qrinput.c in Sources */,
 				E95A33E11BCEBC02007D1DBD /* mask.c in Sources */,

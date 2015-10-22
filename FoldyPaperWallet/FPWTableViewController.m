@@ -17,6 +17,7 @@
 @property (nonatomic, strong) CAGradientLayer *blend;
 @property (nonatomic, strong) UIImage *gradientImage;
 @property (nonatomic, strong) UIImage *clearImage;
+@property (nonatomic) CGFloat lastOffset;
 
 @end
 
