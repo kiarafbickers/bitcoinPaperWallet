@@ -17,7 +17,6 @@ Docs
 *.hmap
 *.ipa
 *.xcuserstate
-*.png
 
 # CocoaPods
 #
