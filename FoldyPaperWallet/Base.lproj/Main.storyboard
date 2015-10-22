@@ -22,7 +22,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aAu-R0-tHb">
-                                            <rect key="frame" x="107" y="54" width="200" height="215"/>
+                                            <rect key="frame" x="107" y="334" width="200" height="215"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c13-vi-MUG">
                                                     <rect key="frame" x="0.0" y="0.0" width="200" height="15"/>
@@ -44,7 +44,7 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7Da-ve-Sdv">
-                                            <rect key="frame" x="107" y="334" width="200" height="215"/>
+                                            <rect key="frame" x="107" y="48" width="200" height="215"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTU-Gv-ad1">
                                                     <rect key="frame" x="0.0" y="0.0" width="200" height="15"/>
@@ -64,13 +64,27 @@
                                                 </imageView>
                                             </subviews>
                                         </stackView>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8AT-ma-geB">
-                                            <rect key="frame" x="107" y="271" width="200" height="12"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tok-rf-dgx">
+                                            <rect key="frame" x="107" y="266" width="200" height="30"/>
                                             <attributedString key="attributedText">
-                                                <fragment content="Address">
+                                                <fragment content="private key address">
                                                     <attributes>
                                                         <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <font key="NSFont" size="13" name="Helvetica-Light"/>
+                                                        <font key="NSFont" size="12" name="Helvetica-Light"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8AT-ma-geB">
+                                            <rect key="frame" x="107" y="551" width="200" height="30"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="public address">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="12" name="Helvetica-Light"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                     </attributes>
                                                 </fragment>
                                             </attributedString>
@@ -80,6 +94,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="keyAddress" destination="8AT-ma-geB" id="r4T-pT-gzf"/>
+                                    <outlet property="keyPrivateAddress" destination="tok-rf-dgx" id="VR5-ed-vTi"/>
                                     <outlet property="keyPrivateImage" destination="ED4-bj-9R1" id="Qea-9I-3pm"/>
                                     <outlet property="keyPrivateLabel" destination="aTU-Gv-ad1" id="SEF-Ym-etH"/>
                                     <outlet property="keyPublicImage" destination="RW7-uH-KKS" id="koP-V4-tqA"/>

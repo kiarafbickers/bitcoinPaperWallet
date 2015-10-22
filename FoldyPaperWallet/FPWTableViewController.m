@@ -245,16 +245,27 @@
     
     FPWTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CustomCell" forIndexPath:indexPath];
     FPWWallet *wallet = [self.wallets objectAtIndex:indexPath.row];
-        
+    
+    // PRIVATE KEY
+    wallet.keyPrivateImage = [UIImage mdQRCodeForString:wallet.keyPrivate.base58String
+                                                   size:cell.keyPrivateImage.bounds.size.width
+                                              fillColor:[UIColor blackColor]];
+    cell.keyPrivateImage.image = wallet.keyPrivateImage;
+    
+    // Split key into 2 lines
+    NSUInteger middle = wallet.keyPrivate.base58String.length / 2;
+    NSString *firstHalf = [wallet.keyPrivate.base58String substringToIndex:middle];
+    NSString *secondHalf = [wallet.keyPrivate.base58String substringFromIndex:middle];
+    NSString *privateLabel = [NSString stringWithFormat:@"%@\n%@", firstHalf, secondHalf];
+    cell.keyPrivateAddress.text = privateLabel;
+    
+    
+    // PUBLIC KEY
     wallet.keyPublicImage = [UIImage mdQRCodeForString:wallet.keyPublic.base58String
                                                       size:cell.keyPublicImage.bounds.size.width
                                                  fillColor:[UIColor blackColor]];
     cell.keyPublicImage.image = wallet.keyPublicImage;
     cell.keyAddress.text = wallet.keyPublic.base58String;
-    wallet.keyPrivateImage = [UIImage mdQRCodeForString:wallet.keyPrivate.base58String
-                                                       size:cell.keyPrivateImage.bounds.size.width
-                                                  fillColor:[UIColor blackColor]];
-    cell.keyPrivateImage.image = wallet.keyPrivateImage;
 
     [self checkIfFirstKey];
     return cell;
