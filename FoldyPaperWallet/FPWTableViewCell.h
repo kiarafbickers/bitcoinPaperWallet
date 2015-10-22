@@ -16,5 +16,6 @@
 @property (nonatomic, weak) IBOutlet UILabel *keyAddress;
 @property (nonatomic, weak) IBOutlet UILabel *keyPrivateLabel;
 @property (nonatomic, weak) IBOutlet UIImageView *keyPrivateImage;
+@property (nonatomic, weak) IBOutlet UILabel *keyPrivateAddress;
 
 @end
