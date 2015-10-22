@@ -23,6 +23,9 @@
 - (UIStatusBarStyle)preferredStatusBarStyle {
     
     if ([self.title isEqualToString:@"Foldy Paper Wallet"]) {
+        // Make Navigation controller white
+        self.navigationBar.backgroundColor = [UIColor whiteColor];
+        self.navigationBar.translucent = NO;
         return UIStatusBarStyleDefault;
     }
     else if ([self.title isEqualToString:@"Pull To Generate"]) {

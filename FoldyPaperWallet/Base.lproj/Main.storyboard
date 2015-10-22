@@ -143,6 +143,7 @@
         <scene sceneID="nYx-ik-fhg">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="P1x-U9-Ad1" customClass="UINavigationController_StatusBarStyle" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <tabBarItem key="tabBarItem" title="Item" id="mDb-d1-22O"/>
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>

@@ -98,6 +98,7 @@
                                                                            [UIFont fontWithName:@"HelveticaNeue-Bold"
                                                                                            size:16.0f],
                                                                        NSForegroundColorAttributeName:[UIColor blackColor]}];
+
 }
 - (void) setGradient {
     
