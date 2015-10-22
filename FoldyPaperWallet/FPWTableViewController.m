@@ -19,6 +19,11 @@
 @property (nonatomic, strong) UIImage *clearImage;
 @property (nonatomic) CGFloat lastOffset;
 
+#define isiPhone  (UI_USER_INTERFACE_IDIOM() == 0)?TRUE:FALSE
+#define isiPhone5  ([[UIScreen mainScreen] bounds].size.height == 568)?TRUE:FALSE
+#define isiPhone6  ([[UIScreen mainScreen] bounds].size.height == 667)?TRUE:FALSE
+#define isiPhone6Plus  ([[UIScreen mainScreen] bounds].size.height == 736)?TRUE:FALSE
+
 @end
 
 @implementation FPWTableViewController
@@ -63,9 +68,32 @@
     UIImage *planeImage = [UIImage imageNamed:@"plane.png"];
     self.myImageView = [[UIImageView alloc] initWithImage:planeImage];
     self.myImageView.tag = 99;
-    CGRect myFrame = CGRectMake(100.0f, 168.0f, self.myImageView.frame.size.width * 0.6f,
-                                self.myImageView.frame.size.height * 0.6f);
-    [self.myImageView setFrame:myFrame];
+
+    // Set plane
+    if(isiPhone) {
+        if (isiPhone5) {
+            CGRect myFrame = CGRectMake(87.0f, 168.0f, self.myImageView.frame.size.width * 0.6f,
+                                        self.myImageView.frame.size.height * 0.6f);
+            [self.myImageView setFrame:myFrame];
+        }
+        else if (isiPhone6) {
+            CGRect myFrame = CGRectMake(115.0f, 168.0f, self.myImageView.frame.size.width * 0.6f,
+                                        self.myImageView.frame.size.height * 0.6f);
+            [self.myImageView setFrame:myFrame];
+        }
+        else if (isiPhone6Plus) {
+            CGRect myFrame = CGRectMake(127.0f, 168.0f, self.myImageView.frame.size.width * 0.7f,
+                                        self.myImageView.frame.size.height * 0.7f);
+            [self.myImageView setFrame:myFrame];
+        }
+        else {
+            // Treat as iPhone4
+            CGRect myFrame = CGRectMake(97.0f, 110.0f, self.myImageView.frame.size.width * 0.5f,
+                                        self.myImageView.frame.size.height * 0.5f);
+            [self.myImageView setFrame:myFrame];
+        }
+    }
+    
     [self.myImageView setContentMode:UIViewContentModeScaleAspectFit];
     [self.view addSubview:self.myImageView];
 }
@@ -194,7 +222,7 @@
 - (void) pushWarningScreen {
     
     // Set warning screen
-    NSString *warningMessage = @"DO NOT let anyone see your private key or they can spend your bitcoins.\n\nDO NOT copy your private key to password managers or anywhere else. Paper wallets are intended for storing bitcoins offline, strictly as a physical document.\n\nThe bitcoin keys generated here are NOT STORED in this application outside of this screen.";
+    NSString *warningMessage = @"DO NOT let anyone see your private key or they can spend your bitcoins.\n\nDO NOT copy your private key to password managers or anywhere else. Paper wallets are intended for storing bitcoins offline, strictly as a physical document.\n\nThe bitcoin keys generated here are NOT PERMANENTLY STORED in this application.";
     
     [UIAlertController showAlertInViewController:self
                                        withTitle:@"WARNING"

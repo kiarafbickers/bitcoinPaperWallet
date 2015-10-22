@@ -81,27 +81,33 @@
 	}
 	
 	// create context
-	CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+//	CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
 	
 	// The constants for specifying the alpha channel information are declared with the CGImageAlphaInfo type but can be passed to this parameter safely.
 
-	CGContextRef ctx = CGBitmapContextCreate(0, size, size, 8, size * 4, colorSpace, (CGBitmapInfo)kCGImageAlphaPremultipliedLast);
+//	CGContextRef ctx = CGBitmapContextCreate(0, size, size, 8, size * 4, colorSpace, (CGBitmapInfo)kCGImageAlphaPremultipliedLast);
+    
+    UIGraphicsBeginImageContext(CGSizeMake(size, size));
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
 	
 	CGAffineTransform translateTransform = CGAffineTransformMakeTranslation(0, -size);
 	CGAffineTransform scaleTransform = CGAffineTransformMakeScale(1, -1);
 	CGContextConcatCTM(ctx, CGAffineTransformConcat(translateTransform, scaleTransform));
-	
+		
 	// draw QR on this context
 	[self mdDrawQRCode:code context:ctx size:size fillColor:fillColor];
 	
 	// get image
-	CGImageRef qrCGImage = CGBitmapContextCreateImage(ctx);
-	UIImage * qrImage = [UIImage imageWithCGImage:qrCGImage];
+//	CGImageRef qrCGImage = CGBitmapContextCreateImage(ctx);
+//	UIImage * qrImage = [UIImage imageWithCGImage:qrCGImage];
+    
+    UIImage *qrImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
 	
 	// free memory
-	CGContextRelease(ctx);
-	CGImageRelease(qrCGImage);
-	CGColorSpaceRelease(colorSpace);
+//	CGContextRelease(ctx);
+//	CGImageRelease(qrCGImage);
+//	CGColorSpaceRelease(colorSpace);
 	QRcode_free(code);
 	return qrImage;
 }
