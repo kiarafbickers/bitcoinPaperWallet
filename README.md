@@ -1,6 +1,9 @@
 
  ![](https://github.com/kiaraRobles/bitcoinPaperWallet/blob/master/FoldyPaperWallet/appIcon.png?raw=true) Foldy Paper Wallet
 ----------------------------------
+
+![](http://imgur.com/kvUzdMr.png)
+
 Generate a Bitcoin paper wallet on your iPhone, without a browser. The Foldy Wallet app will generate both, a private key and a public bitcoin address. That can then be sent to your printer via Apples Air Print.
 
 - Control your own private keys
