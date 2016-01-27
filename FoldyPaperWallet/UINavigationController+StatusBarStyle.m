@@ -26,6 +26,7 @@
         
         // Make Navigation controller white
         self.navigationBar.backgroundColor = [UIColor whiteColor];
+        self.navigationController.navigationBar.barTintColor = [UIColor redColor];
         
         // Remove transparentcy prefrence on inital screen
         self.navigationBar.translucent = NO;

@@ -114,7 +114,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="back-Small.png"/>
                                 <connections>
-                                    <action selector="tapToGoBack:" destination="zi8-P7-dfc" eventType="touchUpInside" id="bjN-tr-GOe"/>
+                                    <action selector="tapToGoBack:" destination="zi8-P7-dfc" eventType="touchUpInside" id="0Ny-ug-az3"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -124,15 +124,15 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Upload-Small-50.png"/>
                                 <connections>
-                                    <action selector="tapToPrint:" destination="zi8-P7-dfc" eventType="touchUpInside" id="NlT-4m-Ph2"/>
+                                    <action selector="tapToPrint:" destination="zi8-P7-dfc" eventType="touchUpInside" id="AaC-0O-fUa"/>
                                 </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
-                        <outlet property="backButton" destination="vuJ-1H-nuE" id="EQy-DD-icA"/>
-                        <outlet property="printButton" destination="ZpK-ty-JUr" id="kdS-9U-amh"/>
+                        <outlet property="backButton" destination="vuJ-1H-nuE" id="emc-4r-6zH"/>
+                        <outlet property="printButton" destination="ZpK-ty-JUr" id="t4A-tf-XXZ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QIp-4E-Ehl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -157,22 +157,6 @@
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w8s-2t-nFb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="GaG-jR-YeM">
-                    <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" image="printer-Small.png"/>
-                    <connections>
-                        <action selector="tapToPrint:" destination="zi8-P7-dfc" eventType="touchUpInside" id="lB4-iz-Wnc"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hPW-co-HzW">
-                    <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" image="printer-Small.png"/>
-                    <connections>
-                        <action selector="tapToPrint:" destination="zi8-P7-dfc" eventType="touchUpInside" id="q36-46-9aP"/>
-                    </connections>
-                </button>
             </objects>
             <point key="canvasLocation" x="3064" y="160"/>
         </scene>
@@ -180,6 +164,5 @@
     <resources>
         <image name="Upload-Small-50.png" width="50" height="50"/>
         <image name="back-Small.png" width="29" height="29"/>
-        <image name="printer-Small.png" width="29" height="29"/>
     </resources>
 </document>
