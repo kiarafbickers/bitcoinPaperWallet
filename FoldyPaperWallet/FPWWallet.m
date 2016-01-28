@@ -7,7 +7,9 @@
 //
 
 #import "FPWWallet.h"
+#import "UIImage+MDQRCode.h"
 #import "NSData+BTCData.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface FPWWallet ( )
 
@@ -19,7 +21,8 @@
 
 @implementation FPWWallet
 
-- (instancetype)initWithKey:(BTCKey *)key {
+- (instancetype)initWithKey:(BTCKey *)key
+{
     if (self) {
         _key = key;
         _keyPrivate = key.privateKeyAddress;
@@ -27,14 +30,16 @@
     }
     return self;
 }
--(BTCPrivateKeyAddress *)makeRandomKey {
-    
-    // Generate Random Key
+
+- (BTCPrivateKeyAddress *)makeRandomKey
+{
     NSString *secretExponent = BTCRandomDataWithLength(32).SHA256.hex;
     BTCPrivateKeyAddress *randomKey = [BTCPrivateKeyAddress addressWithData:BTCDataFromHex(secretExponent)];
     return randomKey;
 }
--(NSString*)addSpaceto:(NSString*)originalString afterWithGroupSize:(int)groupSize {
+
+- (NSString*)addSpaceto:(NSString*)originalString afterWithGroupSize:(int)groupSize
+{
     NSMutableString *result = [[NSMutableString alloc]initWithCapacity:originalString.length];
     
     for (int i=0;i<originalString.length;i++){
@@ -47,7 +52,8 @@
     return [NSString stringWithString:result];
 }
 
--(void)dumpKey:(BTCKey *)key {
+- (void)dumpKey:(BTCKey *)key
+{
     NSLog(@"\n Private = %@", self.keyPrivate);
     NSLog(@"\n Public  = %@", self.keyPublic);
     NSLog(@"-----------------------------------------------------------");
