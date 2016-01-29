@@ -7,7 +7,16 @@
 //
 
 #import "FPWTableViewController.h"
+#import "FPWTableViewCell.h"
+#import "UIImage+MDQRCode.h"
+#import <QuartzCore/QuartzCore.h>
 #import <UIAlertController+Blocks/UIAlertController+Blocks.h>
+@class FPWTableViewCell;
+
+#define isiPhone  (UI_USER_INTERFACE_IDIOM() == 0)?TRUE:FALSE
+#define isiPhone5  ([[UIScreen mainScreen] bounds].size.height == 568)?TRUE:FALSE
+#define isiPhone6  ([[UIScreen mainScreen] bounds].size.height == 667)?TRUE:FALSE
+#define isiPhone6Plus  ([[UIScreen mainScreen] bounds].size.height == 736)?TRUE:FALSE
 
 @interface FPWTableViewController ()
 
@@ -19,49 +28,45 @@
 @property (nonatomic, strong) UIImage *clearImage;
 @property (nonatomic) CGFloat lastOffset;
 
-#define isiPhone  (UI_USER_INTERFACE_IDIOM() == 0)?TRUE:FALSE
-#define isiPhone5  ([[UIScreen mainScreen] bounds].size.height == 568)?TRUE:FALSE
-#define isiPhone6  ([[UIScreen mainScreen] bounds].size.height == 667)?TRUE:FALSE
-#define isiPhone6Plus  ([[UIScreen mainScreen] bounds].size.height == 736)?TRUE:FALSE
-
 @end
 
 @implementation FPWTableViewController
-@class FPWTableViewCell;
 
-- (void)viewDidLoad {
-
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
-    // Set up view
     [self getClearImage];
     [self setGradient];
     [self setGenerateScreen];
     [self placeGradientBackround];
-    
-    // Remove gradient
     [self.blend removeFromSuperlayer];
-    
     [self setRefreshControl];
 }
--(void)viewDidAppear:(BOOL)animated {
+
+- (void)viewDidAppear:(BOOL)animated
+{
     
     [super viewDidAppear:animated];
 }
-- (void)didReceiveMemoryWarning {
+
+- (void)didReceiveMemoryWarning
+{
     
     [super didReceiveMemoryWarning];
 }
-- (void)generateNewWallet {
-    
+
+- (void)generateNewWallet
+{
     self.wallets = [[NSMutableArray alloc] init];
     BTCKey *key = [[BTCKey alloc]init];
     self.randomWallet = [[FPWWallet alloc] initWithKey:key];
     [self.wallets addObject:self.randomWallet];
     [self removeLoadImage];
 }
-- (void)setGenerateScreen {
-    
+
+- (void)setGenerateScreen
+{
     [self setInitialNavigationBar];
     
     // Set logo image centered on view
@@ -69,7 +74,6 @@
     self.myImageView = [[UIImageView alloc] initWithImage:planeImage];
     self.myImageView.tag = 99;
 
-    // Set plane
     if(isiPhone) {
         if (isiPhone5) {
             CGRect myFrame = CGRectMake(87.0f, 168.0f, self.myImageView.frame.size.width * 0.6f,
@@ -97,8 +101,8 @@
     [self.myImageView setContentMode:UIViewContentModeScaleAspectFit];
     [self.view addSubview:self.myImageView];
 }
-- (void) setInitialNavigationBar {
-    
+- (void)setInitialNavigationBar
+{
     // Set title, hide print button, and attributes
     self.title = @"Pull To Generate";
     self.printButton.hidden = YES;
@@ -117,20 +121,18 @@
     self.navigationController.view.backgroundColor = [UIColor clearColor];
     self.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
 }
-- (void) setMainNavigationBar {
-    
+
+- (void)setMainNavigationBar
+{
     self.title = @"Foldy Paper Wallet";
     self.printButton.hidden = NO;
     self.backButton.hidden = NO;
     [self setNeedsStatusBarAppearanceUpdate];
-    [self.navigationController.navigationBar setTitleTextAttributes:@{ NSFontAttributeName:
-                                                                           [UIFont fontWithName:@"HelveticaNeue-Bold"
-                                                                                           size:16.0f],
-                                                                       NSForegroundColorAttributeName:[UIColor blackColor]}];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{ NSFontAttributeName:[UIFont fontWithName:@"HelveticaNeue-Bold" size:16.0f],NSForegroundColorAttributeName:[UIColor blackColor]}];
 
 }
-- (void) setGradient {
-    
+- (void)setGradient
+{
     // Define top and bottom UIColors in gradient
     UIColor *darkBlue = [UIColor colorWithRed:0.11 green:0.47 blue:0.94 alpha:1.0];
     UIColor *lightBlue = [UIColor colorWithRed:0.51 green:0.95 blue:0.99 alpha:1.0];
@@ -149,8 +151,9 @@
     // Convert gradient to image
     [self getGradientImage];
 }
-- (UIImage *) getGradientImage {
-    
+
+- (UIImage *)getGradientImage
+{
     // Get the size of the screen
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     
@@ -168,12 +171,14 @@
     
     return self.gradientImage;
 }
-- (void) placeGradientBackround {
-    
+
+- (void) placeGradientBackround
+{
     self.tableView.backgroundView = [[UIImageView alloc] initWithImage:self.gradientImage];
 }
-- (UIImage *) getClearImage {
-    
+
+- (UIImage *)getClearImage
+{
     //Get the size of the screen
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     
@@ -191,13 +196,14 @@
     
     return self.clearImage;
 }
-- (void) placeClearBackround {
-    
+
+- (void)placeClearBackround
+{
     self.tableView.backgroundView = [[UIImageView alloc] initWithImage:self.clearImage];
 }
-- (void) setRefreshControl {
-    
-    // Initialize the refresh control
+
+- (void)setRefreshControl
+{
     self.refreshControl = [[UIRefreshControl alloc] init];
     self.refreshControl.backgroundColor = [UIColor whiteColor];
     self.refreshControl.tintColor = [UIColor blackColor];
@@ -205,23 +211,24 @@
                             action:@selector(reloadData)
                   forControlEvents:UIControlEventValueChanged];
 }
-- (void) reloadData {
-    
+
+- (void)reloadData
+{
     if (self.refreshControl) {
         [self generateNewWallet];
         [self.tableView reloadData];
         [self.refreshControl endRefreshing];
     }
 }
-- (void) removeLoadImage {
-    
-    // Remove plane image
+
+- (void)removeLoadImage
+{
     UIView *viewToRemove = [self.view viewWithTag:99];
     [viewToRemove removeFromSuperview];
 }
-- (void) pushWarningScreen {
-    
-    // Set warning screen
+
+- (void)pushWarningScreen
+{
     NSString *warningMessage = @"DO NOT let anyone see your private key or they can spend your bitcoins.\n\nDO NOT copy your private key to password managers or anywhere else. Paper wallets are intended for storing bitcoins offline, strictly as a physical document.\n\nThe bitcoin keys generated here are NOT PERMANENTLY STORED in this application.";
     
     [UIAlertController showAlertInViewController:self
@@ -242,13 +249,12 @@
                                             }
                                         }];
 }
-- (void) cancelScreen {
 
+- (void)cancelScreen
+{
     [self.wallets removeAllObjects];
     [self placeGradientBackround];
     
-    // Animate the table view reload
-    // [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
     [UIView transitionWithView:self.tableView
                       duration:1.0f
                        options:UIViewAnimationOptionTransitionCrossDissolve
@@ -260,17 +266,19 @@
 }
 
 #pragma mark - Set custom table cell
-- (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
-    
+
+- (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView
+{
     return 1;
 }
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
     return self.wallets.count;
 }
-- (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    // Disable cell selection
+
+- (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     self.tableView.allowsSelection = NO;
     
     FPWTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CustomCell" forIndexPath:indexPath];
@@ -282,13 +290,11 @@
                                               fillColor:[UIColor blackColor]];
     cell.keyPrivateImage.image = wallet.keyPrivateImage;
     
-    // Split key into 2 lines
     NSUInteger middle = wallet.keyPrivate.base58String.length / 2;
     NSString *firstHalf = [wallet.keyPrivate.base58String substringToIndex:middle];
     NSString *secondHalf = [wallet.keyPrivate.base58String substringFromIndex:middle];
     NSString *privateLabel = [NSString stringWithFormat:@"%@\n%@", firstHalf, secondHalf];
     cell.keyPrivateAddress.text = privateLabel;
-    
     
     // PUBLIC KEY
     wallet.keyPublicImage = [UIImage mdQRCodeForString:wallet.keyPublic.base58String
@@ -300,8 +306,9 @@
     [self checkIfFirstKey];
     return cell;
 }
-- (void) checkIfFirstKey {
-    
+
+- (void)checkIfFirstKey
+{
     if (![self.title  isEqualToString: @"Foldy Paper Wallet"]) {
         [self placeClearBackround];
         [self setMainNavigationBar];
@@ -309,15 +316,16 @@
     }
 }
 
-
-- (IBAction)tapToGoBack:(id)sender {
+- (IBAction)tapToGoBack:(id)sender
+{
     [self cancelScreen];
 }
 
 #pragma mark - Air print
-- (IBAction) tapToPrint:(id)sender {
+
+- (IBAction)tapToPrint:(id)sender
+{
     {
-        
         if ([UIPrintInteractionController isPrintingAvailable]) {
             UIPrintInteractionController *pic = [UIPrintInteractionController sharedPrintController];
             
@@ -339,7 +347,6 @@
             pic.showsPageRange = YES;
             [pic presentAnimated:YES
                completionHandler:^(UIPrintInteractionController *printInteractionController, BOOL completed, NSError *error) {
-                   
                    
                    if (!completed && (error != nil)) {
                        NSLog(@"Error Printing: %@", error);
