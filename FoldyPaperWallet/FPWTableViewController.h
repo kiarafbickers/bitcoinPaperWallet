@@ -11,8 +11,8 @@
 
 @interface FPWTableViewController : UITableViewController
 
-@property (nonatomic, strong) NSMutableArray *wallets;
 @property (nonatomic, strong) FPWWallet *randomWallet;
+@property (nonatomic, strong) NSMutableArray *wallets;
 @property (nonatomic, strong) UIImageView *myImageView;
 
 @end

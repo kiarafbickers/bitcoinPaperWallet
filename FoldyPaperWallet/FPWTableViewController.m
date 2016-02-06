@@ -69,7 +69,6 @@
 {
     [self setInitialNavigationBar];
     
-    // Set logo image centered on view
     UIImage *planeImage = [UIImage imageNamed:@"plane.png"];
     self.myImageView = [[UIImageView alloc] initWithImage:planeImage];
     self.myImageView.tag = 99;
@@ -91,7 +90,6 @@
             [self.myImageView setFrame:myFrame];
         }
         else {
-            // Treat as iPhone4
             CGRect myFrame = CGRectMake(97.0f, 110.0f, self.myImageView.frame.size.width * 0.5f,
                                         self.myImageView.frame.size.height * 0.5f);
             [self.myImageView setFrame:myFrame];
@@ -103,7 +101,6 @@
 }
 - (void)setInitialNavigationBar
 {
-    // Set title, hide print button, and attributes
     self.title = @"Pull To Generate";
     self.printButton.hidden = YES;
     self.backButton.hidden = YES;
@@ -113,7 +110,6 @@
                                                                                            size:16.0f],
                                                                        NSForegroundColorAttributeName:[UIColor whiteColor]}];
 
-    // Make Navigation controller completely translucent
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
                                                   forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.shadowImage = [UIImage new];
@@ -133,65 +129,47 @@
 }
 - (void)setGradient
 {
-    // Define top and bottom UIColors in gradient
     UIColor *darkBlue = [UIColor colorWithRed:0.11 green:0.47 blue:0.94 alpha:1.0];
     UIColor *lightBlue = [UIColor colorWithRed:0.51 green:0.95 blue:0.99 alpha:1.0];
-    
-    // Put colors into array
+
     NSArray *colors = @[ (id)darkBlue.CGColor, (id)lightBlue.CGColor];
     self.blend = [[CAGradientLayer alloc]init];
     self.blend.startPoint = CGPointMake(0.5, 0);
     self.blend.endPoint = CGPointMake(0.5, 1);
     self.blend.colors = colors;
-    
-    // Add gradient array to view layer
+
     [self.view.layer insertSublayer:self.blend atIndex:0];
     self.blend.frame = self.view.bounds;
     
-    // Convert gradient to image
     [self getGradientImage];
 }
 
 - (UIImage *)getGradientImage
 {
-    // Get the size of the screen
     CGRect screenRect = [[UIScreen mainScreen] bounds];
-    
-    // Create a bitmap-based graphics context and make it the current context passing in the screen size
     UIGraphicsBeginImageContext(screenRect.size);
     CGContextRef ctx = UIGraphicsGetCurrentContext();
     [[UIColor blackColor] set]; CGContextFillRect(ctx, screenRect);
-    
-    // Render the receiver and its sublayers into a view or use the window to get a screenshot of the entire device
     [self.view.layer renderInContext:ctx];
     self.gradientImage = UIGraphicsGetImageFromCurrentImageContext();
-    
-    // End the bitmap-based graphics context
     UIGraphicsEndImageContext();
     
     return self.gradientImage;
 }
 
-- (void) placeGradientBackround
+- (void)placeGradientBackround
 {
     self.tableView.backgroundView = [[UIImageView alloc] initWithImage:self.gradientImage];
 }
 
 - (UIImage *)getClearImage
 {
-    //Get the size of the screen
     CGRect screenRect = [[UIScreen mainScreen] bounds];
-    
-    //Create a bitmap-based graphics context and make it the current context passing in the screen size
     UIGraphicsBeginImageContext(screenRect.size);
     CGContextRef ctx = UIGraphicsGetCurrentContext();
     [[UIColor blackColor] set]; CGContextFillRect(ctx, screenRect);
-    
-    // Render the receiver and its sublayers into the specified context choose a view or use the window to get a screenshot of the entire device
     [self.view.layer renderInContext:ctx];
     self.gradientImage = UIGraphicsGetImageFromCurrentImageContext();
-    
-    //End the bitmap-based graphics context
     UIGraphicsEndImageContext();
     
     return self.clearImage;
@@ -240,12 +218,10 @@
                                         tapBlock:^(UIAlertController *controller, UIAlertAction *action, NSInteger buttonIndex){
                                             
                                             if (buttonIndex == controller.cancelButtonIndex) {
-                                                NSLog(@"Okay Tapped");
+
                                             }
                                             else if (buttonIndex == controller.destructiveButtonIndex) {
-                                                // [self placeClearBackround];
                                                 [self cancelScreen];
-                                                NSLog(@"Cancel Tapped");
                                             }
                                         }];
 }
@@ -263,6 +239,20 @@
      }
                     completion:nil];
     [self setGenerateScreen];
+}
+
+- (void)checkIfFirstKey
+{
+    if (![self.title  isEqualToString: @"Foldy Paper Wallet"]) {
+        [self placeClearBackround];
+        [self setMainNavigationBar];
+        [self pushWarningScreen];
+    }
+}
+
+- (IBAction)tapToGoBack:(id)sender
+{
+    [self cancelScreen];
 }
 
 #pragma mark - Set custom table cell
@@ -305,20 +295,6 @@
 
     [self checkIfFirstKey];
     return cell;
-}
-
-- (void)checkIfFirstKey
-{
-    if (![self.title  isEqualToString: @"Foldy Paper Wallet"]) {
-        [self placeClearBackround];
-        [self setMainNavigationBar];
-        [self pushWarningScreen];
-    }
-}
-
-- (IBAction)tapToGoBack:(id)sender
-{
-    [self cancelScreen];
 }
 
 #pragma mark - Air print
