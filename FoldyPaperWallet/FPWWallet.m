@@ -17,6 +17,10 @@
 @property (nonatomic, readwrite) BTCPublicKeyAddress *keyPublic;
 @property (nonatomic, readwrite) BTCPrivateKeyAddress *keyPrivate;
 
+@property (nonatomic, strong) NSData *seed;
+@property (nonatomic, strong) BTCMnemonic *mneonic;
+@property (nonatomic, strong) BTCKeychain *keychain;
+
 @end
 
 @implementation FPWWallet
@@ -30,6 +34,35 @@
     }
     return self;
 }
+
+- (instancetype)initRootHDWallet
+{
+    if (self)
+    {
+        NSData *seed = BTCRandomDataWithLength(32);
+        _mneonic = [[BTCMnemonic alloc] initWithEntropy:seed password:@"1234" wordListType:BTCMnemonicWordListTypeEnglish];
+        _seed = self.mneonic.seed;
+        _keychain = [[BTCKeychain alloc] initWithSeed:self.mneonic.seed];
+        
+        
+        NSMutableString *mneonicStringm = [NSMutableString new];
+        for (NSString *word in _mneonic.words) {
+            [mneonicStringm appendString:word];
+            [mneonicStringm appendString:@" "];
+        }
+        
+        _mnemonicString = mneonicStringm;
+        NSLog(@"%@", _mnemonicString);
+        
+        _key = _keychain.key;
+        _keyPublic = _key.address;
+        _keyPrivate = _key.privateKeyAddress;
+    }
+    
+    return self;
+}
+
+
 
 - (BTCPrivateKeyAddress *)makeRandomKey
 {

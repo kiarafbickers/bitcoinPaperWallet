@@ -15,7 +15,10 @@
 @property (nonatomic, strong)   UIImage *keyPublicImage;
 @property (nonatomic, readonly) BTCPrivateKeyAddress *keyPrivate;
 @property (nonatomic, strong)   UIImage *keyPrivateImage;
+@property (nonatomic, strong) NSString *mnemonicString;
+@property (nonatomic, readonly) NSData *seed;
 
 - (instancetype)initWithKey:(BTCKey *)key;
+- (instancetype)initRootHDWallet;
 
 @end

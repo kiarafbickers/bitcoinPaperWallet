@@ -28,6 +28,8 @@
 @property (nonatomic, strong) UIImage *clearImage;
 @property (nonatomic) CGFloat lastOffset;
 
+@property (nonatomic, strong) UITapGestureRecognizer *tap;
+
 @end
 
 @implementation FPWTableViewController
@@ -59,9 +61,8 @@
 - (void)generateNewWallet
 {
     self.wallets = [[NSMutableArray alloc] init];
-    BTCKey *key = [[BTCKey alloc]init];
-    self.randomWallet = [[FPWWallet alloc] initWithKey:key];
-    [self.wallets addObject:self.randomWallet];
+    self.wallet = [[FPWWallet alloc] initRootHDWallet];
+    [self.wallets addObject:self.wallet];
     [self removeLoadImage];
 }
 
@@ -196,6 +197,7 @@
         [self generateNewWallet];
         [self.tableView reloadData];
         [self.refreshControl endRefreshing];
+        [self pushMnemonicScreen];
     }
 }
 
@@ -205,13 +207,11 @@
     [viewToRemove removeFromSuperview];
 }
 
-- (void)pushWarningScreen
+- (void)pushMnemonicScreen
 {
-    NSString *warningMessage = @"DO NOT let anyone see your private key or they can spend your bitcoins.\n\nDO NOT copy your private key to password managers or anywhere else. Paper wallets are intended for storing bitcoins offline, strictly as a physical document.\n\nThe bitcoin keys generated here are NOT PERMANENTLY STORED in this application.";
-    
     [UIAlertController showAlertInViewController:self
-                                       withTitle:@"WARNING"
-                                         message:warningMessage
+                                       withTitle:@"Secure your mnemonic:"
+                                         message:self.wallet.mnemonicString
                                cancelButtonTitle:@"Got it!"
                           destructiveButtonTitle:@"Cancel"
                                otherButtonTitles:nil
@@ -246,7 +246,6 @@
     if (![self.title  isEqualToString: @"Foldy Paper Wallet"]) {
         [self placeClearBackround];
         [self setMainNavigationBar];
-        [self pushWarningScreen];
     }
 }
 
