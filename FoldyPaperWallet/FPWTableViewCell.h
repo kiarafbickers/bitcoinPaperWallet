@@ -8,14 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
+#import "FPWTextFieldCopyOnly.h"
 
 @interface FPWTableViewCell : UITableViewCell
 
 @property (nonatomic, weak) IBOutlet UILabel *keyPublicLabel;
 @property (nonatomic, weak) IBOutlet UIImageView *keyPublicImage;
-@property (nonatomic, weak) IBOutlet UILabel *keyAddress;
+@property (weak, nonatomic) IBOutlet FPWTextFieldCopyOnly *keyPublicTextfield;
 @property (nonatomic, weak) IBOutlet UILabel *keyPrivateLabel;
+@property (weak, nonatomic) IBOutlet FPWTextFieldCopyOnly *keyPrivateTextfield;
 @property (nonatomic, weak) IBOutlet UIImageView *keyPrivateImage;
-@property (nonatomic, weak) IBOutlet UILabel *keyPrivateAddress;
 
 @end

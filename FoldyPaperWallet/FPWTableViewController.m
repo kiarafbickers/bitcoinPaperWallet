@@ -279,19 +279,14 @@
                                                    size:cell.keyPrivateImage.bounds.size.width
                                               fillColor:[UIColor blackColor]];
     cell.keyPrivateImage.image = wallet.keyPrivateImage;
-    
-    NSUInteger middle = wallet.keyPrivate.base58String.length / 2;
-    NSString *firstHalf = [wallet.keyPrivate.base58String substringToIndex:middle];
-    NSString *secondHalf = [wallet.keyPrivate.base58String substringFromIndex:middle];
-    NSString *privateLabel = [NSString stringWithFormat:@"%@\n%@", firstHalf, secondHalf];
-    cell.keyPrivateAddress.text = privateLabel;
+    cell.keyPrivateTextfield.text = wallet.keyPrivate.base58String;
     
     // PUBLIC KEY
     wallet.keyPublicImage = [UIImage mdQRCodeForString:wallet.keyPublic.base58String
                                                       size:cell.keyPublicImage.bounds.size.width
                                                  fillColor:[UIColor blackColor]];
     cell.keyPublicImage.image = wallet.keyPublicImage;
-    cell.keyAddress.text = wallet.keyPublic.base58String;
+    cell.keyPublicTextfield.text = wallet.keyPublic.base58String;
 
     [self checkIfFirstKey];
     return cell;
