@@ -18,6 +18,9 @@
 #define isiPhone6  ([[UIScreen mainScreen] bounds].size.height == 667)?TRUE:FALSE
 #define isiPhone6Plus  ([[UIScreen mainScreen] bounds].size.height == 736)?TRUE:FALSE
 
+#define kGenerate self.view.bounds.size.width
+#define kSend self.view.bounds.size.width/2
+
 @interface FPWTableViewController ()
 
 @property (nonatomic, strong) FPWTableViewCell *tableCell;
@@ -27,8 +30,6 @@
 @property (nonatomic, strong) UIImage *gradientImage;
 @property (nonatomic, strong) UIImage *clearImage;
 @property (nonatomic) CGFloat lastOffset;
-
-@property (nonatomic, strong) UITapGestureRecognizer *tap;
 
 @end
 
@@ -58,59 +59,71 @@
     [super didReceiveMemoryWarning];
 }
 
-- (void)generateNewWallet
-{
-    self.wallets = [[NSMutableArray alloc] init];
-    self.wallet = [[FPWWallet alloc] initRootHDWallet];
-    [self.wallets addObject:self.wallet];
-    [self removeLoadImage];
-}
-
 - (void)setGenerateScreen
 {
     [self setInitialNavigationBar];
     
-    UIImage *planeImage = [UIImage imageNamed:@"plane.png"];
-    self.myImageView = [[UIImageView alloc] initWithImage:planeImage];
-    self.myImageView.tag = 99;
+    if (self.myImageView == nil) {
+        UIImage *planeImage = [UIImage imageNamed:@"plane.png"];
+        self.myImageView = [[UIImageView alloc] initWithImage:planeImage];
 
-    if(isiPhone) {
-        if (isiPhone5) {
-            CGRect myFrame = CGRectMake(87.0f, 168.0f, self.myImageView.frame.size.width * 0.6f,
-                                        self.myImageView.frame.size.height * 0.6f);
-            [self.myImageView setFrame:myFrame];
+        if(isiPhone) {
+            if (isiPhone5) {
+                CGRect myFrame = CGRectMake(87.0f, 168.0f, self.myImageView.frame.size.width * 0.6f,
+                                            self.myImageView.frame.size.height * 0.6f);
+                [self.myImageView setFrame:myFrame];
+            }
+            else if (isiPhone6) {
+                CGRect myFrame = CGRectMake(115.0f, 168.0f, self.myImageView.frame.size.width * 0.6f,
+                                            self.myImageView.frame.size.height * 0.6f);
+                [self.myImageView setFrame:myFrame];
+            }
+            else if (isiPhone6Plus) {
+                CGRect myFrame = CGRectMake(127.0f, 168.0f, self.myImageView.frame.size.width * 0.7f,
+                                            self.myImageView.frame.size.height * 0.7f);
+                [self.myImageView setFrame:myFrame];
+            }
+            else {
+                CGRect myFrame = CGRectMake(97.0f, 110.0f, self.myImageView.frame.size.width * 0.5f,
+                                            self.myImageView.frame.size.height * 0.5f);
+                [self.myImageView setFrame:myFrame];
+            }
         }
-        else if (isiPhone6) {
-            CGRect myFrame = CGRectMake(115.0f, 168.0f, self.myImageView.frame.size.width * 0.6f,
-                                        self.myImageView.frame.size.height * 0.6f);
-            [self.myImageView setFrame:myFrame];
-        }
-        else if (isiPhone6Plus) {
-            CGRect myFrame = CGRectMake(127.0f, 168.0f, self.myImageView.frame.size.width * 0.7f,
-                                        self.myImageView.frame.size.height * 0.7f);
-            [self.myImageView setFrame:myFrame];
-        }
-        else {
-            CGRect myFrame = CGRectMake(97.0f, 110.0f, self.myImageView.frame.size.width * 0.5f,
-                                        self.myImageView.frame.size.height * 0.5f);
-            [self.myImageView setFrame:myFrame];
-        }
+
+        UIPanGestureRecognizer *gesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleGesture:)];
+        gesture.delegate = (id)self;
+        [gesture setMinimumNumberOfTouches:1];
+        [self.view addGestureRecognizer:gesture];
+        
+        [self.myImageView setContentMode:UIViewContentModeScaleAspectFit];
+        self.myImageView.userInteractionEnabled = YES;
+        
+        [self.view addSubview:self.myImageView];
+    } else if (self.myImageView.hidden == YES) {
+        self.myImageView.hidden = NO;
     }
-    
-    [self.myImageView setContentMode:UIViewContentModeScaleAspectFit];
-    [self.view addSubview:self.myImageView];
 }
+
+- (void)handleGesture:(UIGestureRecognizer *)gesture
+{
+//    CGFloat xCurrent = [gesture locationInView:self.view].x;
+//    
+//    if (xGesture >= screenWidth) {
+//        
+//    } else if (xGesture < screenWidth) {
+//        
+//        
+//        //self.myImageView.transform = CGAffineTransformMakeScale(-1, 1);
+//    }
+}
+
 - (void)setInitialNavigationBar
 {
     self.title = @"Pull To Generate";
     self.printButton.hidden = YES;
     self.backButton.hidden = YES;
     [self setNeedsStatusBarAppearanceUpdate];
-    [self.navigationController.navigationBar setTitleTextAttributes:@{ NSFontAttributeName:
-                                                                           [UIFont fontWithName:@"HelveticaNeue-Bold"
-                                                                                           size:16.0f],
-                                                                       NSForegroundColorAttributeName:[UIColor whiteColor]}];
-
+    [self.navigationController.navigationBar setTitleTextAttributes:@{ NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-Bold"size:16.0f], NSForegroundColorAttributeName:[UIColor whiteColor]}];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
                                                   forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.shadowImage = [UIImage new];
@@ -203,8 +216,7 @@
 
 - (void)removeLoadImage
 {
-    UIView *viewToRemove = [self.view viewWithTag:99];
-    [viewToRemove removeFromSuperview];
+    self.myImageView.hidden = YES;
 }
 
 - (void)pushMnemonicScreen
@@ -252,6 +264,14 @@
 - (IBAction)tapToGoBack:(id)sender
 {
     [self cancelScreen];
+}
+
+- (void)generateNewWallet
+{
+    self.wallets = [[NSMutableArray alloc] init];
+    self.wallet = [[FPWWallet alloc] initRootHDWallet];
+    [self.wallets addObject:self.wallet];
+    [self removeLoadImage];
 }
 
 #pragma mark - Set custom table cell
