@@ -26,6 +26,7 @@
 		E9D7101B1BCD880A00C895D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9D710191BCD880A00C895D5 /* Main.storyboard */; };
 		E9D710201BCD880A00C895D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9D7101F1BCD880A00C895D5 /* Assets.xcassets */; };
 		E9D710231BCD880A00C895D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9D710211BCD880A00C895D5 /* LaunchScreen.storyboard */; };
+		E9E5E38F1D585ACB008AA397 /* FPWSendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E5E38E1D585ACB008AA397 /* FPWSendViewController.m */; };
 		E9F5C51E1D52B91400DBFB32 /* FPWTextFieldCopyOnly.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F5C51D1D52B91400DBFB32 /* FPWTextFieldCopyOnly.m */; };
 		E9F630341BD9371500ABDFA0 /* UINavigationController+StatusBarStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F630331BD9371500ABDFA0 /* UINavigationController+StatusBarStyle.m */; };
 /* End PBXBuildFile section */
@@ -85,6 +86,8 @@
 		E9D710471BCD89F500C895D5 /* FPWTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPWTableViewController.m; sourceTree = "<group>"; };
 		E9D710491BCD8DF400C895D5 /* FPWWallet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPWWallet.h; sourceTree = "<group>"; };
 		E9D7104A1BCD8DF400C895D5 /* FPWWallet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPWWallet.m; sourceTree = "<group>"; };
+		E9E5E38D1D585ACB008AA397 /* FPWSendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPWSendViewController.h; sourceTree = "<group>"; };
+		E9E5E38E1D585ACB008AA397 /* FPWSendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPWSendViewController.m; sourceTree = "<group>"; };
 		E9F5C51C1D52B91400DBFB32 /* FPWTextFieldCopyOnly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPWTextFieldCopyOnly.h; sourceTree = "<group>"; };
 		E9F5C51D1D52B91400DBFB32 /* FPWTextFieldCopyOnly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPWTextFieldCopyOnly.m; sourceTree = "<group>"; };
 		E9F630331BD9371500ABDFA0 /* UINavigationController+StatusBarStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+StatusBarStyle.m"; sourceTree = "<group>"; };
@@ -191,6 +194,8 @@
 				E9D7104A1BCD8DF400C895D5 /* FPWWallet.m */,
 				E977DDC01BCFDEB800B8D497 /* FPWTableViewCell.h */,
 				E977DDC11BCFDEB800B8D497 /* FPWTableViewCell.m */,
+				E9E5E38D1D585ACB008AA397 /* FPWSendViewController.h */,
+				E9E5E38E1D585ACB008AA397 /* FPWSendViewController.m */,
 				E9D710461BCD89F500C895D5 /* FPWTableViewController.h */,
 				E9D710471BCD89F500C895D5 /* FPWTableViewController.m */,
 				E9F5C51C1D52B91400DBFB32 /* FPWTextFieldCopyOnly.h */,
@@ -392,6 +397,7 @@
 				E95A33E71BCEBC48007D1DBD /* UIImage+MDQRCode.m in Sources */,
 				E9F630341BD9371500ABDFA0 /* UINavigationController+StatusBarStyle.m in Sources */,
 				E95A33E31BCEBC2D007D1DBD /* qrencode.c in Sources */,
+				E9E5E38F1D585ACB008AA397 /* FPWSendViewController.m in Sources */,
 				E95A33E21BCEBC12007D1DBD /* qrinput.c in Sources */,
 				E95A33E11BCEBC02007D1DBD /* mask.c in Sources */,
 				E95A33E01BCEBBE4007D1DBD /* rscode.c in Sources */,

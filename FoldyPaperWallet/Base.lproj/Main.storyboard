@@ -6,6 +6,26 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="Hls-Ha-Vsz">
+            <objects>
+                <viewController id="lne-ZQ-BIY" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jCe-du-KLN"/>
+                        <viewControllerLayoutGuide type="bottom" id="RsX-V8-EIM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6Ui-l8-yd7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="3Zi-dG-vGT"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qfi-Hx-HO2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2737" y="318"/>
+        </scene>
         <!--Foldy Paper Wallet-->
         <scene sceneID="Qbi-f3-LPs">
             <objects>
@@ -102,6 +122,7 @@
                                     <outlet property="keyPublicImage" destination="RW7-uH-KKS" id="koP-V4-tqA"/>
                                     <outlet property="keyPublicLabel" destination="c13-vi-MUG" id="pan-hD-x5R"/>
                                     <outlet property="keyPublicTextfield" destination="QGC-6T-HG8" id="cTe-As-dMA"/>
+                                    <segue destination="lne-ZQ-BIY" kind="show" identifier="sendView" id="qWY-y7-VWT"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -140,7 +161,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QIp-4E-Ehl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3602" y="160"/>
+            <point key="canvasLocation" x="3546" y="318"/>
         </scene>
         <!--Item-->
         <scene sceneID="nYx-ik-fhg">
@@ -161,7 +182,26 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w8s-2t-nFb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3064" y="160"/>
+            <point key="canvasLocation" x="3546" y="-794"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="H2F-gV-uQQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="te8-6v-Z7L" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vOQ-yb-qwn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="lne-ZQ-BIY" kind="relationship" relationship="rootViewController" id="h1B-cb-ylC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NT4-Yy-3AG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2737" y="-794"/>
         </scene>
     </scenes>
     <resources>
@@ -169,4 +209,7 @@
         <image name="Upload-Small-50.png" width="50" height="50"/>
         <image name="back-Small.png" width="29" height="29"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="qWY-y7-VWT"/>
+    </inferredMetricsTieBreakers>
 </document>

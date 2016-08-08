@@ -7,6 +7,7 @@
 //
 
 #import "FPWTableViewController.h"
+#import "FPWSendViewController.h"
 #import "FPWTableViewCell.h"
 #import "UIImage+MDQRCode.h"
 #import <QuartzCore/QuartzCore.h>
@@ -53,6 +54,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    [self setInitialNavigationBar];
 }
 
 - (void)didReceiveMemoryWarning
@@ -94,12 +96,9 @@
             }
         }
         
-        self.planeDirection = YES;
+        [self setGesture];
         
-        self.panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleGesture:)];
-        self.panGestureRecognizer.delegate = (id)self;
-        self.panGestureRecognizer.minimumNumberOfTouches = 1;
-        [self.tableView addGestureRecognizer:self.panGestureRecognizer];
+        self.planeDirection = YES;
         
         [self.myImageView setContentMode:UIViewContentModeScaleAspectFit];
         [self.myImageView setUserInteractionEnabled:YES];
@@ -131,6 +130,16 @@
     self.backButton.hidden = NO;
     [self setNeedsStatusBarAppearanceUpdate];
     [self.navigationController.navigationBar setTitleTextAttributes:@{ NSFontAttributeName:[UIFont fontWithName:@"HelveticaNeue-Bold" size:16.0f], NSForegroundColorAttributeName:[UIColor blackColor]}];
+    
+//    if ([self.title isEqualToString:@"Foldy Paper Wallet"]) {
+//        self.title = @"Pull To Generate";
+//        self.planeDirection = YES;
+//        self.myImageView.transform = CGAffineTransformMakeScale(-1, 1);
+//    } else if ([self.title isEqualToString:@"Send View"]) {
+//        self.title = @"Pull To Send";
+//        self.planeDirection = NO;
+//        self.myImageView.transform = CGAffineTransformMakeScale(1, 1);
+//    }
 }
 
 - (void)setGradient
@@ -195,6 +204,14 @@
     [self.refreshControl addTarget:self action:@selector(reloadData) forControlEvents:UIControlEventValueChanged];
 }
 
+- (void)setGesture
+{
+    self.panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleGesture:)];
+    self.panGestureRecognizer.delegate = (id)self;
+    self.panGestureRecognizer.minimumNumberOfTouches = 1;
+    [self.tableView addGestureRecognizer:self.panGestureRecognizer];
+}
+
 - (void)removeLoadImage
 {
     self.myImageView.hidden = YES;
@@ -209,11 +226,15 @@
 
 - (void)reloadData
 {
-    [self.view removeGestureRecognizer:self.panGestureRecognizer];
-    [self generateNewWallet];
+    if ([self.title isEqualToString: @"Pull To Generate"]) {
+        [self generateNewWallet];
+        [self pushMnemonicScreen];
+    } else if ([self.title isEqualToString: @"Pull To Send"]) {
+        [self performSegueWithIdentifier:@"sendView" sender:self];
+    }
+    
     [self.tableView reloadData];
     [self.refreshControl endRefreshing];
-    [self pushMnemonicScreen];
 }
 
 - (void)cancelScreen
