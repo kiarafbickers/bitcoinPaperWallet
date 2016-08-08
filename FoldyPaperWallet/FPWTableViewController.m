@@ -18,26 +18,25 @@
 #define isiPhone6  ([[UIScreen mainScreen] bounds].size.height == 667)?TRUE:FALSE
 #define isiPhone6Plus  ([[UIScreen mainScreen] bounds].size.height == 736)?TRUE:FALSE
 
-#define kGenerate self.view.bounds.size.width
-#define kSend self.view.bounds.size.width/2
+#define kHalfpointOnView self.view.bounds.size.width/2
 
 @interface FPWTableViewController ()
 
 @property (nonatomic, strong) FPWTableViewCell *tableCell;
-@property (weak, nonatomic) IBOutlet UIButton *printButton;
-@property (weak, nonatomic) IBOutlet UIButton *backButton;
+@property (nonatomic, weak) IBOutlet UIButton *printButton;
+@property (nonatomic, weak) IBOutlet UIButton *backButton;
 @property (nonatomic, strong) CAGradientLayer *blend;
 @property (nonatomic, strong) UIImage *gradientImage;
 @property (nonatomic, strong) UIImage *clearImage;
 @property (nonatomic) CGFloat lastOffset;
-@property (nonatomic) CGFloat xLast;
 @property (nonatomic) BOOL planeDirection;
-
-@property (nonatomic, strong) UIPanGestureRecognizer *pangestureRecognizer;
+@property (nonatomic, strong) UIPanGestureRecognizer *panGestureRecognizer;
 
 @end
 
 @implementation FPWTableViewController
+
+# pragma mark - View Life Cycle
 
 - (void)viewDidLoad
 {
@@ -53,15 +52,15 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    
     [super viewDidAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning
 {
-    
     [super didReceiveMemoryWarning];
 }
+
+# pragma mark - Inital Setup Methods
 
 - (void)setGenerateScreen
 {
@@ -71,6 +70,7 @@
         UIImage *planeImage = [UIImage imageNamed:@"plane.png"];
         self.myImageView = [[UIImageView alloc] initWithImage:planeImage];
 
+        // TODO Redo Without Frames
         if(isiPhone) {
             if (isiPhone5) {
                 CGRect myFrame = CGRectMake(87.0f, 168.0f, self.myImageView.frame.size.width * 0.6f,
@@ -96,50 +96,19 @@
         
         self.planeDirection = YES;
         
-        self.pangestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleGesture:)];
-        self.pangestureRecognizer.delegate = (id)self;
-        self.pangestureRecognizer.minimumNumberOfTouches = 1;
-        [self.tableView addGestureRecognizer:self.pangestureRecognizer];
+        self.panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleGesture:)];
+        self.panGestureRecognizer.delegate = (id)self;
+        self.panGestureRecognizer.minimumNumberOfTouches = 1;
+        [self.tableView addGestureRecognizer:self.panGestureRecognizer];
         
         [self.myImageView setContentMode:UIViewContentModeScaleAspectFit];
         [self.myImageView setUserInteractionEnabled:YES];
-        
         [self.view addSubview:self.myImageView];
+        
     } else if (self.myImageView.hidden == YES) {
         self.myImageView.hidden = NO;
     }
 }
-
-- (void)handleGesture:(UIGestureRecognizer *)gesture
-{
-    CGFloat xCurrent = [gesture locationInView:self.view].x;
-    NSLog(@"%f", xCurrent);
-    
-    if (self.planeDirection == YES && xCurrent > kSend) {
-        self.myImageView.transform = CGAffineTransformMakeScale(-1, 1);
-        self.planeDirection = NO;
-        self.title = @"Pull To Send";
-    } else if (self.planeDirection == NO && xCurrent <= kSend) {
-        self.myImageView.transform = CGAffineTransformMakeScale(1, 1);
-        self.planeDirection = YES;
-        self.title = @"Pull To Generate";
-    }
-}
-
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
-{
-    if (self.pangestureRecognizer == gestureRecognizer) {
-        if ([otherGestureRecognizer.view isKindOfClass:UIScrollView.class]) {
-            UIScrollView *scrollView = (UIScrollView *)otherGestureRecognizer.view;
-            if (scrollView.contentOffset.x == 0) {
-                return YES;
-            }
-        }
-    }
-    
-    return NO;
-}
-
 
 - (void)setInitialNavigationBar
 {
@@ -148,8 +117,7 @@
     self.backButton.hidden = YES;
     [self setNeedsStatusBarAppearanceUpdate];
     [self.navigationController.navigationBar setTitleTextAttributes:@{ NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-Bold"size:16.0f], NSForegroundColorAttributeName:[UIColor whiteColor]}];
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
-                                                  forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.shadowImage = [UIImage new];
     self.navigationController.navigationBar.translucent = YES;
     self.navigationController.view.backgroundColor = [UIColor clearColor];
@@ -162,11 +130,12 @@
     self.printButton.hidden = NO;
     self.backButton.hidden = NO;
     [self setNeedsStatusBarAppearanceUpdate];
-    [self.navigationController.navigationBar setTitleTextAttributes:@{ NSFontAttributeName:[UIFont fontWithName:@"HelveticaNeue-Bold" size:16.0f],NSForegroundColorAttributeName:[UIColor blackColor]}];
-
+    [self.navigationController.navigationBar setTitleTextAttributes:@{ NSFontAttributeName:[UIFont fontWithName:@"HelveticaNeue-Bold" size:16.0f], NSForegroundColorAttributeName:[UIColor blackColor]}];
 }
+
 - (void)setGradient
 {
+    // TODO - Add colors to class extension
     UIColor *darkBlue = [UIColor colorWithRed:0.11 green:0.47 blue:0.94 alpha:1.0];
     UIColor *lightBlue = [UIColor colorWithRed:0.51 green:0.95 blue:0.99 alpha:1.0];
 
@@ -223,24 +192,87 @@
     self.refreshControl = [[UIRefreshControl alloc] init];
     self.refreshControl.backgroundColor = [UIColor whiteColor];
     self.refreshControl.tintColor = [UIColor blackColor];
-    [self.refreshControl addTarget:self
-                            action:@selector(reloadData)
-                  forControlEvents:UIControlEventValueChanged];
-}
-
-- (void)reloadData
-{
-    if (self.refreshControl) {
-        [self generateNewWallet];
-        [self.tableView reloadData];
-        [self.refreshControl endRefreshing];
-        [self pushMnemonicScreen];
-    }
+    [self.refreshControl addTarget:self action:@selector(reloadData) forControlEvents:UIControlEventValueChanged];
 }
 
 - (void)removeLoadImage
 {
     self.myImageView.hidden = YES;
+}
+
+#pragma mark - Action Methods
+
+- (IBAction)tapToGoBack:(id)sender
+{
+    [self cancelScreen];
+}
+
+- (void)reloadData
+{
+    [self.view removeGestureRecognizer:self.panGestureRecognizer];
+    [self generateNewWallet];
+    [self.tableView reloadData];
+    [self.refreshControl endRefreshing];
+    [self pushMnemonicScreen];
+}
+
+- (void)cancelScreen
+{
+    [self.wallets removeAllObjects];
+    [self placeGradientBackround];
+    
+    [UIView transitionWithView:self.tableView duration:1.0f options:UIViewAnimationOptionTransitionCrossDissolve animations:^(void) {
+        [self.tableView reloadData];
+    } completion:nil];
+    [self setGenerateScreen];
+}
+
+- (void)checkIfFirstKey
+{
+    if (![self.title  isEqualToString: @"Foldy Paper Wallet"]) {
+        [self placeClearBackround];
+        [self setMainNavigationBar];
+    }
+}
+
+- (void)handleGesture:(UIGestureRecognizer *)gesture
+{
+    CGFloat xCurrent = [gesture locationInView:self.view].x;
+    NSLog(@"%f", xCurrent);
+    
+    if (self.planeDirection == YES && xCurrent > kHalfpointOnView) {
+        self.myImageView.transform = CGAffineTransformMakeScale(-1, 1);
+        self.planeDirection = NO;
+        self.title = @"Pull To Send";
+    } else if (self.planeDirection == NO && xCurrent <= kHalfpointOnView) {
+        self.myImageView.transform = CGAffineTransformMakeScale(1, 1);
+        self.planeDirection = YES;
+        self.title = @"Pull To Generate";
+    }
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
+    if (self.panGestureRecognizer == gestureRecognizer) {
+        if ([otherGestureRecognizer.view isKindOfClass:UIScrollView.class]) {
+            UIScrollView *scrollView = (UIScrollView *)otherGestureRecognizer.view;
+            if (scrollView.contentOffset.x == 0) {
+                return YES;
+            }
+        }
+    }
+    
+    return NO;
+}
+
+#pragma mark - Wallet Methods
+
+- (void)generateNewWallet
+{
+    self.wallets = [[NSMutableArray alloc] init];
+    self.wallet = [[FPWWallet alloc] initRootHDWallet];
+    [self.wallets addObject:self.wallet];
+    [self removeLoadImage];
 }
 
 - (void)pushMnemonicScreen
@@ -254,7 +286,7 @@
                                         tapBlock:^(UIAlertController *controller, UIAlertAction *action, NSInteger buttonIndex){
                                             
                                             if (buttonIndex == controller.cancelButtonIndex) {
-
+                                                
                                             }
                                             else if (buttonIndex == controller.destructiveButtonIndex) {
                                                 [self cancelScreen];
@@ -262,43 +294,7 @@
                                         }];
 }
 
-- (void)cancelScreen
-{
-    [self.wallets removeAllObjects];
-    [self placeGradientBackround];
-    
-    [UIView transitionWithView:self.tableView
-                      duration:1.0f
-                       options:UIViewAnimationOptionTransitionCrossDissolve
-                    animations:^(void) {
-         [self.tableView reloadData];
-     }
-                    completion:nil];
-    [self setGenerateScreen];
-}
-
-- (void)checkIfFirstKey
-{
-    if (![self.title  isEqualToString: @"Foldy Paper Wallet"]) {
-        [self placeClearBackround];
-        [self setMainNavigationBar];
-    }
-}
-
-- (IBAction)tapToGoBack:(id)sender
-{
-    [self cancelScreen];
-}
-
-- (void)generateNewWallet
-{
-    self.wallets = [[NSMutableArray alloc] init];
-    self.wallet = [[FPWWallet alloc] initRootHDWallet];
-    [self.wallets addObject:self.wallet];
-    [self removeLoadImage];
-}
-
-#pragma mark - Set custom table cell
+#pragma mark - Tableview Methods
 
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -313,7 +309,6 @@
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     self.tableView.allowsSelection = NO;
-    
     FPWTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CustomCell" forIndexPath:indexPath];
     FPWWallet *wallet = [self.wallets objectAtIndex:indexPath.row];
     
@@ -335,7 +330,7 @@
     return cell;
 }
 
-#pragma mark - Air print
+#pragma mark - Air Print
 
 - (IBAction)tapToPrint:(id)sender
 {
@@ -357,7 +352,6 @@
             UIGraphicsEndImageContext();
             
             pic.printingItem = cellImage;
-            
             pic.showsPageRange = YES;
             [pic presentAnimated:YES
                completionHandler:^(UIPrintInteractionController *printInteractionController, BOOL completed, NSError *error) {
@@ -372,6 +366,5 @@
         }
     }
 }
-
 
 @end
