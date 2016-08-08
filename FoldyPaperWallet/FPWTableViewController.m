@@ -30,6 +30,10 @@
 @property (nonatomic, strong) UIImage *gradientImage;
 @property (nonatomic, strong) UIImage *clearImage;
 @property (nonatomic) CGFloat lastOffset;
+@property (nonatomic) CGFloat xLast;
+@property (nonatomic) BOOL planeDirection;
+
+@property (nonatomic, strong) UIPanGestureRecognizer *pangestureRecognizer;
 
 @end
 
@@ -89,14 +93,16 @@
                 [self.myImageView setFrame:myFrame];
             }
         }
-
-        UIPanGestureRecognizer *gesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleGesture:)];
-        gesture.delegate = (id)self;
-        [gesture setMinimumNumberOfTouches:1];
-        [self.view addGestureRecognizer:gesture];
+        
+        self.planeDirection = YES;
+        
+        self.pangestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleGesture:)];
+        self.pangestureRecognizer.delegate = (id)self;
+        self.pangestureRecognizer.minimumNumberOfTouches = 1;
+        [self.tableView addGestureRecognizer:self.pangestureRecognizer];
         
         [self.myImageView setContentMode:UIViewContentModeScaleAspectFit];
-        self.myImageView.userInteractionEnabled = YES;
+        [self.myImageView setUserInteractionEnabled:YES];
         
         [self.view addSubview:self.myImageView];
     } else if (self.myImageView.hidden == YES) {
@@ -106,16 +112,34 @@
 
 - (void)handleGesture:(UIGestureRecognizer *)gesture
 {
-//    CGFloat xCurrent = [gesture locationInView:self.view].x;
-//    
-//    if (xGesture >= screenWidth) {
-//        
-//    } else if (xGesture < screenWidth) {
-//        
-//        
-//        //self.myImageView.transform = CGAffineTransformMakeScale(-1, 1);
-//    }
+    CGFloat xCurrent = [gesture locationInView:self.view].x;
+    NSLog(@"%f", xCurrent);
+    
+    if (self.planeDirection == YES && xCurrent > kSend) {
+        self.myImageView.transform = CGAffineTransformMakeScale(-1, 1);
+        self.planeDirection = NO;
+        self.title = @"Pull To Send";
+    } else if (self.planeDirection == NO && xCurrent <= kSend) {
+        self.myImageView.transform = CGAffineTransformMakeScale(1, 1);
+        self.planeDirection = YES;
+        self.title = @"Pull To Generate";
+    }
 }
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
+    if (self.pangestureRecognizer == gestureRecognizer) {
+        if ([otherGestureRecognizer.view isKindOfClass:UIScrollView.class]) {
+            UIScrollView *scrollView = (UIScrollView *)otherGestureRecognizer.view;
+            if (scrollView.contentOffset.x == 0) {
+                return YES;
+            }
+        }
+    }
+    
+    return NO;
+}
+
 
 - (void)setInitialNavigationBar
 {
