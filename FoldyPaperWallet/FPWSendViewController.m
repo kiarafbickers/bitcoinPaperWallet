@@ -7,6 +7,13 @@
 //
 
 #import "FPWSendViewController.h"
+#import "FPWTableViewController.h"
+
+@interface FPWSendViewController ()
+
+@property FPWTableViewController *mainViewController;
+
+@end
 
 @implementation FPWSendViewController
 
@@ -15,8 +22,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.title = @"Send View";
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -27,6 +32,25 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+- (IBAction)tapToGoBack:(id)sender
+{
+    [self cancelScreen];
+}
+
+- (void)cancelScreen
+{
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    self.mainViewController = (FPWTableViewController *)[storyboard instantiateViewControllerWithIdentifier:@"fpwtablevc-identifier"];
+    
+    [UIView transitionWithView:self.navigationController.view duration:1.0f
+                       options:UIViewAnimationOptionTransitionCrossDissolve
+                    animations:^{
+                        [self.navigationController pushViewController:self.mainViewController animated:NO];
+                    }
+                    completion:NULL];
 }
 
 @end

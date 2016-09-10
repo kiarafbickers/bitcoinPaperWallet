@@ -32,6 +32,9 @@
 @property (nonatomic) CGFloat lastOffset;
 @property (nonatomic) BOOL planeDirection;
 @property (nonatomic, strong) UIPanGestureRecognizer *panGestureRecognizer;
+@property (nonatomic, strong) NSMutableString *mMnemonicStringPartial;
+@property (nonatomic, strong) NSString *mnemonicStringPartial;
+@property (nonatomic, strong) NSString *mnemonicStringLastWord;
 
 @end
 
@@ -42,7 +45,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     [self getClearImage];
     [self setGradient];
     [self setGenerateScreen];
@@ -54,7 +56,9 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [self setInitialNavigationBar];
+    
+    /* Called here to manage the navigationbar after cancel button clicked */
+    [self setChoiceNavigationBar];
 }
 
 - (void)didReceiveMemoryWarning
@@ -66,7 +70,7 @@
 
 - (void)setGenerateScreen
 {
-    [self setInitialNavigationBar];
+    [self setChoiceNavigationBar];
     
     if (self.myImageView == nil) {
         UIImage *planeImage = [UIImage imageNamed:@"plane.png"];
@@ -109,9 +113,14 @@
     }
 }
 
-- (void)setInitialNavigationBar
+- (void)setChoiceNavigationBar
 {
-    self.title = @"Pull To Generate";
+    if (self.planeDirection == NO) {
+        self.title = @"Pull To Send";
+    } else {
+        self.title = @"Pull To Generate";
+    }
+    
     self.printButton.hidden = YES;
     self.backButton.hidden = YES;
     [self setNeedsStatusBarAppearanceUpdate];
@@ -123,23 +132,13 @@
     self.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
 }
 
-- (void)setMainNavigationBar
+- (void)setGenerateNavigationBar
 {
     self.title = @"Foldy Paper Wallet";
     self.printButton.hidden = NO;
     self.backButton.hidden = NO;
     [self setNeedsStatusBarAppearanceUpdate];
     [self.navigationController.navigationBar setTitleTextAttributes:@{ NSFontAttributeName:[UIFont fontWithName:@"HelveticaNeue-Bold" size:16.0f], NSForegroundColorAttributeName:[UIColor blackColor]}];
-    
-//    if ([self.title isEqualToString:@"Foldy Paper Wallet"]) {
-//        self.title = @"Pull To Generate";
-//        self.planeDirection = YES;
-//        self.myImageView.transform = CGAffineTransformMakeScale(-1, 1);
-//    } else if ([self.title isEqualToString:@"Send View"]) {
-//        self.title = @"Pull To Send";
-//        self.planeDirection = NO;
-//        self.myImageView.transform = CGAffineTransformMakeScale(1, 1);
-//    }
 }
 
 - (void)setGradient
@@ -222,6 +221,7 @@
 - (IBAction)tapToGoBack:(id)sender
 {
     [self cancelScreen];
+    [self setGesture];
 }
 
 - (void)reloadData
@@ -229,6 +229,7 @@
     if ([self.title isEqualToString: @"Pull To Generate"]) {
         [self generateNewWallet];
         [self pushMnemonicScreen];
+        [self.view removeGestureRecognizer:self.panGestureRecognizer];
     } else if ([self.title isEqualToString: @"Pull To Send"]) {
         [self performSegueWithIdentifier:@"sendView" sender:self];
     }
@@ -240,6 +241,7 @@
 - (void)cancelScreen
 {
     [self.wallets removeAllObjects];
+    self.mMnemonicStringPartial = nil;
     [self placeGradientBackround];
     
     [UIView transitionWithView:self.tableView duration:1.0f options:UIViewAnimationOptionTransitionCrossDissolve animations:^(void) {
@@ -252,14 +254,13 @@
 {
     if (![self.title  isEqualToString: @"Foldy Paper Wallet"]) {
         [self placeClearBackround];
-        [self setMainNavigationBar];
+        [self setGenerateNavigationBar];
     }
 }
 
 - (void)handleGesture:(UIGestureRecognizer *)gesture
 {
     CGFloat xCurrent = [gesture locationInView:self.view].x;
-    NSLog(@"%f", xCurrent);
     
     if (self.planeDirection == YES && xCurrent > kHalfpointOnView) {
         self.myImageView.transform = CGAffineTransformMakeScale(-1, 1);
@@ -298,13 +299,16 @@
 
 - (void)pushMnemonicScreen
 {
+    [self seperateLastWordFromMnemonic];
+    
+    NSString *secureWord = [NSString stringWithFormat:@"Secure word: %@", self.mnemonicStringLastWord];
     [UIAlertController showAlertInViewController:self
-                                       withTitle:@"Secure your mnemonic:"
-                                         message:self.wallet.mnemonicString
+                                       withTitle:secureWord
+                                         message:@"Write down the last word\nin your mnemonic offline."
                                cancelButtonTitle:@"Got it!"
                           destructiveButtonTitle:@"Cancel"
                                otherButtonTitles:nil
-                                        tapBlock:^(UIAlertController *controller, UIAlertAction *action, NSInteger buttonIndex){
+                                        tapBlock:^(UIAlertController *controller, UIAlertAction *action, NSInteger buttonIndex) {
                                             
                                             if (buttonIndex == controller.cancelButtonIndex) {
                                                 
@@ -313,6 +317,41 @@
                                                 [self cancelScreen];
                                             }
                                         }];
+}
+
+- (void)seperateLastWordFromMnemonic
+{
+    NSLog(@"self.wallet.mnemonicString: %@", self.wallet.mnemonicString);
+    
+    
+    // TODO Change from hardcoded numbers
+    NSMutableArray *wordsArray = [NSMutableArray arrayWithArray:[self.wallet.mnemonicString componentsSeparatedByString:@" "]];
+    [wordsArray removeObjectAtIndex:24];
+    
+    NSMutableArray *lastWordArray = [[NSMutableArray alloc] initWithArray:wordsArray copyItems:YES];
+    for (NSUInteger i = lastWordArray.count - 1; i > 0; i--) {
+        [lastWordArray removeObjectAtIndex:0];
+    }
+    
+    [wordsArray removeObjectAtIndex:23];
+    
+    for (NSInteger i = 0; i <= wordsArray.count - 1; i++) {
+        NSString *word = (NSString *)[wordsArray objectAtIndex:i];
+        NSLog(@"%@", word);
+        
+        if (i == wordsArray.count - 1) {
+            self.mMnemonicStringPartial = [[NSString stringWithFormat:@"%@ ■", self.mMnemonicStringPartial] mutableCopy];
+        } else {
+            self.mMnemonicStringPartial = [[NSString stringWithFormat:@"%@ %@", self.mMnemonicStringPartial, word] mutableCopy];
+        }
+    }
+    
+    self.mnemonicStringPartial = [self.mMnemonicStringPartial substringWithRange:NSMakeRange(7, [self.mMnemonicStringPartial length]-7)];
+    
+    NSLog(@"%@", self.mnemonicStringPartial);
+    
+    
+    self.mnemonicStringLastWord = [lastWordArray componentsJoinedByString:@""];
 }
 
 #pragma mark - Tableview Methods
@@ -333,19 +372,17 @@
     FPWTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CustomCell" forIndexPath:indexPath];
     FPWWallet *wallet = [self.wallets objectAtIndex:indexPath.row];
     
+    NSLog(@"%@", self.mnemonicStringPartial);
+    
     // PRIVATE KEY
-    wallet.keyPrivateImage = [UIImage mdQRCodeForString:wallet.keyPrivate.base58String
-                                                   size:cell.keyPrivateImage.bounds.size.width
-                                              fillColor:[UIColor blackColor]];
-    cell.keyPrivateImage.image = wallet.keyPrivateImage;
-    cell.keyPrivateTextfield.text = wallet.keyPrivate.base58String;
+    cell.keyPrivateMumonic.text = self.mnemonicStringPartial;
     
     // PUBLIC KEY
     wallet.keyPublicImage = [UIImage mdQRCodeForString:wallet.keyPublic.base58String
                                                       size:cell.keyPublicImage.bounds.size.width
                                                  fillColor:[UIColor blackColor]];
     cell.keyPublicImage.image = wallet.keyPublicImage;
-    cell.keyPublicTextfield.text = wallet.keyPublic.base58String;
+    cell.keyPublicLabel.text = wallet.keyPublic.base58String;
 
     [self checkIfFirstKey];
     return cell;

@@ -12,11 +12,8 @@
 
 @interface FPWTableViewCell : UITableViewCell
 
-@property (nonatomic, weak) IBOutlet UILabel *keyPublicLabel;
+@property (weak, nonatomic) IBOutlet UILabel *keyPrivateMumonic;
 @property (nonatomic, weak) IBOutlet UIImageView *keyPublicImage;
-@property (weak, nonatomic) IBOutlet FPWTextFieldCopyOnly *keyPublicTextfield;
-@property (nonatomic, weak) IBOutlet UILabel *keyPrivateLabel;
-@property (weak, nonatomic) IBOutlet FPWTextFieldCopyOnly *keyPrivateTextfield;
-@property (nonatomic, weak) IBOutlet UIImageView *keyPrivateImage;
+@property (weak, nonatomic) IBOutlet UILabel *keyPublicLabel;
 
 @end
