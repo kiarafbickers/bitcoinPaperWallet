@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3458088EC2BD62891CD02D0D /* libPods-FoldyPaperWallet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 23B3788031AAE2F3BA7B5D9C /* libPods-FoldyPaperWallet.a */; };
+		E906DD791D8397470050405C /* FPWTableViewSendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E906DD781D8397470050405C /* FPWTableViewSendCell.m */; };
 		E95A33DB1BCEBBAE007D1DBD /* qrspec.c in Sources */ = {isa = PBXBuildFile; fileRef = E93E9E121BCEB4870019B7AD /* qrspec.c */; };
 		E95A33DC1BCEBBB9007D1DBD /* split.c in Sources */ = {isa = PBXBuildFile; fileRef = E93E9E161BCEB4870019B7AD /* split.c */; };
 		E95A33DD1BCEBBC3007D1DBD /* bitstream.c in Sources */ = {isa = PBXBuildFile; fileRef = E93E9E0A1BCEB4870019B7AD /* bitstream.c */; };
@@ -20,13 +21,12 @@
 		E95A33E41BCEBC39007D1DBD /* FPWTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D710471BCD89F500C895D5 /* FPWTableViewController.m */; };
 		E95A33E61BCEBC44007D1DBD /* FPWWallet.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D7104A1BCD8DF400C895D5 /* FPWWallet.m */; };
 		E95A33E71BCEBC48007D1DBD /* UIImage+MDQRCode.m in Sources */ = {isa = PBXBuildFile; fileRef = E93E9E011BCEB4870019B7AD /* UIImage+MDQRCode.m */; };
-		E977DDC21BCFDEB800B8D497 /* FPWTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E977DDC11BCFDEB800B8D497 /* FPWTableViewCell.m */; };
+		E977DDC21BCFDEB800B8D497 /* FPWTableViewGenerateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E977DDC11BCFDEB800B8D497 /* FPWTableViewGenerateCell.m */; };
 		E9CFA03D1BD2AF0200D53079 /* UIImage+Resizing.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CFA03C1BD2AF0200D53079 /* UIImage+Resizing.m */; };
 		E9CFA03E1BD2AF8500D53079 /* UIImage+Resizing.h in Sources */ = {isa = PBXBuildFile; fileRef = E9CFA03B1BD2AF0200D53079 /* UIImage+Resizing.h */; };
 		E9D7101B1BCD880A00C895D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9D710191BCD880A00C895D5 /* Main.storyboard */; };
 		E9D710201BCD880A00C895D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9D7101F1BCD880A00C895D5 /* Assets.xcassets */; };
 		E9D710231BCD880A00C895D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9D710211BCD880A00C895D5 /* LaunchScreen.storyboard */; };
-		E9E5E38F1D585ACB008AA397 /* FPWSendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E5E38E1D585ACB008AA397 /* FPWSendViewController.m */; };
 		E9F5C51E1D52B91400DBFB32 /* FPWTextFieldCopyOnly.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F5C51D1D52B91400DBFB32 /* FPWTextFieldCopyOnly.m */; };
 		E9F630341BD9371500ABDFA0 /* UINavigationController+StatusBarStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F630331BD9371500ABDFA0 /* UINavigationController+StatusBarStyle.m */; };
 /* End PBXBuildFile section */
@@ -51,6 +51,8 @@
 /* Begin PBXFileReference section */
 		23B3788031AAE2F3BA7B5D9C /* libPods-FoldyPaperWallet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FoldyPaperWallet.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0BDF885479AAA13F6DD48F1 /* Pods-FoldyPaperWallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoldyPaperWallet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoldyPaperWallet/Pods-FoldyPaperWallet.debug.xcconfig"; sourceTree = "<group>"; };
+		E906DD771D8397470050405C /* FPWTableViewSendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPWTableViewSendCell.h; sourceTree = "<group>"; };
+		E906DD781D8397470050405C /* FPWTableViewSendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPWTableViewSendCell.m; sourceTree = "<group>"; };
 		E93E9E001BCEB4870019B7AD /* UIImage+MDQRCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MDQRCode.h"; sourceTree = "<group>"; };
 		E93E9E011BCEB4870019B7AD /* UIImage+MDQRCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MDQRCode.m"; sourceTree = "<group>"; };
 		E93E9E0A1BCEB4870019B7AD /* bitstream.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bitstream.c; sourceTree = "<group>"; };
@@ -67,8 +69,8 @@
 		E93E9E151BCEB4870019B7AD /* rscode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rscode.h; sourceTree = "<group>"; };
 		E93E9E161BCEB4870019B7AD /* split.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = split.c; sourceTree = "<group>"; };
 		E93E9E171BCEB4870019B7AD /* split.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = split.h; sourceTree = "<group>"; };
-		E977DDC01BCFDEB800B8D497 /* FPWTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPWTableViewCell.h; sourceTree = "<group>"; };
-		E977DDC11BCFDEB800B8D497 /* FPWTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPWTableViewCell.m; sourceTree = "<group>"; };
+		E977DDC01BCFDEB800B8D497 /* FPWTableViewGenerateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPWTableViewGenerateCell.h; sourceTree = "<group>"; };
+		E977DDC11BCFDEB800B8D497 /* FPWTableViewGenerateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPWTableViewGenerateCell.m; sourceTree = "<group>"; };
 		E983C3711BD7CB9700EE72A2 /* UINavigationController+StatusBarStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+StatusBarStyle.h"; sourceTree = "<group>"; };
 		E9CFA03B1BD2AF0200D53079 /* UIImage+Resizing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resizing.h"; sourceTree = "<group>"; };
 		E9CFA03C1BD2AF0200D53079 /* UIImage+Resizing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resizing.m"; sourceTree = "<group>"; };
@@ -86,8 +88,6 @@
 		E9D710471BCD89F500C895D5 /* FPWTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPWTableViewController.m; sourceTree = "<group>"; };
 		E9D710491BCD8DF400C895D5 /* FPWWallet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPWWallet.h; sourceTree = "<group>"; };
 		E9D7104A1BCD8DF400C895D5 /* FPWWallet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPWWallet.m; sourceTree = "<group>"; };
-		E9E5E38D1D585ACB008AA397 /* FPWSendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPWSendViewController.h; sourceTree = "<group>"; };
-		E9E5E38E1D585ACB008AA397 /* FPWSendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPWSendViewController.m; sourceTree = "<group>"; };
 		E9F5C51C1D52B91400DBFB32 /* FPWTextFieldCopyOnly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPWTextFieldCopyOnly.h; sourceTree = "<group>"; };
 		E9F5C51D1D52B91400DBFB32 /* FPWTextFieldCopyOnly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPWTextFieldCopyOnly.m; sourceTree = "<group>"; };
 		E9F630331BD9371500ABDFA0 /* UINavigationController+StatusBarStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+StatusBarStyle.m"; sourceTree = "<group>"; };
@@ -192,10 +192,10 @@
 				E9D710141BCD880A00C895D5 /* AppDelegate.m */,
 				E9D710491BCD8DF400C895D5 /* FPWWallet.h */,
 				E9D7104A1BCD8DF400C895D5 /* FPWWallet.m */,
-				E977DDC01BCFDEB800B8D497 /* FPWTableViewCell.h */,
-				E977DDC11BCFDEB800B8D497 /* FPWTableViewCell.m */,
-				E9E5E38D1D585ACB008AA397 /* FPWSendViewController.h */,
-				E9E5E38E1D585ACB008AA397 /* FPWSendViewController.m */,
+				E977DDC01BCFDEB800B8D497 /* FPWTableViewGenerateCell.h */,
+				E977DDC11BCFDEB800B8D497 /* FPWTableViewGenerateCell.m */,
+				E906DD771D8397470050405C /* FPWTableViewSendCell.h */,
+				E906DD781D8397470050405C /* FPWTableViewSendCell.m */,
 				E9D710461BCD89F500C895D5 /* FPWTableViewController.h */,
 				E9D710471BCD89F500C895D5 /* FPWTableViewController.m */,
 				E9F5C51C1D52B91400DBFB32 /* FPWTextFieldCopyOnly.h */,
@@ -397,11 +397,11 @@
 				E95A33E71BCEBC48007D1DBD /* UIImage+MDQRCode.m in Sources */,
 				E9F630341BD9371500ABDFA0 /* UINavigationController+StatusBarStyle.m in Sources */,
 				E95A33E31BCEBC2D007D1DBD /* qrencode.c in Sources */,
-				E9E5E38F1D585ACB008AA397 /* FPWSendViewController.m in Sources */,
 				E95A33E21BCEBC12007D1DBD /* qrinput.c in Sources */,
+				E906DD791D8397470050405C /* FPWTableViewSendCell.m in Sources */,
 				E95A33E11BCEBC02007D1DBD /* mask.c in Sources */,
 				E95A33E01BCEBBE4007D1DBD /* rscode.c in Sources */,
-				E977DDC21BCFDEB800B8D497 /* FPWTableViewCell.m in Sources */,
+				E977DDC21BCFDEB800B8D497 /* FPWTableViewGenerateCell.m in Sources */,
 				E95A33DF1BCEBBD1007D1DBD /* AppDelegate.m in Sources */,
 				E95A33DE1BCEBBCB007D1DBD /* main.m in Sources */,
 				E9CFA03D1BD2AF0200D53079 /* UIImage+Resizing.m in Sources */,

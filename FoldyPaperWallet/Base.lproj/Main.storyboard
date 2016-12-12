@@ -7,53 +7,21 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Send View Controller-->
-        <scene sceneID="Hls-Ha-Vsz">
-            <objects>
-                <viewController id="lne-ZQ-BIY" customClass="FPWSendViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jCe-du-KLN"/>
-                        <viewControllerLayoutGuide type="bottom" id="RsX-V8-EIM"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="6Ui-l8-yd7">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="PK6-cp-os5">
-                        <barButtonItem key="leftBarButtonItem" image="back-Small.png" style="plain" id="dEc-M4-gtJ">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Bbk-y2-ceI">
-                                <rect key="frame" x="20" y="12" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="back-Small.png"/>
-                                <connections>
-                                    <action selector="tapToGoBack:" destination="zi8-P7-dfc" eventType="touchUpInside" id="Sbp-5C-39s"/>
-                                    <action selector="tapToGoBack:" destination="lne-ZQ-BIY" eventType="touchUpInside" id="p4J-9x-CSg"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qfi-Hx-HO2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2737" y="318"/>
-        </scene>
         <!--Foldy Paper Wallet-->
         <scene sceneID="Qbi-f3-LPs">
             <objects>
                 <tableViewController storyboardIdentifier="fpwtablevc-identifier" wantsFullScreenLayout="YES" extendedLayoutIncludesOpaqueBars="YES" id="zi8-P7-dfc" customClass="FPWTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="645" sectionHeaderHeight="28" sectionFooterHeight="28" id="SJ4-Ic-w0d">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="426" sectionHeaderHeight="28" sectionFooterHeight="28" id="SJ4-Ic-w0d">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomCell" rowHeight="645" id="mgq-Jr-FQ3" customClass="FPWTableViewCell">
-                                <rect key="frame" x="0.0" y="92" width="414" height="645"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GenerateCell" rowHeight="426" id="mgq-Jr-FQ3" customClass="FPWTableViewGenerateCell">
+                                <rect key="frame" x="0.0" y="92" width="414" height="426"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mgq-Jr-FQ3" id="PMC-6i-2c0">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="644"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="425"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTU-Gv-ad1">
@@ -138,8 +106,49 @@
                                     <outlet property="keyPrivateMumonic" destination="mKY-ft-8rM" id="xU4-mm-tdl"/>
                                     <outlet property="keyPublicImage" destination="RW7-uH-KKS" id="koP-V4-tqA"/>
                                     <outlet property="keyPublicLabel" destination="8Ne-B2-i1v" id="eiN-53-Ihw"/>
-                                    <segue destination="lne-ZQ-BIY" kind="show" identifier="sendView" id="qWY-y7-VWT"/>
                                 </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SendCell" id="zcM-1e-v4T" customClass="FPWTableViewSendCell">
+                                <rect key="frame" x="0.0" y="518" width="414" height="426"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zcM-1e-v4T" id="4oj-g2-c4n">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="425"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6V9-OU-Vy0">
+                                            <rect key="frame" x="93" y="24" width="228" height="45"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Enter your private key mnemonic to send funds or from the address and check its blance:">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="13" name="Helvetica"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LLr-Qv-TeI">
+                                            <rect key="frame" x="93" y="90" width="228" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="6V9-OU-Vy0" firstAttribute="centerX" secondItem="4oj-g2-c4n" secondAttribute="centerX" id="93U-hW-VqD"/>
+                                        <constraint firstItem="LLr-Qv-TeI" firstAttribute="leading" secondItem="6V9-OU-Vy0" secondAttribute="leading" id="Bfj-qs-AR2"/>
+                                        <constraint firstItem="LLr-Qv-TeI" firstAttribute="top" secondItem="6V9-OU-Vy0" secondAttribute="bottom" constant="21" id="ML7-xk-FsA"/>
+                                        <constraint firstItem="6V9-OU-Vy0" firstAttribute="width" secondItem="4oj-g2-c4n" secondAttribute="width" multiplier="0.55" id="dH5-cL-hkA"/>
+                                        <constraint firstItem="LLr-Qv-TeI" firstAttribute="centerX" secondItem="6V9-OU-Vy0" secondAttribute="centerX" id="fQC-vI-J1d"/>
+                                        <constraint firstItem="6V9-OU-Vy0" firstAttribute="top" secondItem="4oj-g2-c4n" secondAttribute="topMargin" constant="16" id="rHN-xr-9jO"/>
+                                        <constraint firstItem="LLr-Qv-TeI" firstAttribute="width" secondItem="6V9-OU-Vy0" secondAttribute="width" id="s7d-pf-4tg"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="Bfj-qs-AR2"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -177,7 +186,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QIp-4E-Ehl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3546" y="318"/>
+            <point key="canvasLocation" x="3546" y="112"/>
         </scene>
         <!--Item-->
         <scene sceneID="nYx-ik-fhg">
@@ -200,32 +209,10 @@
             </objects>
             <point key="canvasLocation" x="3546" y="-794"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="H2F-gV-uQQ">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="te8-6v-Z7L" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vOQ-yb-qwn">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="lne-ZQ-BIY" kind="relationship" relationship="rootViewController" id="h1B-cb-ylC"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NT4-Yy-3AG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2737" y="-656"/>
-        </scene>
     </scenes>
     <resources>
         <image name="Upload-Small-50" width="50" height="50"/>
         <image name="Upload-Small-50.png" width="50" height="50"/>
         <image name="back-Small.png" width="29" height="29"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="qWY-y7-VWT"/>
-    </inferredMetricsTieBreakers>
 </document>

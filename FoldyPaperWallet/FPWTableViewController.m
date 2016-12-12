@@ -7,8 +7,8 @@
 //
 
 #import "FPWTableViewController.h"
-#import "FPWSendViewController.h"
-#import "FPWTableViewCell.h"
+#import "FPWTableViewGenerateCell.h"
+#import "FPWTableViewSendCell.h"
 #import "UIImage+MDQRCode.h"
 #import <QuartzCore/QuartzCore.h>
 #import <UIAlertController+Blocks/UIAlertController+Blocks.h>
@@ -231,7 +231,7 @@
         [self pushMnemonicScreen];
         [self.view removeGestureRecognizer:self.panGestureRecognizer];
     } else if ([self.title isEqualToString: @"Pull To Send"]) {
-        [self performSegueWithIdentifier:@"sendView" sender:self];
+        
     }
     
     [self.tableView reloadData];
@@ -304,7 +304,7 @@
     NSString *secureWord = [NSString stringWithFormat:@"Secure word: %@", self.mnemonicStringLastWord];
     [UIAlertController showAlertInViewController:self
                                        withTitle:secureWord
-                                         message:@"Write down the last word\nin your mnemonic offline."
+                                         message:@"Write down the last recovery\nword of your mnemonic offline.\nYou will need this to send coins."
                                cancelButtonTitle:@"Got it!"
                           destructiveButtonTitle:@"Cancel"
                                otherButtonTitles:nil
@@ -363,29 +363,42 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.wallets.count;
+    if ([self.title isEqualToString:@"Pull To Generate"]) {
+        return self.wallets.count;
+    } else {
+        return 0;
+    }
 }
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     self.tableView.allowsSelection = NO;
-    FPWTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CustomCell" forIndexPath:indexPath];
-    FPWWallet *wallet = [self.wallets objectAtIndex:indexPath.row];
     
-    NSLog(@"%@", self.mnemonicStringPartial);
-    
-    // PRIVATE KEY
-    cell.keyPrivateMumonic.text = self.mnemonicStringPartial;
-    
-    // PUBLIC KEY
-    wallet.keyPublicImage = [UIImage mdQRCodeForString:wallet.keyPublic.base58String
+    if ([self.title isEqualToString:@"Pull To Generate"]) {
+        FPWTableViewGenerateCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GenerateCell" forIndexPath:indexPath];
+        FPWWallet *wallet = [self.wallets objectAtIndex:indexPath.row];
+        
+        NSLog(@"%@", self.mnemonicStringPartial);
+        
+        // PRIVATE KEY
+        cell.keyPrivateMumonic.text = self.mnemonicStringPartial;
+        
+        // PUBLIC KEY
+        wallet.keyPublicImage = [UIImage mdQRCodeForString:wallet.keyPublic.base58String
                                                       size:cell.keyPublicImage.bounds.size.width
                                                  fillColor:[UIColor blackColor]];
-    cell.keyPublicImage.image = wallet.keyPublicImage;
-    cell.keyPublicLabel.text = wallet.keyPublic.base58String;
-
-    [self checkIfFirstKey];
-    return cell;
+        cell.keyPublicImage.image = wallet.keyPublicImage;
+        cell.keyPublicLabel.text = wallet.keyPublic.base58String;
+        
+        [self checkIfFirstKey];
+        return cell;
+    } else if ([self.title isEqualToString:@"Pull To Send"]) {
+        FPWTableViewSendCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SendCell" forIndexPath:indexPath];
+        return cell;
+    }
+    else {
+        return 0;
+    }
 }
 
 #pragma mark - Air Print

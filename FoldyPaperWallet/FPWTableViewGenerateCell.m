@@ -6,9 +6,9 @@
 //  Copyright © 2015 Kiara Robles. All rights reserved.
 //
 
-#import "FPWTableViewCell.h"
+#import "FPWTableViewGenerateCell.h"
 
-@implementation FPWTableViewCell
+@implementation FPWTableViewGenerateCell
 
 - (void)awakeFromNib
 {

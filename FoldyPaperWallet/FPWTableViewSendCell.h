@@ -1,13 +1,13 @@
 //
-//  FPWSendViewController.h
+//  FPWTableViewSendCell.h
 //  FoldyPaperWallet
 //
-//  Created by Kiara Robles on 8/7/16.
+//  Created by Kiara Robles on 9/9/16.
 //  Copyright © 2016 Kiara Robles. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface FPWSendViewController : UIViewController
+@interface FPWTableViewSendCell : UITableViewCell
 
 @end

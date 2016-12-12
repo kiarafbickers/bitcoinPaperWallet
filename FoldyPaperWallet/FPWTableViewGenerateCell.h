@@ -10,7 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "FPWTextFieldCopyOnly.h"
 
-@interface FPWTableViewCell : UITableViewCell
+@interface FPWTableViewGenerateCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *keyPrivateMumonic;
 @property (nonatomic, weak) IBOutlet UIImageView *keyPublicImage;
